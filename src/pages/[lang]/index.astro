@@ -2,9 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import WelcomeSection from '../../components/WelcomeSection.astro';
 import ApproachSection from '../../components/ApproachSection.astro';
-import TherapyInfo from '../../components/TherapyInfo.astro';
-import TherapyProcess from '../../components/TherapyProcess.astro';
+import ForWhomSection from '../../components/ForWhomSection.astro';
+import ImportantInfo from '../../components/ImportantInfo.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
+import NotSuitableSection from '../../components/NotSuitableSection.astro';
+import BenefitsSection from '../../components/BenefitsSection.astro';
 
 import { useTranslations, languages } from '../../i18n/utils';
 
@@ -22,22 +24,26 @@ const t = useTranslations(lang as keyof typeof languages);
     <div class="container">
         <WelcomeSection lang={lang as keyof typeof languages} />
         <ApproachSection lang={lang as keyof typeof languages} />
-        <TherapyInfo lang={lang as keyof typeof languages} />
-        <TherapyProcess lang={lang as keyof typeof languages} />
+        <ImportantInfo lang={lang as keyof typeof languages} />
+        <ForWhomSection lang={lang as keyof typeof languages} />
+        <BenefitsSection lang={lang as keyof typeof languages} />
         <ContactCTA lang={lang as keyof typeof languages} />
+        <NotSuitableSection lang={lang as keyof typeof languages} />
     </div>
 </Layout>
 
 <style>
-    .container {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1rem;
-    }
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow-x: visible;
+    position: relative;
+}
 
-    :global(section) {
-        margin: 2rem 0;
-        scroll-margin-top: 2rem;
-    }
+:global(section) {
+    margin: 2rem 0;
+    scroll-margin-top: 2rem;
+}
 </style>

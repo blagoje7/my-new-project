@@ -5,19 +5,30 @@
     "contact": "Contact"
   },
   "header": {
+    "title": "Welkom",
     "name": "Tamara Medovarski",
-    "credentials": "psychotherapeut, arts, in opleiding tot psychiater"
+    "credentials": {
+      "role1": "psychotherapeut",
+      "role2": "arts",
+      "role3": "in opleiding tot psychiater"
+    }
   },
   "intro": {
     "description": "Ik wil u helpen om de obstakels weg te nemen die uw persoonlijke en professionele ontwikkeling in de weg staan — om uw klachten te verminderen, uw zelfvertrouwen te versterken, uw relaties te verbeteren en te groeien naar meer innerlijke tevredenheid en gevoel van voldoening."
   },
   "approach": {
-    "description1": "Mijn werkwijze is integratieve psychotherapie, waarin ik elementen combineer uit de psychoanalyse, psychodynamische psychotherapie, cognitieve gedragstherapie en humanistische benaderingen.",
-    "description2": "De keuze van methoden, duur en intensiteit van de therapie stem ik af op uw individuele behoeften en mogelijkheden, evenals op de aard van uw klachten."
-  },
+    "title": "Mijn Aanpak",
+    "bullet1": "Vakkundigheid",
+    "bullet2": "Ervaring",
+    "bullet3": "Individueel afgestemd",
+    "description": "Mijn werkwijze is integratieve psychotherapie, waarin ik elementen combineer uit de psychoanalyse, psychodynamische psychotherapie, cognitieve gedragstherapie en humanistische benaderingen.",
+    "description2":"De keuze van methoden, duur en intensiteit van de therapie stem ik af op uw individuele behoeften en mogelijkheden, evenals op de aard van uw klachten."
+},
   "onlineTherapy": {
     "title": "Voordelen van online psychotherapie",
-    "description": "Praktisch en toegankelijk — vanuit het comfort van uw eigen huis, zonder verspil van tijd en energie aan reizen. Voor mensen die in het buitenland wonen biedt online psychotherapie de mogelijkheid om te werken met een therapeut met vergelijkbare culturele achtergrond die bepaalde emotionele- en gedragspatronen beter kan begrijpen en interpreteren."
+    "bullet1": "Praktisch en toegankelijk — vanuit het comfort van uw eigen huis",
+    "bullet2": "Zonder verspil van tijd en energie aan reizen",
+    "bullet3": "Voor mensen die in het buitenland wonen biedt online psychotherapie de mogelijkheid om te werken met een therapeut met vergelijkbare culturele achtergrond die bepaalde emotionele- en gedragspatronen beter kan begrijpen en interpreteren"
   },
   "forWhom": {
     "title": "Voor wie is deze vorm van psychotherapie geschikt (veelvoorkomende thema's):",
@@ -47,17 +58,26 @@
   },
   "therapy": {
     "title": "Hoe verloopt psychotherapie?",
-    "duration": "Een sessie duurt 50 minuten.",
-    "initialMeeting": "Vooraf bied ik een gratis kennismakingsgesprek van 15 minuten aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen.",
-    "firstSession": "De eerste sessie is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen.",
-    "furtherWork": "In de vervolgsessies werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen.",
+    "duration": "Een sessie duurt 50 minuten",
+    "initialMeeting": "Vooraf bied ik een gratis kennismakingsgesprek van 15 minuten aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen",
+    "firstSession": "De eerste sessie is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen",
+    "furtherWork": "In de vervolgsessies werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen",
     "confidentiality": "Alle gedeelde informatie wordt vertrouwelijk behandeld, en u kunt de therapie op elk moment stoppen zonder opgaaf van reden.",
+    "confidentiality2":"U hebt het recht om de therapie op elk moment te beëindigen zonder opgaaf van reden.",
     "platform": "De sessies vinden plaats via Zoom of Google Meet."
   },
   "contact": {
     "title": "Contact",
     "instructions": "Vul het contactformulier in, of stuur een bericht via WhatsApp, Viber of Telegram: +31 6 48569129 We plannen eerst het gratis kennismakingsgesprek van 15 minuten in, daarna volgt de eerste sessie.",
-    "languages": "Ik bied psychotherapie in het Servisch, Engels en Nederlands."
+    "languages": "Ik bied psychotherapie in het Servisch, Engels en Nederlands.",
+    "form": {
+      "name": "Naam",
+      "email": "Email",
+      "phone": "Telefoon",
+      "message": "Bericht",
+      "submit": "Versturen",
+      "required": "verplicht"
+    }
   },
   "notSuitableFor": {
     "title": "Online psychotherapie is NIET GESCHIKT bij:",
@@ -67,6 +87,25 @@
       "Acute psychose, schizofrenie of schizoaffectieve stoornis",
       "Acute ernstige dissociatieve klachten"
     ]
+  },
+  "benefits": {
+    "title": "Overige voordelen",
+    "card1": {
+      "title": "Online therapie in 3 talen",
+      "description": "Verbind met een erkende psycholoog die Servisch, Engels of Nederlands spreekt."
+    },
+    "card2": {
+      "title": "Betaal per sessie",
+      "description": "Geen verborgen kosten, maximale controle."
+    },
+    "card3": {
+      "title": "Flexibele behandeltijden",
+      "description": "Begin wanneer het u uitkomt. Behandelingen op basis van uw schema. Geen wachtlijst."
+    },
+    "card4": {
+      "title": "Gratis kennismakingsgesprek van 15 minuten",
+      "description": "Vul het contactformulier hieronder in of neem contact met mij op via WhatsApp of Viber. Vrijblijvend."
+    }
   },
   "footer": {
     "quickLinks": "Snelle Links",

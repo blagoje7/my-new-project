@@ -5,8 +5,44 @@ const t = useTranslations(lang);
 ---
 
 <section id="approach" class="section">
-    <div class="approach-content">
-        <p>{t('approach.description1')}</p>
-        <p>{t('approach.description2')}</p>
+    <div class="cards-container">
+        <div class="approach-card">
+            <div class="card-content">
+                <h3>{t('approach.title')}</h3>
+                <ul class="approach-bullets">
+                    <li>{t('approach.bullet1')}</li>
+                    <li>{t('approach.bullet2')}</li>
+                    <li>{t('approach.bullet3')}</li>
+                </ul>
+                <p>{t('approach.description')}</p>
+                <br />
+                <p>{t('approach.description2')}</p>
+            </div>
+        </div>
+        
+        <div class="approach-card">
+            <div class="card-content">
+                <h3>{t('onlineTherapy.title')}</h3>
+                <ul class="approach-bullets">
+                    <li>{t('onlineTherapy.bullet1')}</li>
+                    <li>{t('onlineTherapy.bullet2')}</li>
+                    <li>{t('onlineTherapy.bullet3')}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="approach-card">
+            <div class="card-content">
+                <h3>{t('therapy.title')}</h3>
+                <ul class="approach-bullets">
+                    <li>{t('therapy.duration')}</li>
+                    <li>{t('therapy.initialMeeting')}</li>
+                    <li>{t('therapy.firstSession')}</li>
+                    <li>{t('therapy.furtherWork')}</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
+
+

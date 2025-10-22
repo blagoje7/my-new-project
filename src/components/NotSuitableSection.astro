@@ -1,0 +1,16 @@
+---
+import { useTranslations } from '../i18n/utils';
+const { lang = 'sr' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="not-suitable" class="section">
+    <div class="not-suitable">
+        <h2>{t('notSuitableFor.title')}</h2>
+        <ul>
+            {t('notSuitableFor.conditions').map((condition: string) => (
+                <li>{condition}</li>
+            ))}
+        </ul>
+    </div>
+</section>

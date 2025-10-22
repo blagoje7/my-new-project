@@ -5,22 +5,33 @@
     "contact": "Kontakt"
   },
   "header": {
+    "title": "Psihoterapija online",
     "name": "Dr Tamara Medovarski",
-    "credentials": "psihoterapeut, doktor medicine, specijalizant psihijatrije"
+    "credentials": {
+      "role1": "psihoterapeut",
+      "role2": "doktor medicine",
+      "role3": "specijalizant psihijatrije"
+    }
   },
   "intro": {
     "description": "Tu sam da Vam pomognem da zajedno prevaziđemo prepreke koje Vam stoje na putu ka ličnom i profesionalnom razvoju - da radimo na smanjivanju Vaših tegoba, na ostvarivanju Vaših ciljeva, na ostvarivanju kvalitetnijih odnosa, na samoaktualizaciji, da vam pomognem da osnažite ego, da se osećate zadovoljniji sobom."
   },
   "approach": {
-    "description1": "Bavim se integrativnom psihoterapijom koja kombinuje elemente iz psihoanalize, psihodinamske psihoterapije, kognitivno-bihejvioralne psihoterapije i humanističkih pravaca.",
+    "title": "Moj pristup",
+    "bullet1": "Stručnost",
+    "bullet2": "Iskustvo",
+    "bullet3": "Individualan pristup",
+    "description": "Bavim se integrativnom psihoterapijom koja kombinuje elemente iz psihoanalize, psihodinamske psihoterapije, kognitivno-bihejvioralne psihoterapije i humanističkih pravaca.",
     "description2": "Odabir tehnika, dužinu i intenzitet psihoterapije prilagođavam Vašim individualnim potrebama i mogućnostima, kao i prirodi vaših tegoba."
   },
   "onlineTherapy": {
     "title": "Prednosti online psihoterapije",
-    "description": "Praktično, iz komfora sopstvenog doma, bez gubitka vremena i energije na putovanje, pristup psihoterapeutu iz istog kulturološkog miljea koji će razumeti i adekvatno interpretirati određene emotivne i obrasce ponašanja, za osobe koje žive u inostranstvu."
+    "bullet1": "Praktično, iz komfora sopstvenog doma",
+    "bullet2": "Bez gubitka vremena i energije na putovanje",
+    "bullet3": "Pristup psihoterapeutu iz istog kulturološkog miljea koji će razumeti i adekvatno interpretirati određene emotivne i obrasce ponašanja, za osobe koje žive u inostranstvu"
   },
   "forWhom": {
-    "title": "Za koga je namenjen ovaj oblik psihoterapije (cesti primeri):",
+    "title": "Za koga je namenjen ovaj oblik psihoterapije (česti primeri):",
     "issues": [
       "Tegobe u vidu anksioznosti, socijalne anksioznosti, depresivnosti",
       "Problemi sa spavanjem (nesanica ili prekomerno spavanje)",
@@ -47,17 +58,26 @@
   },
   "therapy": {
     "title": "Kako izgleda psihoterapija?",
-    "duration": "Trajanje jedne seanse je 50 minuta.",
-    "initialMeeting": "Pre zakazivanja prve seanse nudim vam 15 minuta besplatnog razgovora radi upoznavanja, što Vama omogućava da procenite da li želite dalje da radimo zajedno, a meni omogućava da procenim da li psihoterapija odgovara vašim potrebama i tegobama.",
-    "firstSession": "Prva seansa je predviđena za inventarizovanje ključnih tegoba i za dobijanje šireg konteksta u okviru kojeg klijent funkcioniše.",
-    "furtherWork": "U daljem radu se bavimo razradom i umanjivanjem tegoba i radom na Vašim ličnim ciljevima.",
-    "confidentiality": "Sve informacije koje podelite su poverljive, i u svakom momentu Vi imate pravo da prekinete psihoterapiju bez davanja obrazlozenja.",
+    "duration": "Trajanje jedne seanse je 50 minuta",
+    "initialMeeting": "Pre zakazivanja prve seanse nudim vam 15 minuta besplatnog razgovora radi upoznavanja, što Vama omogućava da procenite da li želite dalje da radimo zajedno, a meni omogućava da procenim da li psihoterapija odgovara vašim potrebama i tegobama",
+    "firstSession": "Prva seansa je predviđena za inventarizovanje ključnih tegoba i za dobijanje šireg konteksta u okviru kojeg klijent funkcioniše",
+    "furtherWork": "U daljem radu se bavimo razradom i umanjivanjem tegoba i radom na Vašim ličnim ciljevima",
+    "confidentiality": "Sve informacije koje podelite su strogo poverljive.",
+    "confidentiality2":"Vi imate pravo da prekinete psihoterapiju u svakom momentu bez davanja obrazloženja.",
     "platform": "Seanse se realizuju putem Zoom-a ili Google Meets-a."
   },
   "contact": {
     "title": "Kako da me kontaktirate?",
     "instructions": "Ispunite kontakt formu ili mi pišite na Whatsapp ili Viber na +31 6 48569129 (napomena: holandski pozivni broj, nije greška), kako bismo zakazali inicijalno besplatno 15-minutno upoznavanje, a zatim i prvu seansu.",
-    "languages": "Psihoterapiju nudim na srpskom, engleskom i holandskom jeziku."
+    "languages": "Psihoterapiju nudim na srpskom, engleskom i holandskom jeziku.",
+    "form": {
+      "name": "Ime",
+      "email": "Email",
+      "phone": "Telefon",
+      "message": "Poruka",
+      "submit": "Pošalji",
+      "required": "obavezno"
+    }
   },
   "notSuitableFor": {
     "title": "Za koga nije prikladna integrativna psihoterapija online:",
@@ -67,6 +87,25 @@
       "Aktutna psihoza, šizofrenija i šizoafektivni poremećaj",
       "Akutne teške disocijativne tegobe"
     ]
+  },
+  "benefits": {
+    "title": "Ostale prednosti",
+    "card1": {
+      "title": "Online terapija na 3 jezika",
+      "description": "Povežite se sa psihoterapeutom koji pruza usluge psihoterapije na srpskom, engleskom i holandskom jeziku."
+    },
+    "card2": {
+      "title": "Plaćanje nakon svake seanse",
+      "description": "Bez skrivenih troškova, potpuna kontrola."
+    },
+    "card3": {
+      "title": "Fleksibilno vreme tretmana",
+      "description": "Tretmani su prilagođeni vašem rasporedu. Nema liste čekanja."
+    },
+    "card4": {
+      "title": "Besplatna 15-minutna konsultacija",
+      "description": "Pre zakazivanja prve seanse pružam besplatnu konsultaciju. Bez obaveza."
+    }
   },
   "footer": {
     "quickLinks": "Brze veze",

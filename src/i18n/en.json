@@ -5,22 +5,33 @@
     "contact": "Contact"
   },
   "header": {
+    "title": "Psychotherapy online",
     "name": "Dr. Tamara Medovarski",
-    "credentials": "Psychotherapist, Medical Doctor, Resident Psychiatry"
+    "credentials": {
+      "role1": "Psychotherapist",
+      "role2": "Medical Doctor",
+      "role3": "Resident Psychiatry"
+    }
   },
   "intro": {
-    "description": "I’m here to help you overcome the obstacles standing in the way of your personal and professional growth — to reduce your distress, strengthen your sense of self, improve your relationships, and help you move toward self-actualization and a more fulfilling life."
+    "description": "I'm here to help you overcome the obstacles standing in the way of your personal and professional growth — to reduce your distress, strengthen your sense of self, improve your relationships, and help you move toward self-actualization and a more fulfilling life."
   },
   "approach": {
-    "description1": "My approach is integrative psychotherapy, combining elements of psychoanalysis, psychodynamic therapy, cognitive-behavioral therapy and humanistic schools of therapy.",
+    "title": "My Approach",
+    "bullet1": "Expertise",
+    "bullet2": "Experience",
+    "bullet3": "Individualized approach",
+    "description": "My approach is integrative psychotherapy, combining elements of psychoanalysis, psychodynamic therapy, cognitive-behavioral therapy and humanistic schools of therapy.",
     "description2": "The choice of methods, frequency and duration of therapy are tailored to your individual needs, capacities and the nature of your struggles."
-  },
+},
   "onlineTherapy": {
     "title": "Advantages of online psychotherapy",
-    "description": "Convenient and accessible - from the comfort of your own home, without losing energy and time on commuting. It also allows clients living abroad to work with a therapist from a similar cultural background (Balkan region) who can accurately understand and interpret emotional and behavioral patterns specific to that cultural context."
-  },
+    "bullet1": "Convenient and accessible - from the comfort of your own home",
+    "bullet2": "No wasting energy and time on commuting",
+    "bullet3": "It allows clients living abroad to work with a therapist from a similar cultural background (Balkan region) who can accurately understand and interpret emotional and behavioral patterns specific to that cultural context"
+},
   "forWhom": {
-    "title": "Who is online psychitherapy for (common examples):",
+    "title": "Who is online psychotherapy for (common examples):",
     "issues": [
       "Difficulties with anxiety, social anxiety and depressive symptoms",
       "Difficulties with sleep (insomnia, hypersomnia)",
@@ -47,17 +58,26 @@
   },
   "therapy": {
     "title": "What does online psychotherapy look like?",
-    "duration": "Each session lasts 50 minutes.",
-    "initialMeeting": "Before scheduling your first session, I offer a free 15-minute introductory meeting, which allows you to assess whether you want to begin working with me, and helps me evaluate whether psychotherapy is suitable for your needs.",
-    "firstSession": "The first session focuses on mapping out key issues and understanding the broader context of your functioning.",
-    "furtherWork": "Subsequent sessions are dedicated to reducing your difficulties and working toward your personal goals.",
+    "duration": "Each session lasts 50 minutes",
+    "initialMeeting": "Before scheduling your first session, I offer a free 15-minute introductory meeting, which allows you to assess whether you want to begin working with me, and helps me evaluate whether psychotherapy is suitable for your needs",
+    "firstSession": "The first session focuses on mapping out key issues and understanding the broader context of your functioning",
+    "furtherWork": "Subsequent sessions are dedicated to reducing your difficulties and working toward your personal goals",
     "confidentiality": "All information shared is strictly confidential, and you have the right to discontinue therapy at any time without explanation.",
+    "confidentiality2":"You have the right to discontinue therapy at any time without providing a reason.",
     "platform": "Sessions are conducted via Zoom or Google Meet."
   },
   "contact": {
     "title": "How to contact me?",
     "instructions": "You can fill out the contact form, or message me on WhatsApp, Viber or Telegram at +31 6 48569129 (Note: Dutch phone number — not an error.) First we will schedule a free 15-minute introductory conversation, followed by your first session.",
-    "languages": "I offer psychotherapy in Serbian, English and Dutch."
+    "languages": "I offer psychotherapy in Serbian, English and Dutch.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send",
+      "required": "required"
+    }
   },
   "notSuitableFor": {
     "title": "Who is online psychotherapy NOT suitable for:",
@@ -67,6 +87,25 @@
       "Active psychosis, schizophrenia, or schizoaffective disorder",
       "Severe acute dissociative symptoms"
     ]
+  },
+  "benefits": {
+    "title": "Other Benefits Of Choosing Us",
+    "card1": {
+      "title": "Online therapy in 3 languages",
+      "description": "Connect with licensed psychologist who speaks Serbian, English or Dutch."
+    },
+    "card2": {
+      "title": "Pay as you go after each session",
+      "description": "Avoid hidden fees and have maximal control."
+    },
+    "card3": {
+      "title": "Flexible treatment times",
+      "description": "Start when you like. Treatments based on your schedule. No waiting list."
+    },
+    "card4": {
+      "title": "Free 15-Minute Consultation",
+      "description": "Fill out the contact form below or contact me via WhatsApp or Viber to get connected with me. No strings attached."
+    }
   },
   "footer": {
     "quickLinks": "Quick Links",

@@ -5,16 +5,28 @@ const t = useTranslations(lang);
 ---
 
 <section id="welcome" class="section">
-    <header class="header">
-        <h1>{t('header.name')}</h1>
-        <p class="credentials">{t('header.credentials')}</p>
-    </header>
-    <div class="intro">
-        <p>{t('intro.description')}</p>
-    </div>
-    <div class="approach">
-        <p>{t('approach.description1')}</p>
-        <p>{t('approach.description2')}</p>
+    <h1 class="main-title">{t('header.title')}</h1>
+    
+    <div class="welcome-content">
+        <div class="profile-section">
+            <img src="/IMG_16832.jpg" alt={t('header.name')} class="profile-image" />
+        </div>
+        
+        <div class="info-section">
+            <div class="credentials-card">
+                <h2 class="name">{t('header.name')}</h2>
+                <div class="credentials-list">
+                    <p class="credential">{t('header.credentials.role1')}</p>
+                    <p class="credential">{t('header.credentials.role2')}</p>
+                    <p class="credential">{t('header.credentials.role3')}</p>
+                </div>
+            </div>
+            
+            <div class="intro-card">
+                <p>{t('intro.description')}</p>
+            </div>
+        </div>
     </div>
 </section>
+
 
