@@ -1,0 +1,49 @@
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    /* Enhanced hover effects */
+    .section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px var(--shadow-color);
+    }
+
+    /* Refined navigation */
+    nav {
+        padding: 1.25rem 2rem;
+    }
+
+    .nav-items {
+        gap: 2.5rem;
+    }
+
+    /* Typography refinements */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.875rem; }
+    h3 { font-size: 1.5rem; }
+
+    /* Enhanced animations */
+    .footer-section li:hover {
+        transform: translateX(5px);
+    }
+
+    /* Grid layouts */
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Form interactions */
+    button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px var(--shadow-color);
+    }
+
+    /* Language switcher enhancements */
+    .language-button:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 2px 8px var(--shadow-color);
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--light-bg);
+        color: var(--primary-color);
+    }
+}

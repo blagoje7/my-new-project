@@ -4,6 +4,7 @@ import WelcomeSection from '../../components/WelcomeSection.astro';
 import ApproachSection from '../../components/ApproachSection.astro';
 import TherapyInfo from '../../components/TherapyInfo.astro';
 import TherapyProcess from '../../components/TherapyProcess.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
 
 import { useTranslations, languages } from '../../i18n/utils';
 
@@ -19,24 +20,23 @@ const t = useTranslations(lang as keyof typeof languages);
 
 <Layout title={`Dr Tamara Medovarski - ${t('nav.home')}`} lang={lang as keyof typeof languages}>
     <div class="container">
-        <section id="home" class="section">
-            <WelcomeSection lang={lang as keyof typeof languages} />
-            <ApproachSection lang={lang as keyof typeof languages} />
-            <TherapyInfo lang={lang as keyof typeof languages} />
-            <TherapyProcess lang={lang as keyof typeof languages} />
-        </section>
+        <WelcomeSection lang={lang as keyof typeof languages} />
+        <ApproachSection lang={lang as keyof typeof languages} />
+        <TherapyInfo lang={lang as keyof typeof languages} />
+        <TherapyProcess lang={lang as keyof typeof languages} />
+        <ContactCTA lang={lang as keyof typeof languages} />
     </div>
 </Layout>
 
 <style>
     .container {
         width: 100%;
-        max-width: 1200px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 1rem;
     }
 
-    section {
+    :global(section) {
         margin: 2rem 0;
         scroll-margin-top: 2rem;
     }

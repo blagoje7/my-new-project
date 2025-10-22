@@ -1,0 +1,13 @@
+/* Page layout styles */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+}

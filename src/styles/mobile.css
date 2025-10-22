@@ -1,0 +1,131 @@
+/* Hide hamburger by default */
+.hamburger {
+    display: none;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Navigation styles */
+    nav {
+        padding: 1rem;
+    }
+
+    .nav-items {
+        display: none; /* Hidden by default, shown when menu is open */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
+        z-index: 99;
+    }
+
+    .nav-items.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        background: none;
+        margin-right: 1rem;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--text-color);
+        position: absolute;
+        transition: all var(--transition-speed) ease;
+    }
+
+    .hamburger span:nth-child(1) { top: 6px; }
+    .hamburger span:nth-child(2) { top: 14px; }
+    .hamburger span:nth-child(3) { top: 22px; }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 14px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 14px;
+    }
+
+    /* Section styles */
+    .section {
+        padding: 2rem 1rem;
+        margin: 1rem;
+        border-radius: 8px;
+    }
+
+    /* Typography */
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    p { 
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    /* Form elements */
+    input, textarea, select {
+        padding: 0.75rem;
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+
+    button {
+        width: 100%;
+        padding: 0.875rem;
+        margin: 0.5rem 0;
+        min-height: 44px; /* Better touch targets */
+    }
+
+    /* Language switcher */
+    .language-button {
+        padding: 0.625rem;
+    }
+
+    .flag {
+        width: 20px;
+        height: 14px;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding: 2rem 0 1rem;
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    /* Touch optimizations */
+    a, button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-section li {
+        padding: 0.5rem 0;
+    }
+}

@@ -1,11 +1,14 @@
 ---
 interface Props {
-	title?: string;
-	lang?: 'sr' | 'en' | 'nl';
+    title?: string;
+    lang?: 'sr' | 'en' | 'nl';
 }
 
 const { title = "Dr Tamara Medovarski - Psychotherapist", lang = 'sr' } = Astro.props;
 import '../styles/global.css';
+import '../styles/mobile.css';
+import '../styles/desktop.css';
+import '../styles/layout.css';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Footer from '../components/Footer.astro';
 import { useTranslations } from '../i18n/utils';
@@ -15,28 +18,79 @@ const t = useTranslations(lang);
 
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Dr Tamara Medovarski - Online Psychotherapy" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<div class="nav-items">
-					<a href={`/${lang}`}>{t('nav.home')}</a>
-					<a href={`/${lang}/about`}>{t('nav.about')}</a>
-					<a href={`/${lang}/contact`}>{t('nav.contact')}</a>
-				</div>
-				<LanguageSwitcher />
-			</nav>
-		</header>
-		<main>
-			<slot />
-		</main>
-		<Footer lang={lang} />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dr Tamara Medovarski - Online Psychotherapy" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-items">
+                    <a href={`/${lang}`}>{t('nav.home')}</a>
+                    <a href={`/${lang}/about`}>{t('nav.about')}</a>
+                    <a href={`/${lang}/contact`}>{t('nav.contact')}</a>
+                </div>
+                <LanguageSwitcher />
+            </nav>
+        </header>
+        <main>
+            <slot />
+        </main>
+        <Footer lang={lang} />
+    </body>
 </html>
+
+<script>
+    // Client-side device detection and layout adjustment
+    function initializeLayout() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        document.body.classList.toggle('is-mobile', isMobile);
+        
+        if (isMobile) {
+            const hamburger = document.querySelector('.hamburger');
+            const navItems = document.querySelector('.nav-items');
+
+            hamburger?.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navItems?.classList.toggle('show');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger?.contains(e.target as Node) && 
+                    !navItems?.contains(e.target as Node) && 
+                    navItems?.classList.contains('show')) {
+                    hamburger?.classList.remove('active');
+                    navItems?.classList.remove('show');
+                }
+            });
+
+            // Close menu when clicking a nav link
+            navItems?.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger?.classList.remove('active');
+                    navItems?.classList.remove('show');
+                });
+            });
+        }
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', initializeLayout);
+
+    // Handle window resize
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initializeLayout, 250);
+    });
+</script>
