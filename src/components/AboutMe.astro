@@ -1,0 +1,23 @@
+---
+import { useTranslations } from '../i18n/utils';
+const { lang = 'sr' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="about" class="section">
+    <div class="biography">
+        <h2>{t('biography.title')}</h2>
+        <div class="bio-content">
+            <p>{t('biography.content')}</p>
+        </div>
+    </div>
+
+    <div class="focus">
+        <p>{t('specialFocus.description')}</p>
+    </div>
+
+    <div class="languages">
+        <p>{t('contact.languages')}</p>
+    </div>
+</section>
+

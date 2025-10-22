@@ -1,0 +1,85 @@
+---
+import { languages, languageNames, getLangFromUrl } from '../i18n/utils';
+import srFlag from '../assets/flags/sr.svg';
+import enFlag from '../assets/flags/en.svg';
+import nlFlag from '../assets/flags/nl.svg';
+
+const currentUrl = Astro.url;
+const currentLang = getLangFromUrl(currentUrl);
+
+const flags: Record<string, string> = {
+    sr: srFlag.src,
+    en: enFlag.src,
+    nl: nlFlag.src
+};
+---
+
+<div class="language-switcher">
+    <button id="language-button" class="language-button">
+        <img src={flags[currentLang]} alt={`${languageNames[currentLang]} flag`} class="flag" />
+        <span class="lang-name">{languageNames[currentLang]}</span>
+        <span class="arrow">▼</span>
+    </button>
+    <div id="language-dropdown" class="language-dropdown">
+        {Object.entries(languageNames).map(([code, name]) => (
+            <button 
+                class:list={["dropdown-item", { active: code === currentLang }]}
+                data-lang={code}
+            >
+                <img src={flags[code]} alt={`${name} flag`} class="flag" />
+                <span class="lang-name">{name}</span>
+            </button>
+        ))}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('language-button');
+        const dropdown = document.getElementById('language-dropdown');
+        const items = document.querySelectorAll('.dropdown-item');
+
+        // Toggle dropdown
+        button?.addEventListener('click', () => {
+            dropdown?.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!button?.contains(e.target as Node) && !dropdown?.contains(e.target as Node)) {
+                dropdown?.classList.remove('show');
+            }
+        });
+
+        // Handle language selection
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const lang = item.getAttribute('data-lang');
+                if (!lang) return;
+
+                const currentPath = window.location.pathname;
+                const pathParts = currentPath.split('/').filter(Boolean);
+                let newPath;
+
+                if (currentPath === '/' || pathParts.length === 0) {
+                    newPath = `/${lang}`;
+                } else {
+                    const supportedLanguages = ['sr', 'en', 'nl'];
+                    if (supportedLanguages.includes(pathParts[0])) {
+                        pathParts[0] = lang;
+                    } else {
+                        pathParts.unshift(lang);
+                    }
+                    newPath = '/' + pathParts.join('/');
+                }
+
+                if (!newPath.endsWith('/')) {
+                    newPath += '/';
+                }
+
+                window.location.href = window.location.origin + newPath;
+            });
+        });
+    });
+</script>
+

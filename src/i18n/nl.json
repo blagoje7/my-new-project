@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Hoofdpagina",
+    "about": "Over mij",
+    "contact": "Contact"
+  },
+  "header": {
+    "name": "Tamara Medovarski",
+    "credentials": "psychotherapeut, arts, in opleiding tot psychiater"
+  },
+  "intro": {
+    "description": "Ik wil u helpen om de obstakels weg te nemen die uw persoonlijke en professionele ontwikkeling in de weg staan — om uw klachten te verminderen, uw zelfvertrouwen te versterken, uw relaties te verbeteren en te groeien naar meer innerlijke tevredenheid en gevoel van voldoening."
+  },
+  "approach": {
+    "description1": "Mijn werkwijze is integratieve psychotherapie, waarin ik elementen combineer uit de psychoanalyse, psychodynamische psychotherapie, cognitieve gedragstherapie en humanistische benaderingen.",
+    "description2": "De keuze van methoden, duur en intensiteit van de therapie stem ik af op uw individuele behoeften en mogelijkheden, evenals op de aard van uw klachten."
+  },
+  "onlineTherapy": {
+    "title": "Voordelen van online psychotherapie",
+    "description": "Praktisch en toegankelijk — vanuit het comfort van uw eigen huis, zonder verspil van tijd en energie aan reizen. Voor mensen die in het buitenland wonen biedt online psychotherapie de mogelijkheid om te werken met een therapeut met vergelijkbare culturele achtergrond die bepaalde emotionele- en gedragspatronen beter kan begrijpen en interpreteren."
+  },
+  "forWhom": {
+    "title": "Voor wie is deze vorm van psychotherapie geschikt (veelvoorkomende thema's):",
+    "issues": [
+      "Angstklachten, sociale angstklachten, somberheid",
+      "Moeite met slaap (slapeloosheid of juist overmatig slapen)",
+      "Chronisch gevoel van vermoeidheid, stress en burn-out",
+      "Eetproblemen (emotioneel eten, eetbuien, obsessie met gezond eten, restrictief eten)",
+      "Moeilijkheden in relaties — bindingsangst, verlatingsangst, jaloezie, controlebehoefte, moeite om eigen behoeften te uiten, moeite om nee te zeggen",
+      "Terugtrekgedrag of het vermijden van vriendschappelijke of romantische relaties uit gevoelens van minderwaardigheid",
+      "Gebrek aan motivatie, zingeving of richting",
+      "Perfectionisme en overmatige zelfkritiek",
+      "Zelf-sabotage en “imposter-syndroom”",
+      "Zichzelf niet durven uiten op een authentieke manier, te veel aanpassing aan de verwachtingen van de omgeving",
+      "Moeilijkheden bij het aannemen van nieuwe rollen (ouder, partner, nieuwe functie op de werkvloer)",
+      "Moeite met het aanpassen aan een nieuwe omgeving en cultuur bij emigreren naar een ander land",
+      "Creatieve blokkades",
+      "De wens om het gebruik van alcohol te verminderen, minder te gokken of minder te gamen"
+    ]
+  },
+  "biography": {
+    "title": "Mijn professionele carriere",
+    "content": "Ik ben in 2015 afgestudeerd aan de Medische Faculteit van Novi Sad (Servië) en na het behalen van mijn beroepsvergunning ingeschreven bij de Servische artsenorganisatie. Na een korte periode in de huisartsenpraktijk ben ik in 2017 naar Nederland verhuisd. Na het leren van de taal, de erkenning van mijn diploma en behalen van mijn BIG-registratie werkte ik sinds 2020 bij het Universitair Centrum Psychiatrie. Drie maanden na mijn indiensttreding werd ik toegelaten tot de opleiding tot psychiater en psychotherapeut."
+  },
+  "specialFocus": {
+    "description": "Ik heb bijzonder affiniteit voor therapie geven aan clienten die in het buitenland wonen, die moeite ervaren met het aanpassen aan een andere cultuur, het aangaan van hechte emotionele relaties en het bewaren van hun eigen culturele identiteit en authenticiteit."
+  },
+  "therapy": {
+    "title": "Hoe verloopt psychotherapie?",
+    "duration": "Een sessie duurt 50 minuten.",
+    "initialMeeting": "Vooraf bied ik een gratis kennismakingsgesprek van 15 minuten aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen.",
+    "firstSession": "De eerste sessie is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen.",
+    "furtherWork": "In de vervolgsessies werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen.",
+    "confidentiality": "Alle gedeelde informatie wordt vertrouwelijk behandeld, en u kunt de therapie op elk moment stoppen zonder opgaaf van reden.",
+    "platform": "De sessies vinden plaats via Zoom of Google Meet."
+  },
+  "contact": {
+    "title": "Contact",
+    "instructions": "Vul het contactformulier in, of stuur een bericht via WhatsApp, Viber of Telegram: +31 6 48569129 We plannen eerst het gratis kennismakingsgesprek van 15 minuten in, daarna volgt de eerste sessie.",
+    "languages": "Ik bied psychotherapie in het Servisch, Engels en Nederlands."
+  },
+  "notSuitableFor": {
+    "title": "Online psychotherapie is NIET GESCHIKT bij:",
+    "conditions": [
+      "Acute suïcidaliteit of zelfbeschadigend gedrag",
+      "Acute manische episode",
+      "Acute psychose, schizofrenie of schizoaffectieve stoornis",
+      "Acute ernstige dissociatieve klachten"
+    ]
+  },
+  "footer": {
+    "quickLinks": "Snelle Links",
+    "onlinePlatforms": "Online Platforms",
+    "rightsReserved": "Alle rechten voorbehouden."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "header": {
+    "name": "Dr. Tamara Medovarski",
+    "credentials": "Psychotherapist, Medical Doctor, Resident Psychiatry"
+  },
+  "intro": {
+    "description": "I’m here to help you overcome the obstacles standing in the way of your personal and professional growth — to reduce your distress, strengthen your sense of self, improve your relationships, and help you move toward self-actualization and a more fulfilling life."
+  },
+  "approach": {
+    "description1": "My approach is integrative psychotherapy, combining elements of psychoanalysis, psychodynamic therapy, cognitive-behavioral therapy and humanistic schools of therapy.",
+    "description2": "The choice of methods, frequency and duration of therapy are tailored to your individual needs, capacities and the nature of your struggles."
+  },
+  "onlineTherapy": {
+    "title": "Advantages of online psychotherapy",
+    "description": "Convenient and accessible - from the comfort of your own home, without losing energy and time on commuting. It also allows clients living abroad to work with a therapist from a similar cultural background (Balkan region) who can accurately understand and interpret emotional and behavioral patterns specific to that cultural context."
+  },
+  "forWhom": {
+    "title": "Who is online psychitherapy for (common examples):",
+    "issues": [
+      "Difficulties with anxiety, social anxiety and depressive symptoms",
+      "Difficulties with sleep (insomnia, hypersomnia)",
+      "Feeling of chronic fatigue, stress and burnout",
+      "Difficulties regulating eating (emotional eating, uncontrolable overeating, obsessing over healthy eating, restrictive eating)",
+      "Relationship difficulties - fear of intimacy and abandonement, excessive jealousy or partner controlling behavior, overly addapting to your partners needs, difficulties to express your own needs, difficulties saying &quot;no&quot;",
+      "Withdrawal and avoidance of friendships and romantic relationships due to feelings of inadequacy",
+      "Lack of motivation, sense of purpose and dirrection",
+      "Perfectionism, excessive self-criticism",
+      "Self-sabbotage and &quot;imposter syndrome&quot;",
+      "Feeling inauthentic, overly adjusted to others&#39; expectations",
+      "Difficulties adjusting to and integrating into a new culture, living abroad",
+      "Chalenges adapting to new roles (parenthood, partnership, professional transitions)",
+      "Cretive block",
+      "Desire to reduce alcohol consumption, gambling, excessive gaming"
+    ]
+  },
+  "biography": {
+    "title": "My professional background",
+    "content": "I graduated from the Faculty of Medicine in Novi Sad, Serbia in 2015 and became a licensed physician after passing the state exam. After a short period of work in general practice, I moved to the Netherlands in 2017. Following language certification and diploma recognition, I started working in 2020 at the University Medical Center Groningen, Department of Psychiatry. Three months later, I was accepted into the psychiatry residency program and began formal psychotherapy training."
+  },
+  "specialFocus": {
+    "description": "I am particularly attuned to working with individuals of Balkan origin living abroad, who often struggle to adapt to a foreign culture and integrate, to form meaningful emotional connections, while preserving their personal and cultural identity and authenticity."
+  },
+  "therapy": {
+    "title": "What does online psychotherapy look like?",
+    "duration": "Each session lasts 50 minutes.",
+    "initialMeeting": "Before scheduling your first session, I offer a free 15-minute introductory meeting, which allows you to assess whether you want to begin working with me, and helps me evaluate whether psychotherapy is suitable for your needs.",
+    "firstSession": "The first session focuses on mapping out key issues and understanding the broader context of your functioning.",
+    "furtherWork": "Subsequent sessions are dedicated to reducing your difficulties and working toward your personal goals.",
+    "confidentiality": "All information shared is strictly confidential, and you have the right to discontinue therapy at any time without explanation.",
+    "platform": "Sessions are conducted via Zoom or Google Meet."
+  },
+  "contact": {
+    "title": "How to contact me?",
+    "instructions": "You can fill out the contact form, or message me on WhatsApp, Viber or Telegram at +31 6 48569129 (Note: Dutch phone number — not an error.) First we will schedule a free 15-minute introductory conversation, followed by your first session.",
+    "languages": "I offer psychotherapy in Serbian, English and Dutch."
+  },
+  "notSuitableFor": {
+    "title": "Who is online psychotherapy NOT suitable for:",
+    "conditions": [
+      "Acute suicidal risk or self-harming behavior",
+      "Acute manic episode",
+      "Active psychosis, schizophrenia, or schizoaffective disorder",
+      "Severe acute dissociative symptoms"
+    ]
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "onlinePlatforms": "Online Platforms",
+    "rightsReserved": "All rights reserved."
+  }
+}

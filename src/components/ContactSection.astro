@@ -1,0 +1,42 @@
+---
+import { useTranslations } from '../i18n/utils';
+const { lang = 'sr' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="section">
+    <h1>{t('contact.title')}</h1>
+
+    <div class="contact-methods">
+        <p class="instructions">{t('contact.instructions')}</p>
+
+        <form class="contact-form" action="/submit-form" method="POST">
+            <div class="form-group">
+                <label for="name">Ime (Name) *</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon (Phone)</label>
+                <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+                <label for="message">Poruka (Message) *</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit">Pošalji (Send)</button>
+        </form>
+
+        <div class="alternative-contact">
+            <p>{t('contact.languages')}</p>
+        </div>
+    </div>
+</section>
+

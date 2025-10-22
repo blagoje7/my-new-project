@@ -1,0 +1,80 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+    lang: 'sr' | 'en' | 'nl';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section contact-info">
+            <h3>Dr Tamara Medovarski</h3>
+            <p class="credentials">{t('header.credentials')}</p>
+            <ul>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:contact@tamaramedovarski.com">contact@tamaramedovarski.com</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Belgrade, Serbia</span>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 13h18M3 7h18M3 19h18"></path>
+                    </svg>
+                    <span>WhatsApp/Viber: +31 6 48569129</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-section quick-links">
+            <h3>{t('footer.quickLinks')}</h3>
+            <ul>
+                <li><a href={`/${lang}`}>{t('nav.home')}</a></li>
+                <li><a href={`/${lang}/about`}>{t('nav.about')}</a></li>
+                <li><a href={`/${lang}/contact`}>{t('nav.contact')}</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section platforms">
+            <h3>{t('footer.onlinePlatforms')}</h3>
+            <ul>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.6 11.28L22 7v10l-6.4-4.28v4.28L22 21V3l-6.4 4.28V11.28z"></path><path d="M2 7l6.4 4.28V7L2 3v18l6.4-4.28V11.28L2 17V7z"></path>
+                    </svg>
+                    Zoom
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Google Meet
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 20.29V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7.71a2 2 0 0 0-1.42.59L3 20.29z"></path>
+                    </svg>
+                    Contact
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {currentYear} Dr Tamara Medovarski. {t('footer.rightsReserved')}</p>
+    </div>
+</footer>
+
