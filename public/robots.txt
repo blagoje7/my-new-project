@@ -1,5 +1,22 @@
+# Global rules
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*
 
+# Allow important directories explicitly
+Allow: /en/
+Allow: /sr/
+Allow: /nl/
+Allow: /assets/
+Allow: /images/
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://tamaramedovarski.com/sitemap.xml
+
+# Host directive for preferred domain version
+Host: https://tamaramedovarski.com

@@ -80,6 +80,33 @@ const t = useTranslations(lang);
                 "@context": "https://schema.org",
                 "@graph": [
                     {
+                        "@type": "Service",
+                        "name": "Online Psychotherapy",
+                        "serviceType": "Psychotherapy",
+                        "provider": {
+                            "@type": "Person",
+                            "name": "Dr Tamara Medovarski",
+                            "jobTitle": "Psychotherapist",
+                            "image": "${Astro.url.origin}/IMG_16832.jpg"
+                        },
+                        "areaServed": ["Netherlands", "Serbia", "Global"],
+                        "availableLanguage": ["English", "Serbian", "Dutch"],
+                        "description": "Professional online psychotherapy services in multiple languages",
+                        "offers": {
+                            "@type": "Offer",
+                            "availability": "https://schema.org/InStock",
+                            "price": "0",
+                            "priceCurrency": "EUR",
+                            "validFrom": "2025-10-26",
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "price": "0",
+                                "priceCurrency": "EUR",
+                                "description": "Free initial consultation"
+                            }
+                        }
+                    },
+                    {
                         "@type": "ProfessionalService",
                         "name": "Dr Tamara Medovarski - Psychotherapy",
                         "image": "${Astro.url.origin}/assets/logo11111.png",
@@ -87,7 +114,7 @@ const t = useTranslations(lang);
                         "@id": "${Astro.url.origin}",
                         "url": "${Astro.url.origin}",
                         "telephone": "+31 6 48569129",
-                        "priceRange": "$$",
+                        "priceRange": "$",
                         "areaServed": ["Netherlands", "Serbia", "Worldwide"],
                         "availableLanguage": ["English", "Serbian", "Dutch"],
                         "founder": {
