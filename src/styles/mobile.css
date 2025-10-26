@@ -29,16 +29,15 @@
         top: 60px; /* Height of nav */
         left: 0;
         right: 0;
-        bottom: 0;
+        height: calc(100vh - 60px); /* Full viewport height minus nav height */
         background-color: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(8px);
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        padding: 2rem 1rem;
-        gap: 2rem;
+        justify-content: center; /* Center the links vertically */
+        padding: 0 1rem;
+        gap: 3rem; /* Increased spacing between links */
         z-index: 1000;
-        overflow-y: auto;
         transition: opacity 0.3s ease;
         opacity: 0;
     }
@@ -46,6 +45,19 @@
     .nav-items.show {
         display: flex;
         opacity: 1;
+    }
+
+    .nav-items a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 200px;
+        text-align: center;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-items a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     .hamburger {
