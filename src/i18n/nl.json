@@ -1,11 +1,17 @@
 {
+  "thankYou": {
+    "title": "Bedankt voor uw bericht",
+    "message": "Ik heb uw bericht ontvangen en zal zo spoedig mogelijk contact met u opnemen.",
+    "followUp": "U kunt binnen 24-48 uur (tijdens werkdagen) een reactie van mij verwachten.",
+    "backHome": "Terug naar de hoofdpagina"
+  },
   "nav": {
     "home": "Hoofdpagina",
     "about": "Over mij",
     "contact": "Contact"
   },
   "header": {
-    "title": "Welkom",
+    "title": "Psychotherapie online",
     "name": "Tamara Medovarski",
     "credentials": {
       "role1": "psychotherapeut",
@@ -62,7 +68,7 @@
     "initialMeeting": "Vooraf bied ik <strong>een gratis kennismakingsgesprek van 15 minuten</strong> aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen",
     "firstSession": "<strong>De eerste sessie</strong> is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen",
     "furtherWork": "<strong>In de vervolgsessies</strong> werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen",
-    "confidentiality": "Alle gedeelde informatie wordt vertrouwelijk behandeld, en u kunt de therapie op elk moment stoppen zonder opgaaf van reden.",
+    "confidentiality": "Alle gedeelde informatie wordt vertrouwelijk behandeld.",
     "confidentiality2":"U hebt het recht om de therapie op elk moment te beëindigen zonder opgaaf van reden.",
     "platform": "De sessies vinden plaats via Zoom of Google Meet."
   },
@@ -92,7 +98,7 @@
     "title": "Overige voordelen",
     "card1": {
       "title": "Online therapie in 3 talen",
-      "description": "Verbind met psycholoog die Servisch, Engels of Nederlands spreekt."
+      "description": "Verbind met psychotherapeut die Servisch, Engels of Nederlands spreekt."
     },
     "card2": {
       "title": "Betaal per sessie",

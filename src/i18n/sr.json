@@ -1,4 +1,10 @@
 {
+  "thankYou": {
+    "title": "Hvala na poruci",
+    "message": "Primila sam vašu poruku i javiću vam se u najkraćem mogućem roku.",
+    "followUp": "Možete očekivati moj odgovor u roku od 24-48 sati tokom radnih dana.",
+    "backHome": "Povratak na početnu stranu"
+  },
   "nav": {
     "home": "Početna",
     "about": "O meni",
@@ -45,7 +51,7 @@
       "Osećaj neautentičnosti i <strong>preteranog prilagođavanja</strong> očekivanjima okoline",
       "Poteškoće u prilagođavanju <strong>novim ulogama</strong> (roditelj, partner, nova uloga na poslu)",
       "Poteškoće u prilagođavanju <strong>novoj sredini</strong> ili kulturološkom miljeu pri emigraciji u <strong>inostranstvo</strong>",
-      "Kreativni blok",
+      "<strong>Kreativni blok</strong>",
       "Želja da se smanji/prekine upotreba <strong>alkohola</strong>, da se smanji/prekine s <strong>kockanjem</strong> ili prekomernim igranjem <strong>igrica</strong>"
     ]
   },
@@ -68,7 +74,7 @@
   },
   "contact": {
     "title": "Kako da me kontaktirate?",
-    "instructions": "Ispunite kontakt formu ili mi pišite na Whatsapp ili Viber na +31 6 48569129 (napomena: holandski pozivni broj, nije greška), kako bismo zakazali inicijalno besplatno 15-minutno upoznavanje, a zatim i prvu seansu.",
+    "instructions": "Ispunite kontakt formu klikom na dugme ili mi pišite na Whatsapp ili Viber na +31 6 48569129 (napomena: holandski pozivni broj, nije greška), kako bismo zakazali inicijalno besplatno 15-minutno upoznavanje, a zatim i prvu seansu.",
     "languages": "Psihoterapiju nudim na srpskom, engleskom i holandskom jeziku.",
     "form": {
       "name": "Ime",
