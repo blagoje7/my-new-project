@@ -7,7 +7,7 @@
     --secondary-color: #8E7B74;    /* Secondary brand color */
     --text-color: #4A4A4A;         /* Main text color */
     --background-color: #F9F6F3;   /* Main background color */
-    --light-bg: #fce8d4;          /* Light peachy background for cards */
+    --light-bg: #bedbd0;          /* Light background for cards */
     --border-color: #E6E6E6;       /* Border color */
     --accent-color: #B7C9C9;       /* Accent color */
     --warning-bg: #FBF7F0;         /* Warning background */
@@ -216,6 +216,7 @@ nav a:hover::after {
     padding: 2rem;
     background-color: var(--light-bg);
     border-radius: 8px;
+    border: 1px solid var(--primary-color);
 }
 
 .for-whom ul {
@@ -1052,7 +1053,7 @@ button:active {
     background-color: var(--light-bg);
     border-radius: 12px;
     text-align: center;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--primary-color);
     box-shadow: 0 4px 20px var(--shadow-color);
     transition: transform var(--transition-speed) ease;
 }
