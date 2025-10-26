@@ -14,16 +14,16 @@ const t = useTranslations(lang);
         
         <div class="info-section">
             <div class="credentials-card">
-                <h2 class="name">{t('header.name')}</h2>
+                <h2 class="name" set:html={t('header.name')} />
                 <div class="credentials-list">
-                    <p class="credential">{t('header.credentials.role1')}</p>
-                    <p class="credential">{t('header.credentials.role2')}</p>
-                    <p class="credential">{t('header.credentials.role3')}</p>
+                    <p class="credential" set:html={t('header.credentials.role1')} />
+                    <p class="credential" set:html={t('header.credentials.role2')} />
+                    <p class="credential" set:html={t('header.credentials.role3')} />
                 </div>
             </div>
             
             <div class="intro-card">
-                <p>{t('intro.description')}</p>
+                <p set:html={t('intro.description')} />
             </div>
         </div>
     </div>

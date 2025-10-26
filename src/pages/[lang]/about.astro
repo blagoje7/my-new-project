@@ -16,7 +16,7 @@ const t = useTranslations(lang as keyof typeof languages);
 <Layout title={`Dr Tamara Medovarski - ${t('nav.about')}`} lang={lang as keyof typeof languages}>
     <div class="page-container">
         <div class="content-wrapper">
-            <h1 class="page-title">{t('biography.title')}</h1>
+            <h1 class="page-title" set:html={t('biography.title')} />
             <section class="content-section">
                 <AboutMe lang={lang as keyof typeof languages} />
             </section>

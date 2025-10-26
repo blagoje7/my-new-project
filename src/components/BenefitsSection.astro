@@ -6,39 +6,39 @@ const t = useTranslations(lang);
 
 <section id="benefits" class="section">
     
-    <h2>{t('benefits.title')}</h2>
+    <h2 set:html={t('benefits.title')} />
     <div class="benefits-grid">
         
         <div class="benefit-card">
             <div class="icon-wrapper">
                 <i class="far fa-comments"></i>
             </div>
-            <h3>{t('benefits.card1.title')}</h3>
-            <p>{t('benefits.card1.description')}</p>
+            <h3 set:html={t('benefits.card1.title')} />
+            <p set:html={t('benefits.card1.description')} />
         </div>
 
         <div class="benefit-card">
             <div class="icon-wrapper">
                 <i class="fas fa-money-check-alt"></i>
             </div>
-            <h3>{t('benefits.card2.title')}</h3>
-            <p>{t('benefits.card2.description')}</p>
+            <h3 set:html={t('benefits.card2.title')} />
+            <p set:html={t('benefits.card2.description')} />
         </div>
 
         <div class="benefit-card">
             <div class="icon-wrapper">
                 <i class="fas fa-hourglass-start"></i>
             </div>
-            <h3>{t('benefits.card3.title')}</h3>
-            <p>{t('benefits.card3.description')}</p>
+            <h3 set:html={t('benefits.card3.title')} />
+            <p set:html={t('benefits.card3.description')} />
         </div>
 
         <div class="benefit-card">
             <div class="icon-wrapper">
                 <i class="far fa-smile-beam"></i>
             </div>
-            <h3>{t('benefits.card4.title')}</h3>
-            <p>{t('benefits.card4.description')}</p>
+            <h3 set:html={t('benefits.card4.title')} />
+            <p set:html={t('benefits.card4.description')} />
         </div>
     </div>
 </section>

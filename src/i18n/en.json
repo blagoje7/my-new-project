@@ -14,14 +14,14 @@
     }
   },
   "intro": {
-    "description": "I'm here to help you overcome the obstacles standing in the way of your personal and professional growth — to reduce your distress, strengthen your sense of self, improve your relationships, and help you move toward self-actualization and a more fulfilling life."
+    "description": "I'm here to help you <strong>overcome the obstacles</strong> standing in the way of your <strong>personal and professional growth</strong> — to reduce your distress, strengthen your sense of self, improve your relationships, and help you move toward self-actualization and a more fulfilling life."
   },
   "approach": {
     "title": "My Approach",
     "bullet1": "Expertise",
     "bullet2": "Experience",
     "bullet3": "Individualized approach",
-    "description": "My approach is integrative psychotherapy, combining elements of psychoanalysis, psychodynamic therapy, cognitive-behavioral therapy and humanistic schools of therapy.",
+    "description": "My approach is <strong>integrative psychotherapy</strong>, combining elements of psychoanalysis, psychodynamic therapy, cognitive-behavioral therapy and humanistic schools of therapy.",
     "description2": "The choice of methods, frequency and duration of therapy are tailored to your individual needs, capacities and the nature of your struggles."
 },
   "onlineTherapy": {
@@ -33,20 +33,20 @@
   "forWhom": {
     "title": "Who is online psychotherapy for (common examples):",
     "issues": [
-      "Difficulties with anxiety, social anxiety and depressive symptoms",
-      "Difficulties with sleep (insomnia, hypersomnia)",
-      "Feeling of chronic fatigue, stress and burnout",
-      "Difficulties regulating eating (emotional eating, uncontrolable overeating, obsessing over healthy eating, restrictive eating)",
-      "Relationship difficulties - fear of intimacy and abandonement, excessive jealousy or partner controlling behavior, overly addapting to your partners needs, difficulties to express your own needs, difficulties saying &quot;no&quot;",
-      "Withdrawal and avoidance of friendships and romantic relationships due to feelings of inadequacy",
-      "Lack of motivation, sense of purpose and dirrection",
-      "Perfectionism, excessive self-criticism",
-      "Self-sabbotage and &quot;imposter syndrome&quot;",
+      "Difficulties with <strong>anxiety, social anxiety and depressive symptoms</strong>",
+      "Difficulties with <strong>sleep</strong> (insomnia, hypersomnia)",
+      "Feeling of <strong>chronic fatigue, stress and burnout</strong>",
+      "Difficulties <strong>regulating eating</strong> (emotional eating, uncontrolable overeating, obsessing over healthy eating, restrictive eating)",
+      "<strong>Relationship difficulties</strong> - fear of intimacy and abandonment, excessive jealousy or partner controlling behavior, overly adapting to your partner's needs, difficulties expressing your own needs, difficulties saying &quot;no&quot;",
+      "<strong>Withdrawal</strong> and avoidance of friendships and romantic relationships due to feelings of inadequacy",
+      "Lack of <strong>motivation, sense of purpose and direction</strong>",
+      "<strong>Perfectionism</strong>, excessive self-criticism",
+      "<strong>Self-sabotage</strong> and &quot;imposter syndrome&quot;",
       "Feeling inauthentic, overly adjusted to others&#39; expectations",
-      "Difficulties adjusting to and integrating into a new culture, living abroad",
-      "Chalenges adapting to new roles (parenthood, partnership, professional transitions)",
-      "Cretive block",
-      "Desire to reduce alcohol consumption, gambling, excessive gaming"
+      "Difficulties adjusting to and <strong>integrating into a new culture, living abroad</strong>",
+      "Challenges <strong>adapting to new roles</strong> (parenthood, partnership, professional transitions)",
+      "<strong>Creative block</strong>",
+      "Desire to reduce <strong>alcohol consumption, gambling, excessive gaming</strong>"
     ]
   },
   "biography": {
@@ -58,10 +58,10 @@
   },
   "therapy": {
     "title": "What does online psychotherapy look like?",
-    "duration": "Each session lasts 50 minutes",
-    "initialMeeting": "Before scheduling your first session, I offer a free 15-minute introductory meeting, which allows you to assess whether you want to begin working with me, and helps me evaluate whether psychotherapy is suitable for your needs",
-    "firstSession": "The first session focuses on mapping out key issues and understanding the broader context of your functioning",
-    "furtherWork": "Subsequent sessions are dedicated to reducing your difficulties and working toward your personal goals",
+    "duration": "Each session lasts <strong>50 minutes</strong>",
+    "initialMeeting": "Before scheduling your first session, I offer <strong>a free 15-minute introductory meeting</strong>, which allows you to assess whether you want to begin working with me, and helps me evaluate whether psychotherapy is suitable for your needs",
+    "firstSession": "The <strong>first session</strong> focuses on mapping out key issues and understanding the broader context of your functioning",
+    "furtherWork": "<strong>Subsequent sessions</strong> are dedicated to reducing your difficulties and working toward your personal goals",
     "confidentiality": "All information shared is strictly confidential, and you have the right to discontinue therapy at any time without explanation.",
     "confidentiality2":"You have the right to discontinue therapy at any time without providing a reason.",
     "platform": "Sessions are conducted via Zoom or Google Meet."
@@ -92,7 +92,7 @@
     "title": "Other Benefits Of Choosing Us",
     "card1": {
       "title": "Online therapy in 3 languages",
-      "description": "Connect with licensed psychologist who speaks Serbian, English or Dutch."
+      "description": "Connect with psychologist who speaks Serbian, English or Dutch."
     },
     "card2": {
       "title": "Pay as you go after each session",

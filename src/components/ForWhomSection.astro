@@ -6,10 +6,10 @@ const t = useTranslations(lang);
 
 <section id="for-whom" class="section">
     <div class="for-whom">
-        <h2>{t('forWhom.title')}</h2>
+        <h2 set:html={t('forWhom.title')} />
         <ul>
             {t('forWhom.issues').map((issue: string) => (
-                <li>{issue}</li>
+                <li set:html={issue} />
             ))}
         </ul>
     </div>

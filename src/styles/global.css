@@ -617,8 +617,6 @@ section {
 }
 
 #approach .approach-bullets li {
-    display: flex;
-    align-items: flex-start;
     color: var(--text-color);
     font-weight: 400;
     margin-bottom: 0.75rem;
@@ -626,6 +624,10 @@ section {
     line-height: 1.4;
     padding-left: 1rem;
     position: relative;
+}
+
+#approach .approach-bullets li span {
+    display: inline;
 }
 
 #approach .approach-bullets + p {
@@ -901,21 +903,23 @@ section {
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 1.5rem;
-    padding: 1rem 1rem 0;
+    position: relative;
+    margin-top: 1rem;
+    height: 2.5rem;
     border-top: 1px solid var(--border-color);
     color: var(--secondary-color);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         margin: 0;
-        text-align: center;
-        max-width: none;
+        width: auto;
+        white-space: nowrap;
+        line-height: 1.2;
     }
 }
 .language-switcher {

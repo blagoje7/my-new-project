@@ -7,15 +7,15 @@ const t = useTranslations(lang);
 <div class="content-box">
     <div class="biography">
         <div class="bio-content">
-            <p>{t('biography.content')}</p>
+            <p set:html={t('biography.content')} />
         </div>
     </div>
 
     <div class="focus">
-        <p>{t('specialFocus.description')}</p>
+        <p set:html={t('specialFocus.description')} />
     </div>
 
     <div class="languages">
-        <p>{t('contact.languages')}</p>
+        <p set:html={t('contact.languages')} />
     </div>
 </div>

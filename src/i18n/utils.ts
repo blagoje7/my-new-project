@@ -20,7 +20,8 @@ export function getLangFromUrl(url: URL) {
 
 export function useTranslations(lang: Language) {
     return function t(key: string) {
-        return key.split('.').reduce((obj, k) => obj && obj[k], languages[lang] as any) || key;
+        const value = key.split('.').reduce((obj, k) => obj && obj[k], languages[lang] as any) || key;
+        return value;
     }
 }
 

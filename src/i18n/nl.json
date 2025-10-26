@@ -14,14 +14,14 @@
     }
   },
   "intro": {
-    "description": "Ik wil u helpen om de obstakels weg te nemen die uw persoonlijke en professionele ontwikkeling in de weg staan — om uw klachten te verminderen, uw zelfvertrouwen te versterken, uw relaties te verbeteren en te groeien naar meer innerlijke tevredenheid en gevoel van voldoening."
+    "description": "Ik wil u helpen om <strong>de obstakels weg te nemen</strong> die uw <strong>persoonlijke en professionele ontwikkeling</strong> in de weg staan — om uw klachten te verminderen, uw zelfvertrouwen te versterken, uw relaties te verbeteren en te groeien naar meer innerlijke tevredenheid en gevoel van voldoening."
   },
   "approach": {
     "title": "Mijn Aanpak",
     "bullet1": "Vakkundigheid",
     "bullet2": "Ervaring",
     "bullet3": "Individueel afgestemd",
-    "description": "Mijn werkwijze is integratieve psychotherapie, waarin ik elementen combineer uit de psychoanalyse, psychodynamische psychotherapie, cognitieve gedragstherapie en humanistische benaderingen.",
+    "description": "Mijn werkwijze is <strong>integratieve psychotherapie</strong>, waarin ik elementen combineer uit de psychoanalyse, psychodynamische psychotherapie, cognitieve gedragstherapie en humanistische benaderingen.",
     "description2":"De keuze van methoden, duur en intensiteit van de therapie stem ik af op uw individuele behoeften en mogelijkheden, evenals op de aard van uw klachten."
 },
   "onlineTherapy": {
@@ -33,20 +33,20 @@
   "forWhom": {
     "title": "Voor wie is deze vorm van psychotherapie geschikt (veelvoorkomende thema's):",
     "issues": [
-      "Angstklachten, sociale angstklachten, somberheid",
-      "Moeite met slaap (slapeloosheid of juist overmatig slapen)",
-      "Chronisch gevoel van vermoeidheid, stress en burn-out",
-      "Eetproblemen (emotioneel eten, eetbuien, obsessie met gezond eten, restrictief eten)",
-      "Moeilijkheden in relaties — bindingsangst, verlatingsangst, jaloezie, controlebehoefte, moeite om eigen behoeften te uiten, moeite om nee te zeggen",
-      "Terugtrekgedrag of het vermijden van vriendschappelijke of romantische relaties uit gevoelens van minderwaardigheid",
-      "Gebrek aan motivatie, zingeving of richting",
-      "Perfectionisme en overmatige zelfkritiek",
-      "Zelf-sabotage en “imposter-syndroom”",
-      "Zichzelf niet durven uiten op een authentieke manier, te veel aanpassing aan de verwachtingen van de omgeving",
-      "Moeilijkheden bij het aannemen van nieuwe rollen (ouder, partner, nieuwe functie op de werkvloer)",
-      "Moeite met het aanpassen aan een nieuwe omgeving en cultuur bij emigreren naar een ander land",
-      "Creatieve blokkades",
-      "De wens om het gebruik van alcohol te verminderen, minder te gokken of minder te gamen"
+      "<strong>Angstklachten, sociale angstklachten, somberheid</strong>",
+      "Moeite met <strong>slaap</strong> (slapeloosheid of juist overmatig slapen)",
+      "<strong>Chronisch gevoel van vermoeidheid, stress en burn-out</strong>",
+      "Eetproblemen (<strong>emotioneel eten, eetbuien, obsessie met gezond eten, restrictief eten</strong>)",
+      "<strong>Moeilijkheden in relaties</strong> — bindingsangst, verlatingsangst, jaloezie, controlebehoefte, moeite om eigen behoeften te uiten, moeite om nee te zeggen",
+      "<strong>Terugtrekgedrag</strong> of het vermijden van vriendschappelijke of romantische relaties uit gevoelens van minderwaardigheid",
+      "Gebrek aan <strong>motivatie, zingeving of richting</strong>",
+      "<strong>Perfectionisme</strong> en overmatige zelfkritiek",
+      "<strong>Zelf-sabotage</strong> en \"imposter-syndroom\"",
+      "Zichzelf niet durven uiten op een authentieke manier, te veel <strong>aanpassing</strong> aan de verwachtingen van de omgeving",
+      "Moeilijkheden bij het aannemen van <strong>nieuwe rollen</strong> (ouder, partner, nieuwe functie op de werkvloer)",
+      "Moeite met het <strong>aanpassen aan een nieuwe omgeving en cultuur bij emigreren naar een ander land</strong>",
+      "<strong>Creatieve blokkades</strong>",
+      "De wens om het gebruik van <strong>alcohol</strong> te verminderen, minder te <strong>gokken</strong> of minder te <strong>gamen</strong>"
     ]
   },
   "biography": {
@@ -58,10 +58,10 @@
   },
   "therapy": {
     "title": "Hoe verloopt psychotherapie?",
-    "duration": "Een sessie duurt 50 minuten",
-    "initialMeeting": "Vooraf bied ik een gratis kennismakingsgesprek van 15 minuten aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen",
-    "firstSession": "De eerste sessie is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen",
-    "furtherWork": "In de vervolgsessies werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen",
+    "duration": "Een sessie duurt <strong>50 minuten</strong>",
+    "initialMeeting": "Vooraf bied ik <strong>een gratis kennismakingsgesprek van 15 minuten</strong> aan. Dat geeft u de mogelijkheid om te proeven of u zich op uw gemak voelt bij mij, en het geeft mij de kans te beoordelen of psychotherapie aansluit bij uw klachten en verwachtingen",
+    "firstSession": "<strong>De eerste sessie</strong> is bedoeld om uw belangrijkste klachten en de bredere context waarin u functioneert te verkennen",
+    "furtherWork": "<strong>In de vervolgsessies</strong> werken we samen aan het verminderen van uw klachten en aan uw persoonlijke doelen",
     "confidentiality": "Alle gedeelde informatie wordt vertrouwelijk behandeld, en u kunt de therapie op elk moment stoppen zonder opgaaf van reden.",
     "confidentiality2":"U hebt het recht om de therapie op elk moment te beëindigen zonder opgaaf van reden.",
     "platform": "De sessies vinden plaats via Zoom of Google Meet."
@@ -92,7 +92,7 @@
     "title": "Overige voordelen",
     "card1": {
       "title": "Online therapie in 3 talen",
-      "description": "Verbind met een erkende psycholoog die Servisch, Engels of Nederlands spreekt."
+      "description": "Verbind met psycholoog die Servisch, Engels of Nederlands spreekt."
     },
     "card2": {
       "title": "Betaal per sessie",
