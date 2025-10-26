@@ -1,7 +1,18 @@
 ---
 import { useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
+
 const { lang = 'sr' } = Astro.props;
 const t = useTranslations(lang);
+
+// Define the image dimensions and metadata
+const imageProps = {
+    src: '/IMG_16832.jpg',
+    width: 600,    // More appropriate width for the layout
+    height: 800,   // Maintaining aspect ratio
+    format: 'jpg',
+    alt: t('header.name')
+};
 ---
 
 <section id="welcome" class="section">
@@ -9,7 +20,17 @@ const t = useTranslations(lang);
     
     <div class="welcome-content">
         <div class="profile-section">
-            <img src="/IMG_16832.jpg" alt={t('header.name')} class="profile-image" />
+            <Image 
+                src={imageProps.src}
+                alt={imageProps.alt}
+                width={imageProps.width}
+                height={imageProps.height}
+                class="profile-image"
+                quality={90}
+                format="webp"
+                loading="eager"
+                style="object-fit: cover; display: block; max-width: 100%; height: auto;"
+            />
         </div>
         
         <div class="info-section">

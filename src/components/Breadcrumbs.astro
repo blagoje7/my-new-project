@@ -1,0 +1,83 @@
+---
+interface Props {
+    currentPath: string;
+    lang: 'en' | 'sr' | 'nl';
+}
+
+const { currentPath, lang } = Astro.props;
+import { useTranslations } from '../i18n/utils';
+
+const t = useTranslations(lang);
+
+interface Breadcrumb {
+    label: string;
+    path: string;
+    isLast: boolean;
+}
+
+// Always start with home
+const homeItem: Breadcrumb = {
+    label: t('nav.home'),
+    path: `/${lang}`,
+    isLast: false
+};
+
+// Get path segments excluding empty strings
+const segments: string[] = currentPath.split('/').filter(Boolean);
+const contentSegments: string[] = segments[0] === lang ? segments.slice(1) : segments;
+
+// Build breadcrumbs array starting with home
+const breadcrumbs: Breadcrumb[] = [homeItem];
+
+// Add remaining segments
+contentSegments.forEach((segment: string, index: number) => {
+    let label: string = segment;
+    const pathSegments: string[] = segments.slice(0, segments.indexOf(segment) + 1);
+    const path: string = '/' + pathSegments.join('/');
+    
+    // Translate segment names
+    switch (segment) {
+        case 'about':
+            label = t('nav.about');
+            break;
+        case 'contact':
+            label = t('nav.contact');
+            break;
+    }
+    
+    breadcrumbs.push({
+        label,
+        path,
+        isLast: index === contentSegments.length - 1
+    });
+});
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList" role="list">
+        {breadcrumbs.map((crumb, index) => (
+            <li 
+                itemprop="itemListElement" 
+                itemscope 
+                itemtype="https://schema.org/ListItem"
+                class={crumb.isLast ? 'current-page' : ''}
+            >
+                {!crumb.isLast ? (
+                    <a 
+                        href={crumb.path} 
+                        itemprop="item"
+                        aria-current={crumb.isLast ? 'page' : undefined}
+                    >
+                        <span itemprop="name">{crumb.label}</span>
+                    </a>
+                ) : (
+                    <span itemprop="name" aria-current="page">{crumb.label}</span>
+                )}
+                <meta itemprop="position" content={String(index + 1)} />
+                {!crumb.isLast && (
+                    <span class="separator" aria-hidden="true">/</span>
+                )}
+            </li>
+        ))}
+    </ol>
+</nav>

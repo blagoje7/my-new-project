@@ -1,3 +1,19 @@
+/* Breadcrumbs Mobile Styles */
+@media (max-width: 768px) {
+    .breadcrumbs {
+        font-size: 0.8rem;
+        padding: 0.25rem 0;
+    }
+
+    .breadcrumbs ol {
+        gap: 0.25rem;
+    }
+
+    .separator {
+        margin: 0 0.25rem;
+    }
+}
+
 /* Mobile Navigation */
 .hamburger {
     display: none;

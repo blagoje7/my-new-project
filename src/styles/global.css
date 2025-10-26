@@ -813,6 +813,49 @@ section {
 }
 
 /* ==========================================================================
+   Breadcrumbs Component
+   ========================================================================== */
+.breadcrumbs {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumbs a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 0 0.5rem;
+    color: var(--text-color-light);
+}
+
+.current-page {
+    color: var(--text-color-light);
+}
+
+/* ==========================================================================
    Footer Component
    ========================================================================== */
 .footer {

@@ -1,14 +1,20 @@
 ---
 interface Props {
     title?: string;
+    description?: string;
     lang?: 'sr' | 'en' | 'nl';
 }
 
-const { title = "Dr Tamara Medovarski - Psychotherapist", lang = 'sr' } = Astro.props;
+const { 
+    title = "Dr Tamara Medovarski - Psychotherapist",
+    description = "Expert online psychotherapy in Serbian, English, and Dutch. Dr Tamara Medovarski offers professional therapy for anxiety, depression, and personal growth. Schedule your free consultation today.",
+    lang = 'sr' 
+} = Astro.props;
 import '../styles/global.css';
 import '../styles/mobile.css';
 import '../styles/desktop.css';
 import '../styles/layout.css';
+import '../styles/accessibility.css';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Footer from '../components/Footer.astro';
 import { useTranslations } from '../i18n/utils';
@@ -20,12 +26,35 @@ const t = useTranslations(lang);
 <html lang={lang}>
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Dr Tamara Medovarski - Online Psychotherapy" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         
-        <!-- Favicons -->
-        <link rel="icon" href="/assets/logo11111.png" />
+        <!-- Security Headers -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;" />
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+        
+        <!-- Regional Meta Tags -->
+        <meta name="geo.region" content="NL" />
+        <meta name="geo.position" content="52.3676;4.9041" />
+        <meta name="ICBM" content="52.3676, 4.9041" />
+        <meta name="geo.placename" content="Amsterdam, Netherlands" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="keywords" content="psychotherapy, online therapy, anxiety, depression, mental health, Dutch therapy, Serbian therapy, English therapy, expat therapy" />
+        <meta name="author" content="Dr Tamara Medovarski" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- Language alternates -->
+        <link rel="alternate" hreflang="en" href={`${Astro.url.origin}/en${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
+        <link rel="alternate" hreflang="sr" href={`${Astro.url.origin}/sr${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
+        <link rel="alternate" hreflang="nl" href={`${Astro.url.origin}/nl${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
+        <link rel="canonical" href={Astro.url} />
+        
+        <!-- Favicon -->
         <link rel="shortcut icon" href="/assets/logo11111.png" />
+        <link rel="icon" href="/assets/logo11111.png" />
         <link rel="icon" type="image/png" href="/assets/logo11111.png" />
         <!-- Force favicon refresh -->
         <link rel="icon" type="image/png" href="/assets/logo11111.png?v=2" />
@@ -33,40 +62,116 @@ const t = useTranslations(lang);
         <!-- Open Graph / Social Media -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Dr Tamara Medovarski - Online Psychotherapy" />
-        <meta property="og:image" content="/assets/logo11111.png" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={`${Astro.url.origin}/assets/logo11111.png`} />
         <meta property="og:url" content={Astro.url} />
+        <meta property="og:site_name" content="Dr Tamara Medovarski - Psychotherapy" />
+        <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : lang === 'nl' ? 'nl_NL' : 'en_US'} />
         
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content="Dr Tamara Medovarski - Online Psychotherapy" />
-        <meta name="twitter:image" content="/assets/logo11111.png" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={`${Astro.url.origin}/assets/logo11111.png`} />
         
-        <meta name="generator" content={Astro.generator} />
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "ProfessionalService",
+                        "name": "Dr Tamara Medovarski - Psychotherapy",
+                        "image": "${Astro.url.origin}/assets/logo11111.png",
+                        "description": "Expert online psychotherapy in Serbian, English, and Dutch. Professional therapy for anxiety, depression, and personal growth.",
+                        "@id": "${Astro.url.origin}",
+                        "url": "${Astro.url.origin}",
+                        "telephone": "+31 6 48569129",
+                        "priceRange": "$$",
+                        "areaServed": ["Netherlands", "Serbia", "Worldwide"],
+                        "availableLanguage": ["English", "Serbian", "Dutch"],
+                        "founder": {
+                            "@type": "Person",
+                            "name": "Dr Tamara Medovarski",
+                            "jobTitle": ["Psychotherapist", "Medical Doctor", "Psychiatrist in Training"],
+                            "description": "Medical Doctor and Psychotherapist specializing in integrative psychotherapy",
+                            "knowsLanguage": ["en", "sr", "nl"]
+                        },
+                        "sameAs": [],
+                        "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "name": "Psychotherapy Services",
+                            "itemListElement": [
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Online Psychotherapy",
+                                        "description": "Professional online therapy sessions in Serbian, English, or Dutch"
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Free Initial Consultation",
+                                        "description": "15-minute free consultation to discuss your needs"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@type": "WebSite",
+                        "name": "Dr Tamara Medovarski - Psychotherapy",
+                        "url": "${Astro.url.origin}",
+                        "potentialAction": {
+                            "@type": "SearchAction",
+                            "target": "${Astro.url.origin}/search?q={search_term_string}",
+                            "query-input": "required name=search_term_string"
+                        }
+                    },
+                    {
+                        "@type": "MedicalBusiness",
+                        "name": "Dr Tamara Medovarski - Psychotherapy Practice",
+                        "medicalSpecialty": ["Psychotherapy", "Mental Health"],
+                        "availableService": [
+                            "Online Psychotherapy",
+                            "Anxiety Treatment",
+                            "Depression Treatment",
+                            "Relationship Counseling",
+                            "Expat Support"
+                        ]
+                    }
+                ]
+            }
+        </script>        <meta name="generator" content={Astro.generator} />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="manifest" href="/manifest.json" />
         <title>{title}</title>
     </head>
     <body>
-        <header>
-            <nav>
-                <button class="hamburger" aria-label="Menu">
+        <header role="banner">
+            <nav role="navigation" aria-label="Main navigation">
+                <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-items">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <div class="nav-items">
-                    <a href={`/${lang}`}>{t('nav.home')}</a>
-                    <a href={`/${lang}/about`}>{t('nav.about')}</a>
-                    <a href={`/${lang}/contact`}>{t('nav.contact')}</a>
+                <div id="nav-items" class="nav-items">
+                    <a href={`/${lang}`} aria-current={Astro.url.pathname === `/${lang}` ? 'page' : undefined}>{t('nav.home')}</a>
+                    <a href={`/${lang}/about`} aria-current={Astro.url.pathname === `/${lang}/about` ? 'page' : undefined}>{t('nav.about')}</a>
+                    <a href={`/${lang}/contact`} aria-current={Astro.url.pathname === `/${lang}/contact` ? 'page' : undefined}>{t('nav.contact')}</a>
                 </div>
                 <LanguageSwitcher />
             </nav>
         </header>
-        <main>
+        <main id="main-content" role="main">
             <slot />
         </main>
         <Footer lang={lang} />
+        <!-- Skip to main content link (hidden until focused) -->
+        <a href="#main-content" class="skip-to-main-content">Skip to main content</a>
     </body>
 </html>
 
