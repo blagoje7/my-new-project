@@ -174,7 +174,8 @@ nav a:hover::after {
 @media (max-width: 768px) {
     .main-title {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin: 1rem 0 2rem 0;
+        padding-top: 1rem;
     }
 
     .welcome-content {
@@ -1119,11 +1120,16 @@ button:active {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 0 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        margin-bottom: 1.5rem;
     }
 
     .footer-section li {
         justify-content: center;
+        margin-bottom: 0.5rem;
     }
     
     .footer-section li:hover {

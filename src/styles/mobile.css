@@ -1,42 +1,84 @@
-/* Hide hamburger by default */
+/* Mobile Navigation */
 .hamburger {
     display: none;
 }
 
-/* Mobile-specific styles */
 @media (max-width: 768px) {
-    /* Navigation styles */
+    body.menu-open {
+        overflow: hidden;
+    }
+
     nav {
-        padding: 1rem;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 1001;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-items {
-        display: none; /* Hidden by default, shown when menu is open */
+        display: none;
         position: fixed;
-        top: 64px; /* Adjusted to match header height */
+        top: 60px; /* Height of nav */
         left: 0;
         right: 0;
-        bottom: 0; /* Make it full height */
+        bottom: 0;
         background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
         flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         padding: 2rem 1rem;
-        gap: 1.5rem;
-        box-shadow: 0 4px 12px var(--shadow-color);
+        gap: 2rem;
         z-index: 1000;
+        overflow-y: auto;
+        transition: opacity 0.3s ease;
+        opacity: 0;
     }
 
     .nav-items.show {
         display: flex;
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1002;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transition: all 0.3s ease-in-out;
+        transform-origin: left;
+    }
+
+    .hamburger.active span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:last-child {
+        transform: rotate(-45deg);
     }
 
     .hamburger {
@@ -80,14 +122,19 @@
 
     /* Main content padding for fixed header */
     main {
-        padding-top: 64px;
+        padding-top: 80px;  /* Increased from 64px */
     }
 
     /* Section styles */
     .section {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         margin: 1rem 0;
         border-radius: 8px;
+    }
+
+    /* Welcome section specific mobile adjustments */
+    #welcome.section {
+        padding-top: 2rem;
     }
 
     /* Typography */

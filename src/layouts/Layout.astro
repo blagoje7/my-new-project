@@ -51,47 +51,69 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-    // Client-side device detection and layout adjustment
-    function initializeLayout() {
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        document.body.classList.toggle('is-mobile', isMobile);
+    function toggleMenu(isOpen: boolean) {
+        const hamburger = document.querySelector('.hamburger');
+        const navItems = document.querySelector('.nav-items');
         
-        if (isMobile) {
-            const hamburger = document.querySelector('.hamburger');
-            const navItems = document.querySelector('.nav-items');
-
-            hamburger?.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navItems?.classList.toggle('show');
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!hamburger?.contains(e.target as Node) && 
-                    !navItems?.contains(e.target as Node) && 
-                    navItems?.classList.contains('show')) {
-                    hamburger?.classList.remove('active');
-                    navItems?.classList.remove('show');
-                }
-            });
-
-            // Close menu when clicking a nav link
-            navItems?.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger?.classList.remove('active');
-                    navItems?.classList.remove('show');
-                });
-            });
+        if (isOpen) {
+            hamburger?.classList.add('active');
+            navItems?.classList.add('show');
+            document.body.classList.add('menu-open');
+        } else {
+            hamburger?.classList.remove('active');
+            navItems?.classList.remove('show');
+            document.body.classList.remove('menu-open');
         }
     }
 
+    function initializeMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const navItems = document.querySelector('.nav-items');
+
+        // Toggle menu on hamburger click
+        hamburger?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isCurrentlyOpen = navItems?.classList.contains('show');
+            toggleMenu(!isCurrentlyOpen);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const target = e.target as Node;
+            if (!hamburger?.contains(target) && 
+                !navItems?.contains(target) && 
+                navItems?.classList.contains('show')) {
+                toggleMenu(false);
+            }
+        });
+
+        // Close menu when clicking a nav link
+        navItems?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu(false);
+            });
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navItems?.classList.contains('show')) {
+                toggleMenu(false);
+            }
+        });
+    }
+
     // Initialize on load
-    document.addEventListener('DOMContentLoaded', initializeLayout);
+    document.addEventListener('DOMContentLoaded', initializeMenu);
 
     // Handle window resize
     let resizeTimer: ReturnType<typeof setTimeout>;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(initializeLayout, 250);
+        resizeTimer = setTimeout(() => {
+            // Close menu if open during resize
+            if (document.querySelector('.nav-items')?.classList.contains('show')) {
+                toggleMenu(false);
+            }
+        }, 250);
     });
 </script>
