@@ -10,7 +10,7 @@ const t = useTranslations(lang);
     <div class="contact-methods">
         <p class="instructions">{t('contact.instructions')}</p>
 
-        <form class="contact-form" action="/submit-form" method="POST">
+        <form class="contact-form" action="https://formspree.io/f/xzzkbnqo" method="POST">
             <div class="form-group">
                 <label for="name">{t('contact.form.name')} * <span class="required">({t('contact.form.required')})</span></label>
                 <input type="text" id="name" name="name" required />

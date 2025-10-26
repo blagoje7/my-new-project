@@ -570,6 +570,18 @@ button:active {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    #approach.section,
+    #welcome.section,
+    #for-whom.section,
+    #important-info.section,
+    #benefits.section {
+        width: 100%;
+        margin-left: 0;
+        transform: none;
+    }
+}
+
 .cards-container {
     display: flex;
     flex-direction: row;

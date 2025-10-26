@@ -8,12 +8,22 @@
     /* Navigation styles */
     nav {
         padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
     }
 
     .nav-items {
         display: none; /* Hidden by default, shown when menu is open */
         position: fixed;
-        top: 60px;
+        top: 64px; /* Adjusted to match header height */
         left: 0;
         right: 0;
         background-color: rgba(255, 255, 255, 0.98);
@@ -21,7 +31,7 @@
         padding: 1rem;
         gap: 1rem;
         box-shadow: 0 4px 12px var(--shadow-color);
-        z-index: 99;
+        z-index: 1000;
     }
 
     .nav-items.show {
@@ -67,10 +77,15 @@
         top: 14px;
     }
 
+    /* Main content padding for fixed header */
+    main {
+        padding-top: 64px;
+    }
+
     /* Section styles */
     .section {
         padding: 2rem 1rem;
-        margin: 1rem;
+        margin: 1rem 0;
         border-radius: 8px;
     }
 
