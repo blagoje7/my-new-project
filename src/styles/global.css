@@ -220,12 +220,16 @@ nav a:hover::after {
     border: 1px solid var(--primary-color);
 }
 
+.for-whom h2 {
+    text-align: left;
+}
+
 .for-whom ul {
     list-style-type: disc;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
     margin-top: 1rem;
     columns: 2;
-    column-gap: 3rem;
+    column-gap: 2rem;
 }
 
 .not-suitable ul {
@@ -236,7 +240,24 @@ nav a:hover::after {
 
 .for-whom li, .not-suitable li {
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.4;
+    text-align: left;
+    break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+    .for-whom {
+        padding: 1.5rem;
+    }
+    
+    .for-whom ul {
+        columns: 1;
+        padding-left: 1.25rem;
+    }
+
+    .for-whom li {
+        margin-bottom: 0.75rem;
+    }
 }
 
 /* Therapy Process Styles */
@@ -367,8 +388,10 @@ nav a:hover::after {
 .contact-form {
     background-color: var(--light-bg);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 20px;
     margin: 2rem 0;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -388,9 +411,11 @@ nav a:hover::after {
 
 .alternative-contact {
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     background-color: var(--light-bg);
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -413,9 +438,10 @@ h3 { font-size: 1.5rem; }
 p {
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
-    line-height: 1.2;
+    line-height: 1.5;
     color: var(--text-color);
     max-width: 70ch; /* Optimal reading length */
+    text-align: left;
 }
 
 /* ==========================================================================
@@ -477,11 +503,66 @@ button:active {
 /* ==========================================================================
    Layout Components
    ========================================================================== */
+/* Container layouts */
 .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow-x: visible;
+    position: relative;
+}
+
+.page-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* Content layouts */
+.content-box {
+    background-color: #bedbd0;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--primary-color);
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+/* About page specific */
+.biography, .focus, .languages {
+    margin-bottom: 2rem;
+}
+
+.biography:last-child, 
+.focus:last-child, 
+.languages:last-child {
+    margin-bottom: 0;
+}
+
+/* Page titles */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Section spacing */
+section {
+    margin: 2rem 0;
+    scroll-margin-top: 2rem;
 }
 
 .section {
@@ -735,7 +816,7 @@ button:active {
 .footer {
     background-color: rgba(255, 255, 255, 0.9);
     border-top: 1px solid var(--border-color);
-    padding: 3rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
     margin-top: 4rem;
     box-shadow: 0 -2px 20px var(--shadow-color);
 }
@@ -821,8 +902,8 @@ button:active {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3rem;
-    padding: 1.5rem 1rem 0;
+    margin-top: 1.5rem;
+    padding: 1rem 1rem 0;
     border-top: 1px solid var(--border-color);
     color: var(--secondary-color);
     font-size: 0.9rem;

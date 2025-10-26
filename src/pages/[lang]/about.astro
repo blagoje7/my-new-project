@@ -14,22 +14,12 @@ const t = useTranslations(lang as keyof typeof languages);
 ---
 
 <Layout title={`Dr Tamara Medovarski - ${t('nav.about')}`} lang={lang as keyof typeof languages}>
-    <div class="container">
-        <section class="section">
-            <AboutMe lang={lang as keyof typeof languages} />
-        </section>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <h1 class="page-title">{t('biography.title')}</h1>
+            <section class="content-section">
+                <AboutMe lang={lang as keyof typeof languages} />
+            </section>
+        </div>
     </div>
 </Layout>
-
-<style>
-    .container {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
-    .section {
-        margin: 2rem 0;
-    }
-</style>

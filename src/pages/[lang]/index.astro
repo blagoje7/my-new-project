@@ -31,19 +31,3 @@ const t = useTranslations(lang as keyof typeof languages);
         <NotSuitableSection lang={lang as keyof typeof languages} />
     </div>
 </Layout>
-
-<style>
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    overflow-x: visible;
-    position: relative;
-}
-
-:global(section) {
-    margin: 2rem 0;
-    scroll-margin-top: 2rem;
-}
-</style>

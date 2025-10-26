@@ -4,9 +4,8 @@ const { lang = 'sr' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="about" class="section">
+<div class="content-box">
     <div class="biography">
-        <h2>{t('biography.title')}</h2>
         <div class="bio-content">
             <p>{t('biography.content')}</p>
         </div>
@@ -19,5 +18,4 @@ const t = useTranslations(lang);
     <div class="languages">
         <p>{t('contact.languages')}</p>
     </div>
-</section>
-
+</div>
