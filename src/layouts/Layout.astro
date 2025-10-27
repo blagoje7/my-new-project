@@ -53,17 +53,17 @@ const t = useTranslations(lang);
         <link rel="canonical" href={Astro.url} />
         
         <!-- Favicon -->
-        <link rel="shortcut icon" href="/assets/logo11111.png" />
-        <link rel="icon" href="/assets/logo11111.png" />
-        <link rel="icon" type="image/png" href="/assets/logo11111.png" />
+        <link rel="shortcut icon" href="/assets/logo.png" />
+        <link rel="icon" href="/assets/logo.png" />
+        <link rel="icon" type="image/png" href="/assets/logo.png" />
         <!-- Force favicon refresh -->
-        <link rel="icon" type="image/png" href="/assets/logo11111.png?v=2" />
+        <link rel="icon" type="image/png" href="/assets/logo.png?v=2" />
         
         <!-- Open Graph / Social Media -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={`${Astro.url.origin}/assets/logo11111.png`} />
+        <meta property="og:image" content={`${Astro.url.origin}/assets/logo.png`} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:site_name" content="Dr Tamara Medovarski - Psychotherapy" />
         <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : lang === 'nl' ? 'nl_NL' : 'en_US'} />
@@ -72,7 +72,7 @@ const t = useTranslations(lang);
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${Astro.url.origin}/assets/logo11111.png`} />
+        <meta name="twitter:image" content={`${Astro.url.origin}/assets/logo.png`} />
         
         <!-- JSON-LD Structured Data -->
         <script type="application/ld+json">
@@ -109,7 +109,7 @@ const t = useTranslations(lang);
                     {
                         "@type": "ProfessionalService",
                         "name": "Dr Tamara Medovarski - Psychotherapy",
-                        "image": "${Astro.url.origin}/assets/logo11111.png",
+                        "image": "${Astro.url.origin}/assets/logo.png",
                         "description": "Expert online psychotherapy in Serbian, English, and Dutch. Professional therapy for anxiety, depression, and personal growth.",
                         "@id": "${Astro.url.origin}",
                         "url": "${Astro.url.origin}",
