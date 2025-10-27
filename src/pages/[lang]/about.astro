@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import AboutMe from '../../components/AboutMe.astro';
 import { useTranslations, languages } from '../../i18n/utils';
+import { Image } from 'astro:assets';
 
 export function getStaticPaths() {
     return Object.keys(languages).map(lang => ({
@@ -15,11 +16,89 @@ const t = useTranslations(lang as keyof typeof languages);
 
 <Layout title={`Dr Tamara Medovarski - ${t('nav.about')}`} lang={lang as keyof typeof languages}>
     <div class="page-container">
-        <div class="content-wrapper">
-            <h1 class="page-title" set:html={t('biography.title')} />
-            <section class="content-section">
-                <AboutMe lang={lang as keyof typeof languages} />
-            </section>
+        <div class="about-layout">
+            <div class="content-section-wrapper">
+                <div class="content-wrapper">
+                    <h1 class="page-title" set:html={t('biography.title')} />
+                    <section class="content-section">
+                        <AboutMe lang={lang as keyof typeof languages} />
+                    </section>
+                </div>
+            </div>
+            <div class="image-section">
+                <img 
+                    src="/Vodnoja.jpg" 
+                    alt="Vodno Mountain view" 
+                    class="about-image"
+                />
+            </div>
         </div>
     </div>
 </Layout>
+
+<style>
+    .about-layout {
+        display: flex;
+        min-height: calc(100vh - 120px);
+        gap: 0;
+    }
+
+    .content-section-wrapper {
+        flex: 1;
+        padding: 2rem;
+        background-color: var(--background-color);
+    }
+
+    .image-section {
+        flex: 0 0 50%;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color: #f5f5f5;
+    }
+
+    .about-image {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
+        padding: 2rem 0;
+    }
+
+    .page-title {
+        margin-bottom: 2rem;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        .about-layout {
+            flex-direction: column;
+        }
+
+        .image-section {
+            flex: none;
+            height: 40vh;
+            position: relative;
+            order: 2;
+        }
+
+        .content-section-wrapper {
+            padding: 1rem;
+            order: 1;
+        }
+
+        .content-wrapper {
+            padding: 1rem 0;
+        }
+    }
+</style>
