@@ -19,10 +19,14 @@ const imageAlt = t('header.name');
                 alt={imageAlt}
                 width={600}
                 height={800}
+                widths={[240, 300, 400, 600]}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 300px, 400px"
                 class="profile-image"
                 loading="eager"
                 fetchpriority="high"
+                decoding="async"
                 format="webp"
+                quality={85}
             />
         </div>
         

@@ -34,7 +34,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         
         <!-- Critical inline CSS for above-the-fold content -->
-        <style>
+        <style is:inline>
             :root{--primary-color:#6E3B31;--secondary-color:#8E7B74;--text-color:#4A4A4A;--background-color:#F9F6F3;--light-bg:#bedbd0;--border-color:#E6E6E6;--shadow-color:rgba(140,78,69,0.1);--transition-speed:.4s}
             *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
             html,body{overflow-x:hidden;width:100%;margin:0;padding:0}
@@ -51,6 +51,10 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             p{margin-bottom:1.5rem;font-size:1.05rem;line-height:1.6;color:var(--text-color)}
             .section{padding:3rem 0}
             .hamburger{display:none}
+            .welcome-content{display:flex;gap:3rem;align-items:flex-start;width:100%;max-width:min(75vw,1800px);margin:0 auto}
+            .profile-section{flex:0 0 45%;min-width:0;max-width:45%}
+            .profile-image{width:100%;height:auto;aspect-ratio:600/800;display:block;border-radius:12px}
+            .info-section{flex:1;display:flex;flex-direction:column;gap:1.5rem}
         </style>
         
         <!-- Security Headers -->
@@ -217,7 +221,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
         
         <!-- Override Font Awesome font-display for better text visibility -->
-        <style>
+        <style is:inline>
             @font-face {
                 font-family: 'Font Awesome 5 Free';
                 font-style: normal;
@@ -269,8 +273,8 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
     </body>
 </html>
 
-<script>
-    function toggleMenu(isOpen: boolean) {
+<script is:inline async>
+    function toggleMenu(isOpen) {
         const hamburger = document.querySelector('.hamburger');
         const navItems = document.querySelector('.nav-items');
         
@@ -298,13 +302,13 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            const target = e.target as Node;
+            const target = e.target;
             if (!hamburger?.contains(target) && 
                 !navItems?.contains(target) && 
                 navItems?.classList.contains('show')) {
                 toggleMenu(false);
             }
-        });
+        }, { passive: true });
 
         // Close menu when clicking a nav link
         navItems?.querySelectorAll('a').forEach(link => {
@@ -321,11 +325,15 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         });
     }
 
-    // Initialize on load
-    document.addEventListener('DOMContentLoaded', initializeMenu);
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeMenu);
+    } else {
+        initializeMenu();
+    }
 
     // Handle window resize - optimized with requestAnimationFrame
-    let resizeRaf: number;
+    let resizeRaf;
     let isResizing = false;
     
     window.addEventListener('resize', () => {
