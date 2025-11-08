@@ -4,78 +4,78 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <!-- Home Pages -->
     <url>
-        <loc>https://tamaramedovarski.com/en</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en"/>
+        <loc>https://drmedovarski.com/en</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/sr</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr"/>
+        <loc>https://drmedovarski.com/sr</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/nl</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl"/>
+        <loc>https://drmedovarski.com/nl</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <!-- About Pages -->
     <url>
-        <loc>https://tamaramedovarski.com/en/about</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/about"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/about"/>
+        <loc>https://drmedovarski.com/en/about</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/sr/about</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/about"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/about"/>
+        <loc>https://drmedovarski.com/sr/about</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/nl/about</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/about"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/about"/>
+        <loc>https://drmedovarski.com/nl/about</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <!-- Contact Pages -->
     <url>
-        <loc>https://tamaramedovarski.com/en/contact</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/contact"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/contact"/>
+        <loc>https://drmedovarski.com/en/contact</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/sr/contact</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/contact"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/contact"/>
+        <loc>https://drmedovarski.com/sr/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tamaramedovarski.com/nl/contact</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tamaramedovarski.com/en/contact"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://tamaramedovarski.com/sr/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://tamaramedovarski.com/nl/contact"/>
+        <loc>https://drmedovarski.com/nl/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
