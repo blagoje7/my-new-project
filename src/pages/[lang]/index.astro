@@ -18,9 +18,18 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = useTranslations(lang as keyof typeof languages);
+
+// Create meta description from approach.description and approach.description2
+const approachDesc = t('approach.description').replace(/<\/?strong>/g, '');
+const approachDesc2 = t('approach.description2').replace(/<\/?strong>/g, '');
+const metaDescription = `${approachDesc} ${approachDesc2}`;
 ---
 
-<Layout title={`Dr Tamara Medovarski - ${t('nav.home')}`} lang={lang as keyof typeof languages}>
+<Layout 
+    title={`Dr Tamara Medovarski - ${t('nav.home')}`} 
+    description={metaDescription}
+    lang={lang as keyof typeof languages}
+>
     <div class="container">
         <WelcomeSection lang={lang as keyof typeof languages} />
         <ApproachSection lang={lang as keyof typeof languages} />
