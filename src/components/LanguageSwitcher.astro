@@ -16,7 +16,7 @@ const flags: Record<string, string> = {
 
 <div class="language-switcher">
     <button id="language-button" class="language-button">
-        <img src={flags[currentLang]} alt={`${languageNames[currentLang]} flag`} class="flag" />
+        <img src={flags[currentLang]} alt={`${languageNames[currentLang]} flag`} class="flag" width="24" height="16" />
         <span class="lang-name">{languageNames[currentLang]}</span>
         <span class="arrow">▼</span>
     </button>
@@ -26,7 +26,7 @@ const flags: Record<string, string> = {
                 class:list={["dropdown-item", { active: code === currentLang }]}
                 data-lang={code}
             >
-                <img src={flags[code]} alt={`${name} flag`} class="flag" />
+                <img src={flags[code]} alt={`${name} flag`} class="flag" width="24" height="16" />
                 <span class="lang-name">{name}</span>
             </button>
         ))}

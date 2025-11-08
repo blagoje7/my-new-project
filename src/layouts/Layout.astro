@@ -38,23 +38,33 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             :root{--primary-color:#6E3B31;--secondary-color:#8E7B74;--text-color:#4A4A4A;--background-color:#F9F6F3;--light-bg:#bedbd0;--border-color:#E6E6E6;--shadow-color:rgba(140,78,69,0.1);--transition-speed:.4s}
             *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
             html,body{overflow-x:hidden;width:100%;margin:0;padding:0}
-            body{font-family:Roboto,sans-serif;line-height:1.6;color:var(--text-color);background-color:var(--background-color);font-weight:400;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+            body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;line-height:1.6;color:var(--text-color);background-color:var(--background-color);font-weight:400;display:flex;flex-direction:column;align-items:center;min-height:100vh}
             main{width:100%;max-width:min(75vw,1800px);margin:0 auto;padding:0 1rem;flex:1 0 auto}
-            header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);width:100%}
+            header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);width:100%;min-height:80px}
             nav{display:flex;align-items:center;padding:1.25rem 0;background-color:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 2px 20px var(--shadow-color);width:100%}
             .nav-items{display:flex;gap:2.5rem;flex:0 0 auto;padding-left:2rem}
-            .language-switcher{margin-left:auto;flex-shrink:0;padding-right:2rem}
+            .language-switcher{margin-left:auto;flex-shrink:0;padding-right:2rem;position:relative;display:inline-block;min-width:180px}
+            .language-button{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background-color:#fff;border:1px solid var(--border-color);border-radius:8px;cursor:pointer;font-size:.9rem;color:var(--text-color);min-height:38px;width:100%}
+            .language-dropdown{position:absolute;top:100%;right:0;background-color:#fff;border:1px solid var(--border-color);border-radius:8px;margin-top:.25rem;box-shadow:0 4px 12px var(--shadow-color);z-index:1000;min-width:180px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
+            .language-dropdown.show{opacity:1;visibility:visible;pointer-events:auto}
+            .dropdown-item{display:flex;align-items:center;gap:.5rem;width:100%;padding:.5rem 1rem;border:none;background:none;cursor:pointer;text-align:left;white-space:nowrap;color:var(--text-color);min-height:38px}
+            .flag{width:24px;height:16px;object-fit:cover;border-radius:2px;border:1px solid var(--border-color)}
+            .arrow{font-size:.8em;margin-left:.25rem}
             nav a{color:var(--text-color);text-decoration:none;padding:.5rem 0;font-weight:500;position:relative;transition:color var(--transition-speed) ease}
             h1,h2,h3{margin-bottom:1.5rem;line-height:1.3;color:var(--primary-color);font-weight:600}
-            h1{font-size:2.5rem}
-            h2{font-size:1.875rem}
+            h1{font-size:2.5rem;min-height:3.25rem}
+            h2{font-size:1.875rem;min-height:2.4375rem}
             p{margin-bottom:1.5rem;font-size:1.05rem;line-height:1.6;color:var(--text-color)}
             .section{padding:3rem 0}
             .hamburger{display:none}
-            .welcome-content{display:flex;gap:3rem;align-items:flex-start;width:100%;max-width:min(75vw,1800px);margin:0 auto}
-            .profile-section{flex:0 0 45%;min-width:0;max-width:45%}
+            .welcome-content{display:flex;gap:3rem;align-items:flex-start;width:100%;max-width:min(75vw,1800px);margin:0 auto;min-height:400px}
+            .profile-section{flex:0 0 35%;min-width:0;max-width:35%}
             .profile-image{width:100%;height:auto;aspect-ratio:600/800;display:block;border-radius:12px}
-            .info-section{flex:1;display:flex;flex-direction:column;gap:1.5rem}
+            .info-section{flex:1;display:flex;flex-direction:column;gap:1.5rem;min-width:0}
+            .credentials-card,.intro-card{border-radius:8px;padding:1.5rem;min-height:120px}
+            .name{font-size:1.8rem;color:var(--primary-color);margin:0 0 1rem 0;min-height:2.34rem}
+            .credentials-list{display:flex;flex-direction:column;gap:.5rem}
+            .credential{margin-bottom:.5rem;font-size:1.05rem}
         </style>
         
         <!-- Security Headers -->
