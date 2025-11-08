@@ -154,7 +154,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
                             "@type": "Person",
                             "name": "Dr Tamara Medovarski",
                             "jobTitle": "Psychotherapist",
-                            "image": "${Astro.url.origin}/IMG_16832.jpg"
+                            "image": "${Astro.url.origin}/IMG_16832-800w.avif"
                         },
                         "areaServed": ["Netherlands", "Serbia", "Global"],
                         "availableLanguage": ["English", "Serbian", "Dutch"],
@@ -243,10 +243,10 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         
         <!-- Preload LCP images for faster loading -->
         {isHomePage && (
-            <link rel="preload" as="image" href="/IMG_16832-800w.jpg" fetchpriority="high" />
+            <link rel="preload" as="image" href="/IMG_16832-800w.avif" fetchpriority="high" />
         )}
         {isAboutPage && (
-            <link rel="preload" as="image" href="/Vodnoja-800w.jpg" fetchpriority="high" />
+            <link rel="preload" as="image" href="/Vodnoja-800w.avif" fetchpriority="high" />
         )}
         
         <link rel="manifest" href="/manifest.json" />
