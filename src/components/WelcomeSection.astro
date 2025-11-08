@@ -1,6 +1,5 @@
 ---
 import { useTranslations } from '../i18n/utils';
-import { Image } from 'astro:assets';
 
 const { lang = 'sr' } = Astro.props;
 const t = useTranslations(lang);
@@ -14,19 +13,17 @@ const imageAlt = t('header.name');
     
     <div class="welcome-content">
         <div class="profile-section">
-            <Image 
+            <img 
                 src="/IMG_16832-800w.avif"
+                srcset="/IMG_16832-400w.avif 400w, /IMG_16832-800w.avif 800w, /IMG_16832-1200w.avif 1200w"
                 alt={imageAlt}
-                width={728}
-                height={800}
-                widths={[273, 364, 546, 728]}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 273px, 364px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 343px, 377px"
+                width="728"
+                height="800"
                 class="profile-image"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                format="avif"
-                quality={85}
             />
         </div>
         

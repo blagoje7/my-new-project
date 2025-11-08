@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import AboutMe from '../../components/AboutMe.astro';
 import { useTranslations, languages } from '../../i18n/utils';
-import { Image } from 'astro:assets';
 
 export function getStaticPaths() {
     return Object.keys(languages).map(lang => ({
@@ -26,18 +25,16 @@ const t = useTranslations(lang as keyof typeof languages);
                 </div>
             </div>
             <div class="image-section">
-                <Image 
-                    src="/Vodnoja-800w.avif" 
+                <img 
+                    src="/Vodnoja-800w.avif"
+                    srcset="/Vodnoja-400w.avif 400w, /Vodnoja-800w.avif 800w"
                     alt="Vodno Mountain view" 
-                    width={800}
-                    height={600}
-                    widths={[400, 600, 800, 1200]}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    width="800"
+                    height="600"
                     class="about-image"
                     loading="eager"
                     fetchpriority="high"
-                    format="avif"
-                    quality={85}
                 />
             </div>
         </div>
