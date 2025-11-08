@@ -274,7 +274,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <!-- Skip to main content link (hidden until focused) -->
         <a href="#main-content" class="skip-to-main-content">Skip to main content</a>
         
-        <!-- External menu script -->
-        <script src="/assets/menu.js" async></script>
+        <!-- External menu script - deferred -->
+        <script src="/assets/menu.js" defer></script>
     </body>
 </html>

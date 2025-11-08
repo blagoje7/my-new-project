@@ -40,17 +40,18 @@ export default defineConfig({
             try {
               let html = fs.readFileSync(htmlPath, 'utf-8');
               
-              // Replace stylesheet links with preload + add CSS loader script
+              // Replace stylesheet links with preload + inline CSS loader
               html = html.replace(
                 /<link rel="stylesheet" href="\/_astro\/([^"]+\.css)">/g,
                 '<link rel="preload" href="/_astro/$1" as="style"><noscript><link rel="stylesheet" href="/_astro/$1"></noscript>'
               );
               
-              // Add CSS loader script before closing head tag if not already present
-              if (!html.includes('css-loader.js')) {
+              // Add inline CSS loader script before closing head tag if not already present
+              if (!html.includes('CSS preload helper')) {
+                const inlineCssLoader = `<script>(function(){const e=document.querySelectorAll('link[rel="preload"][as="style"]');e.forEach(function(e){e.addEventListener("load",function(){this.onload=null,this.rel="stylesheet",this.media="all"}),e.sheet&&(e.rel="stylesheet",e.media="all")})})();</script>`;
                 html = html.replace(
                   '</head>',
-                  '<script src="/assets/css-loader.js"></script></head>'
+                  `${inlineCssLoader}</head>`
                 );
               }
               
