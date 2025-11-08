@@ -29,6 +29,14 @@ const t = useTranslations(lang);
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         
+        <!-- Critical inline CSS for above-the-fold content -->
+        <style>
+            :root{--primary-color:#6E3B31;--secondary-color:#8E7B74;--text-color:#4A4A4A;--background-color:#F9F6F3;--light-bg:#bedbd0;--transition-speed:.4s}
+            *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+            body{font-family:Roboto,sans-serif;line-height:1.2;color:var(--text-color);background-color:var(--background-color);font-weight:400;text-align:left}
+            header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+        </style>
+        
         <!-- Security Headers -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;" />
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
@@ -52,18 +60,17 @@ const t = useTranslations(lang);
         <link rel="alternate" hreflang="nl" href={`${Astro.url.origin}/nl${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
         <link rel="canonical" href={Astro.url} />
         
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="/assets/logo.png" />
-        <link rel="icon" href="/assets/logo.png" />
-        <link rel="icon" type="image/png" href="/assets/logo.png" />
-        <!-- Force favicon refresh -->
-        <link rel="icon" type="image/png" href="/assets/logo.png?v=2" />
+        <!-- Favicon - Multiple sizes for better compatibility -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
         <!-- Open Graph / Social Media -->
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={`${Astro.url.origin}/assets/logo.png`} />
+        <meta property="og:image" content={`${Astro.url.origin}/web-app-manifest-512x512.png`} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:site_name" content="Dr Tamara Medovarski - Psychotherapy" />
         <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : lang === 'nl' ? 'nl_NL' : 'en_US'} />
@@ -72,7 +79,7 @@ const t = useTranslations(lang);
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${Astro.url.origin}/assets/logo.png`} />
+        <meta name="twitter:image" content={`${Astro.url.origin}/web-app-manifest-512x512.png`} />
         
         <!-- JSON-LD Structured Data -->
         <script type="application/ld+json">
@@ -109,7 +116,7 @@ const t = useTranslations(lang);
                     {
                         "@type": "ProfessionalService",
                         "name": "Dr Tamara Medovarski - Psychotherapy",
-                        "image": "${Astro.url.origin}/assets/logo.png",
+                        "image": "${Astro.url.origin}/web-app-manifest-512x512.png",
                         "description": "Expert online psychotherapy in Serbian, English, and Dutch. Professional therapy for anxiety, depression, and personal growth.",
                         "@id": "${Astro.url.origin}",
                         "url": "${Astro.url.origin}",
@@ -173,7 +180,20 @@ const t = useTranslations(lang);
                 ]
             }
         </script>        <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+        
+        <!-- Load Font Awesome with media trick for non-blocking -->
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+        
+        <!-- Fallback for Font Awesome loading -->
+        <script is:inline>
+            !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;if(o)for(var s in o)o.hasOwnProperty(s)&&a.setAttribute(s,o[s]);a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media="all"}),a.onloadcssdefined=f,f(function(){a.media!=="all"&&(a.media="all")}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+        </script>
+        
         <link rel="manifest" href="/manifest.json" />
         <title>{title}</title>
     </head>

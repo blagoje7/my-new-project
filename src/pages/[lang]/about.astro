@@ -26,11 +26,19 @@ const t = useTranslations(lang as keyof typeof languages);
                 </div>
             </div>
             <div class="image-section">
-                <img 
-                    src="/Vodnoja.jpg" 
-                    alt="Vodno Mountain view" 
-                    class="about-image"
-                />
+                <picture>
+                    <source 
+                        srcset="/Vodnoja-400w.jpg 400w, /Vodnoja-800w.jpg 800w" 
+                        type="image/jpeg"
+                        sizes="(max-width: 768px) 400px, 800px"
+                    />
+                    <img 
+                        src="/Vodnoja-800w.jpg" 
+                        alt="Vodno Mountain view" 
+                        class="about-image"
+                        loading="lazy"
+                    />
+                </picture>
             </div>
         </div>
     </div>
