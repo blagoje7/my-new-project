@@ -4,7 +4,7 @@ const { lang = 'sr' } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="content-box">
+<div class="about-content-box">
     <div class="biography">
         <div class="bio-content">
             <p set:html={t('biography.content')} />
