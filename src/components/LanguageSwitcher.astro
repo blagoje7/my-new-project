@@ -39,17 +39,19 @@ const flags: Record<string, string> = {
         const dropdown = document.getElementById('language-dropdown');
         const items = document.querySelectorAll('.dropdown-item');
 
+        if (!button || !dropdown) return;
+
         // Toggle dropdown
-        button?.addEventListener('click', () => {
-            dropdown?.classList.toggle('show');
+        button.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
-            if (!button?.contains(e.target as Node) && !dropdown?.contains(e.target as Node)) {
-                dropdown?.classList.remove('show');
+            if (!button.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
+                dropdown.classList.remove('show');
             }
-        });
+        }, { passive: true });
 
         // Handle language selection
         items.forEach(item => {
