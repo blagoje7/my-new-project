@@ -70,7 +70,8 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             .approach-card{padding:2rem;background-color:var(--light-bg);border:1px solid var(--primary-color);border-radius:8px;flex:1;min-height:200px}
             .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;width:100%;background-color:var(--light-bg);border-radius:8px;padding:2rem;min-height:200px}
             .benefit-card{background-color:var(--light-bg);border:1px solid var(--primary-color);border-radius:8px;padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:180px}
-            .icon-wrapper{font-size:2rem;margin-bottom:1rem;min-height:2rem;min-width:2rem}
+            .icon-wrapper{font-size:2rem;margin-bottom:1rem;min-height:2rem;min-width:2rem;color:var(--primary-color)}
+            .icon-wrapper svg{width:2rem;height:2rem;display:block}
             @media(max-width:768px){
                 main{padding-top:90px}
                 nav{height:70px;position:fixed;top:0;left:0;right:0;z-index:1001;padding:1rem}
@@ -93,6 +94,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
                 .benefits-grid{grid-template-columns:1fr;gap:.75rem;padding:1rem;min-height:800px}
                 .benefit-card{padding:.75rem;min-height:120px}
                 .icon-wrapper{font-size:1.5rem;min-height:1.5rem;min-width:1.5rem}
+                .icon-wrapper svg{width:1.5rem;height:1.5rem}
             }
         </style>
         
@@ -239,14 +241,6 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             }
         </script>        <meta name="generator" content={Astro.generator} />
         
-        <!-- Preconnect to external domains -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-        
-        <!-- Preload Font Awesome font files for faster rendering -->
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin />
-        
         <!-- Preload LCP images for faster loading -->
         {isHomePage && (
             <link rel="preload" as="image" href="/IMG_16832-800w.jpg" fetchpriority="high" />
@@ -254,35 +248,6 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         {isAboutPage && (
             <link rel="preload" as="image" href="/Vodnoja-800w.jpg" fetchpriority="high" />
         )}
-        
-        <!-- Load Font Awesome asynchronously -->
-        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'" />
-        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
-        
-        <!-- Override Font Awesome font-display for better text visibility -->
-        <style is:inline>
-            @font-face {
-                font-family: 'Font Awesome 5 Free';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-regular-400.woff2) format('woff2');
-            }
-            @font-face {
-                font-family: 'Font Awesome 5 Free';
-                font-style: normal;
-                font-weight: 900;
-                font-display: swap;
-                src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2) format('woff2');
-            }
-            @font-face {
-                font-family: 'Font Awesome 5 Brands';
-                font-style: normal;
-                font-weight: 400;
-                font-display: swap;
-                src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2) format('woff2');
-            }
-        </style>
         
         <link rel="manifest" href="/manifest.json" />
         <title>{title}</title>

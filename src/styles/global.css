@@ -472,6 +472,12 @@ button:active {
     margin-bottom: 0.75rem;
 }
 
+.icon-wrapper svg {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+}
+
 .benefit-card h3 {
     font-size: 1rem;
     margin: 0.75rem 0;
@@ -891,6 +897,11 @@ button:active {
 
     .icon-wrapper {
         font-size: 1.5rem;
+    }
+
+    .icon-wrapper svg {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .benefit-card h3 {
