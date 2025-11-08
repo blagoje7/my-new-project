@@ -40,11 +40,19 @@ export default defineConfig({
             try {
               let html = fs.readFileSync(htmlPath, 'utf-8');
               
-              // Replace stylesheet links with preload (except Font Awesome)
+              // Replace stylesheet links with preload + add CSS loader script
               html = html.replace(
                 /<link rel="stylesheet" href="\/_astro\/([^"]+\.css)">/g,
-                '<link rel="preload" href="/_astro/$1" as="style" onload="this.onload=null;this.rel=\'stylesheet\';this.media=\'all\'"><noscript><link rel="stylesheet" href="/_astro/$1"></noscript>'
+                '<link rel="preload" href="/_astro/$1" as="style"><noscript><link rel="stylesheet" href="/_astro/$1"></noscript>'
               );
+              
+              // Add CSS loader script before closing head tag if not already present
+              if (!html.includes('css-loader.js')) {
+                html = html.replace(
+                  '</head>',
+                  '<script src="/assets/css-loader.js"></script></head>'
+                );
+              }
               
               fs.writeFileSync(htmlPath, html);
             } catch (e) {
