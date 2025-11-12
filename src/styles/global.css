@@ -387,6 +387,16 @@ button:active {
     color: var(--warning-text);
 }
 
+.not-suitable .therapy-only-notice {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f5e6e6;
+    border-left: 4px solid var(--warning-text);
+    font-weight: bold;
+    color: var(--warning-text);
+    text-align: center;
+}
+
 /* ==========================================================================
    Approach Section
    ========================================================================== */

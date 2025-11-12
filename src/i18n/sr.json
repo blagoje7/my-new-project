@@ -70,7 +70,8 @@
     "furtherWork": "<strong>U daljem radu</strong> se bavimo razradom i umanjivanjem tegoba i radom na Vašim ličnim ciljevima",
     "confidentiality": "Sve informacije koje podelite su strogo poverljive.",
     "confidentiality2":"Vi imate pravo da prekinete psihoterapiju u svakom momentu bez davanja obrazloženja.",
-    "platform": "Seanse se realizuju putem Zoom-a ili Google Meets-a."
+    "platform": "Seanse se realizuju putem Zoom-a ili Google Meets-a.",
+    "therapyOnly": "Napomena: Pružam isključivo psihoterapijske usluge. Ne propisujem lekove niti pružam psihijatrijsku dijagnostiku."
   },
   "contact": {
     "title": "Kako da me kontaktirate?",

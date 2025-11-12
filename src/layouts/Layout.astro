@@ -103,13 +103,15 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
         
         <!-- Regional Meta Tags -->
-        <meta name="geo.region" content="NL" />
-        <meta name="geo.position" content="52.3676;4.9041" />
-        <meta name="ICBM" content="52.3676, 4.9041" />
-        <meta name="geo.placename" content="Amsterdam, Netherlands" />
+        <meta name="geo.region" content={lang === 'sr' ? 'RS;DE;AT;CH' : lang === 'nl' ? 'NL' : 'GLOBAL'} />
+        <meta name="geo.placename" content={lang === 'sr' ? 'Srbija, Nemačka, Austrija, Švajcarska' : 'Amsterdam, Netherlands'} />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="theme-color" content="#ffffff" />
-        <meta name="keywords" content="psychotherapy, online therapy, anxiety, depression, mental health, Dutch therapy, Serbian therapy, English therapy, expat therapy" />
+        <meta name="keywords" content={lang === 'sr' 
+            ? 'online psihoterapija, onlajn psihoterapija, psiholog online, psiholog onlajn, psihoterapija preko interneta, terapija od kuće, srpski psiholog, anksioznost, depresija, stres, burn-out, problemi u odnosima' 
+            : lang === 'nl' 
+            ? 'online psychotherapie, psycholoog online, therapie vanuit huis, expat therapie, Servische psycholoog, integratieve psychotherapie, angst, depressie, burn-out, relatieproblemen'
+            : 'online psychotherapy, psychologist online, therapy from home, expat therapy, Serbian psychologist, integrative psychotherapy, anxiety, depression, stress, burn-out, relationship issues'} />
         <meta name="author" content="Dr Tamara Medovarski" />
         <meta name="robots" content="index, follow" />
         

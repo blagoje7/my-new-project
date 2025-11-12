@@ -23,10 +23,15 @@ const t = useTranslations(lang as keyof typeof languages);
 const approachDesc = t('approach.description').replace(/<\/?strong>/g, '');
 const approachDesc2 = t('approach.description2').replace(/<\/?strong>/g, '');
 const metaDescription = `${approachDesc} ${approachDesc2}`;
+
+// Create title with "Psihoterapija online" for Serbian
+const pageTitle = lang === 'sr' 
+    ? `${t('header.title')} - Dr Tamara Medovarski`
+    : `Dr Tamara Medovarski - Online Psychotherapy`;
 ---
 
 <Layout 
-    title={`Dr Tamara Medovarski - ${t('nav.home')}`} 
+    title={pageTitle} 
     description={metaDescription}
     lang={lang as keyof typeof languages}
 >
