@@ -33,6 +33,15 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17725181424"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17725181424');
+        </script>
+        
         <!-- Critical inline CSS for above-the-fold content -->
         <style is:inline>
             :root{--primary-color:#6E3B31;--secondary-color:#8E7B74;--text-color:#4A4A4A;--background-color:#F9F6F3;--light-bg:#bedbd0;--border-color:#E6E6E6;--shadow-color:rgba(140,78,69,0.1);--transition-speed:.4s}
