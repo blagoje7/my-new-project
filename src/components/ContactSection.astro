@@ -12,7 +12,10 @@ const t = useTranslations(lang);
 
         <form 
             class="contact-form" 
-            name="contact" method="POST" data-netlify="true"
+            name="contact" 
+            method="POST" 
+            data-netlify="true"
+            action={`/${lang}/thank-you`}
         >
             <div class="form-group">
                 <label for="name">{t('contact.form.name')} * <span class="required">({t('contact.form.required')})</span></label>
