@@ -14,6 +14,11 @@ const t = useTranslations(lang as keyof typeof languages);
 ---
 
 <Layout title={`${t('thankYou.title')} - Dr Tamara Medovarski`} lang={lang as keyof typeof languages}>
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script is:inline>
+      gtag('event', 'conversion', {'send_to': 'AW-17725181424/CYpvCL6ojsAbEPCbg4RC'});
+    </script>
+    
     <div class="container">
         <Breadcrumbs currentPath={Astro.url.pathname} lang={lang as keyof typeof languages} />
         
