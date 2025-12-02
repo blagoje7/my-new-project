@@ -18,6 +18,7 @@ const t = useTranslations(lang);
             action={`/${lang}/thank-you`}
         >
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="language" value={lang} />
             <div class="form-group">
                 <label for="name">{t('contact.form.name')} * <span class="required">({t('contact.form.required')})</span></label>
                 <input type="text" id="name" name="name" required />

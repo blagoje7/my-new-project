@@ -275,7 +275,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
                     <a href={`/${lang}/about`} aria-current={Astro.url.pathname === `/${lang}/about` ? 'page' : undefined}>{t('nav.about')}</a>
                     <a href={`/${lang}/contact`} aria-current={Astro.url.pathname === `/${lang}/contact` ? 'page' : undefined}>{t('nav.contact')}</a>
                 </div>
-                <LanguageSwitcher />
+                <LanguageSwitcher lang={lang} />
             </nav>
         </header>
         <main id="main-content" role="main">

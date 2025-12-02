@@ -1,11 +1,15 @@
 ---
-import { languages, languageNames, getLangFromUrl } from '../i18n/utils';
+import { languages, languageNames } from '../i18n/utils';
 import srFlag from '../assets/flags/sr.svg';
 import enFlag from '../assets/flags/en.svg';
 import nlFlag from '../assets/flags/nl.svg';
 
-const currentUrl = Astro.url;
-const currentLang = getLangFromUrl(currentUrl);
+interface Props {
+    lang: 'sr' | 'en' | 'nl';
+}
+
+const { lang } = Astro.props;
+const currentLang = lang;
 
 const flags: Record<string, string> = {
     sr: srFlag.src,
