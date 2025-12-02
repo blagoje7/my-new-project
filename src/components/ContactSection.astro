@@ -17,6 +17,7 @@ const t = useTranslations(lang);
             data-netlify="true"
             action={`/${lang}/thank-you`}
         >
+            <input type="hidden" name="form-name" value="contact" />
             <div class="form-group">
                 <label for="name">{t('contact.form.name')} * <span class="required">({t('contact.form.required')})</span></label>
                 <input type="text" id="name" name="name" required />
