@@ -2,6 +2,7 @@
 import { useTranslations } from '../i18n/utils';
 const { lang = 'sr' } = Astro.props;
 const t = useTranslations(lang);
+const thankYouUrl = `${Astro.url.origin}/${lang}/thank-you`;
 ---
 
 <section id="contact" class="section">
@@ -15,7 +16,7 @@ const t = useTranslations(lang);
             name="contact" 
             method="POST" 
             data-netlify="true"
-            action={`/${lang}/thank-you`}
+            action={thankYouUrl}
         >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="language" value={lang} />
