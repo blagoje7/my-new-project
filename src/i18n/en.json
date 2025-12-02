@@ -1,9 +1,9 @@
 {
   "thankYou": {
-    "title": "Thank You for Your Message",
-    "message": "I have received your message and will get back to you as soon as possible.",
-    "followUp": "You can expect to hear from me within 24-48 hours during business days.",
-    "backHome": "Return to Homepage"
+    "title": "Hvala na poruci",
+    "message": "Primila sam vašu poruku i javiću vam se u najkraćem mogućem roku.",
+    "followUp": "Možete očekivati moj odgovor u roku od 24-48 sati tokom radnih dana.",
+    "backHome": "Povratak na početnu stranu"
   },
   "nav": {
     "home": "Home",
