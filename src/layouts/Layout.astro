@@ -1,4 +1,13 @@
 ---
+import '../styles/global.css';
+import '../styles/mobile.css';
+import '../styles/desktop.css';
+import '../styles/layout.css';
+import '../styles/accessibility.css';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations } from '../i18n/utils';
+
 interface Props {
     title?: string;
     description?: string;
@@ -10,14 +19,6 @@ const {
     description = "Expert online psychotherapy in Serbian, English, and Dutch. Dr Tamara Medovarski offers professional therapy for anxiety, depression, and personal growth. Schedule your free consultation today.",
     lang = 'sr' 
 } = Astro.props;
-import '../styles/global.css';
-import '../styles/mobile.css';
-import '../styles/desktop.css';
-import '../styles/layout.css';
-import '../styles/accessibility.css';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
-import Footer from '../components/Footer.astro';
-import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations(lang);
 
@@ -39,6 +40,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+
           gtag('config', 'AW-17725181424');
         </script>
         
@@ -253,10 +255,10 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         
         <!-- Preload LCP images for faster loading -->
         {isHomePage && (
-            <link rel="preload" as="image" href="/IMG_16832-800w.avif" fetchpriority="high" />
+            <link rel="preload" as="image" href="/IMG_16832-800w.avif" fetchPriority="high" />
         )}
         {isAboutPage && (
-            <link rel="preload" as="image" href="/Vodnoja-800w.avif" fetchpriority="high" />
+            <link rel="preload" as="image" href="/Vodnoja-800w.avif" fetchPriority="high" />
         )}
         
         <link rel="manifest" href="/manifest.json" />
