@@ -11,12 +11,32 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const t = useTranslations(lang as keyof typeof languages);
+
+const pageTitle = lang === 'sr'
+    ? 'Kontakt | Online psihoterapija – Dr Tamara Medovarski'
+    : lang === 'nl'
+    ? 'Contact | Online psychotherapie – Dr Tamara Medovarski'
+    : 'Contact | Online Psychotherapy – Dr Tamara Medovarski';
+
+const pageDescription = lang === 'sr'
+    ? 'Zakažite besplatnu 15-minutnu konsultaciju. Online psihoterapija na srpskom i engleskom jeziku. Kontaktirajte Dr Tamaru Medovarski.'
+    : lang === 'nl'
+    ? 'Plan een gratis kennismaking van 15 minuten. Online psychotherapie in Servisch, Engels en Nederlands.'
+    : 'Book a free 15-minute consultation. Online psychotherapy in Serbian and English. Contact Dr Tamara Medovarski.';
 ---
 
-<Layout title={`Dr Tamara Medovarski - ${t('nav.contact')}`} lang={lang as keyof typeof languages}>
+<Layout title={pageTitle} description={pageDescription} lang={lang as keyof typeof languages}>
     <div class="container">
         <section class="section">
             <ContactSection lang={lang as keyof typeof languages} />
         </section>
+        {lang === 'sr' && (
+            <section class="section internal-links-section">
+                <p>
+                    Dr Tamara Medovarski nudi <a href="/sr/">online psihoterapiju</a> dostupnu iz bilo kog mesta u Srbiji i inostranstvu.
+                    Specijalizovana je i za <a href="/online-psihoterapija-za-dijasporu/">psihoterapiju za dijasporu</a> – na srpskom jeziku, bez obzira gde živite.
+                </p>
+            </section>
+        )}
     </div>
 </Layout>

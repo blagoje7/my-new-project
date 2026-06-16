@@ -19,21 +19,44 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = useTranslations(lang as keyof typeof languages);
 
-// Create meta description from approach.description and approach.description2
-const approachDesc = t('approach.description').replace(/<\/?strong>/g, '');
-const approachDesc2 = t('approach.description2').replace(/<\/?strong>/g, '');
-const metaDescription = `${approachDesc} ${approachDesc2}`;
+// SEO-optimized titles and descriptions per language
+const pageTitle = lang === 'sr'
+    ? 'Online psihoterapija | Dr Tamara Medovarski'
+    : lang === 'nl'
+    ? 'Online psychotherapie | Dr Tamara Medovarski'
+    : 'Online Psychotherapy | Dr Tamara Medovarski';
 
-// Create title with "Psihoterapija online" for Serbian
-const pageTitle = lang === 'sr' 
-    ? `${t('header.title')} - Dr Tamara Medovarski`
-    : `Dr Tamara Medovarski - Online Psychotherapy`;
+const metaDescription = lang === 'sr'
+    ? 'Online psihoterapija na srpskom i engleskom jeziku. Podrška kod anksioznosti, depresije, stresa i životnih izazova. Individualne online seanse za klijente iz Srbije i dijaspore.'
+    : lang === 'nl'
+    ? 'Online psychotherapie in het Servisch, Engels en Nederlands. Professionele ondersteuning bij angst, depressie, stress en levensvragen.'
+    : 'Online psychotherapy in Serbian and English. Support for anxiety, depression, stress and life challenges. Individual online sessions for clients from Serbia and the diaspora.';
+
+// FAQ schema for structured data
+const homepageFAQ = lang === 'sr' ? [
+    { question: 'Da li je online terapija jednako efikasna kao terapija uživo?', answer: 'Da, istraživanja pokazuju da je online psihoterapija jednako efikasna kao terapija licem u lice za anksioznost, depresiju i stres. Online format pruža i dodatne prednosti: dostupnost iz komfora vašeg doma, bez gubitka vremena na putovanje i mogućnost rada sa terapeutom iz istog kulturnog okruženja.' },
+    { question: 'Koliko traje seansa?', answer: 'Trajanje jedne seanse je 50 minuta.' },
+    { question: 'Kako zakazati termin?', answer: 'Možete popuniti kontakt formu, ili mi pisati na WhatsApp ili Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.' },
+    { question: 'Na kojoj platformi se održavaju seanse?', answer: 'Seanse se realizuju putem Zoom-a ili Google Meet-a.' },
+    { question: 'Na kom jeziku možemo raditi?', answer: 'Psihoterapiju nudim na srpskom, engleskom i holandskom jeziku.' }
+] : lang === 'nl' ? [
+    { question: 'Is online therapie even effectief als therapie in persoon?', answer: 'Ja, onderzoek toont aan dat online psychotherapie even effectief is als face-to-facetherapie voor angst, depressie en stress.' },
+    { question: 'Hoe lang duurt een sessie?', answer: 'Een sessie duurt 50 minuten.' },
+    { question: 'Hoe maak ik een afspraak?', answer: 'Vul het contactformulier in of stuur een bericht via WhatsApp of Viber op +31 6 48569129. Voor de eerste sessie bied ik een gratis kennismaking van 15 minuten aan.' },
+    { question: 'Op welk platform vinden de sessies plaats?', answer: 'Sessies worden gehouden via Zoom of Google Meet.' }
+] : [
+    { question: 'Is online therapy just as effective as in-person therapy?', answer: 'Yes, research shows that online psychotherapy is equally effective as face-to-face therapy for anxiety, depression and stress.' },
+    { question: 'How long does a session last?', answer: 'Each session lasts 50 minutes.' },
+    { question: 'How do I book an appointment?', answer: 'Fill out the contact form or message me on WhatsApp or Viber at +31 6 48569129. I offer a free 15-minute introductory conversation before the first session.' },
+    { question: 'Which platform are sessions held on?', answer: 'Sessions are conducted via Zoom or Google Meet.' }
+];
 ---
 
 <Layout 
     title={pageTitle} 
     description={metaDescription}
     lang={lang as keyof typeof languages}
+    faqSchema={homepageFAQ}
 >
     <div class="container">
         <WelcomeSection lang={lang as keyof typeof languages} />

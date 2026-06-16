@@ -7,6 +7,12 @@ function toggleMenu(isOpen) {
         navItems?.classList.add('show');
         document.body.classList.add('menu-open');
     } else {
+        // Close services dropdown first so it doesn't leak visually
+        const servicesDropdown = document.querySelector('.services-dropdown');
+        const servicesBtn = servicesDropdown?.querySelector('.services-dropdown-btn');
+        servicesDropdown?.classList.remove('open');
+        servicesBtn?.setAttribute('aria-expanded', 'false');
+
         hamburger?.classList.remove('active');
         navItems?.classList.remove('show');
         document.body.classList.remove('menu-open');
@@ -46,6 +52,48 @@ function initializeMenu() {
         if (e.key === 'Escape' && navItems?.classList.contains('show')) {
             toggleMenu(false);
         }
+    });
+
+    // --- Services dropdown ---
+    const servicesDropdown = document.querySelector('.services-dropdown');
+    const servicesBtn = servicesDropdown?.querySelector('.services-dropdown-btn');
+
+    function closeServicesDropdown() {
+        servicesDropdown?.classList.remove('open');
+        servicesBtn?.setAttribute('aria-expanded', 'false');
+    }
+
+    servicesBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = servicesDropdown.classList.contains('open');
+        if (isOpen) {
+            closeServicesDropdown();
+        } else {
+            servicesDropdown.classList.add('open');
+            servicesBtn.setAttribute('aria-expanded', 'true');
+        }
+    });
+
+    // Close services dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!servicesDropdown?.contains(e.target)) {
+            closeServicesDropdown();
+        }
+    }, { passive: true });
+
+    // Close services dropdown on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeServicesDropdown();
+        }
+    });
+
+    // Close services dropdown AND hamburger menu when a dropdown link is clicked (mobile)
+    servicesDropdown?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeServicesDropdown();
+            toggleMenu(false);
+        });
     });
 }
 

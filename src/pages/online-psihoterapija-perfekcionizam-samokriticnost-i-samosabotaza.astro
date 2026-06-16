@@ -1,0 +1,400 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteBase = "https://drmedovarski.com";
+
+const faqSchema = [
+  {
+    question: "Da li je perfekcionizam uvek problem?",
+    answer:
+      "Ne. Visoki standardi i posvećenost nisu sami po sebi problematični. Perfekcionizam postaje problem kada počne da koči umesto da pokreće - kada je strah od neuspeha jači od želje za uspehom, kada svaka greška nosi nesrazmerni emocionalni teret, ili kada hronično nezadovoljstvo postane osnovno životno stanje.",
+  },
+  {
+    question:
+      "Kako perfekcionizam i prevelik trud mogu da dovedu do lošeg funkcionisanja u školi, tokom studija ili na poslu?",
+    answer:
+      "Kada se prekomerno teži ka savršenosti, započinjanje zadataka se često odlaže jer uslovi ”još nisu dovoljno dobri”, a završavanje prolongira jer se previše vremena rasipa na detalje i usavršavanja. Uprkos ogromnom uloženom trudu - paradoksalno - ciljevi se ne ostvaruju, a ocene funkcionisanja od strane nadležnih negativne. Ovo posledično dovodi do hranjenja osećaja da “nije dovoljno dobro” i da “treba više truda”, zatvarajući tako začarani krug i dovodeći u krajnjem slučaju do sagorevanja i depresije.",
+  },
+  {
+    question: "Koja je razlika između perfekcionizma i samosabotaže?",
+    answer:
+      "Perfekcionizam je obrazac visokih, često nerealnih standarda praćenih intenzivnom samokritičnošću. Samosabotaža je jedna od njegovih mogućih posledica - ali može da postoji i samostalno, kao način da se izbegne rizik od neispunjenih očekivanja, neuspeha ili odbijanja.",
+  },
+  {
+    question:
+      "Da li psihoterapija pomaže kod perfekcionizma, samokritičnosti i samosabotaže?",
+    answer:
+      "Da. Kroz integrativni pristup, psihoterapija efikasno povezuje praktične strategije za redefinisanje svakodnevnih standarda sa dubinskim radom na korenima unutrašnjeg kritičara i stabilizaciji osećaja sopstvene vrednosti. Ovakav sveobuhvatan rad omogućava klijentima da prevaziđu otpore i trajno transformišu svoj odnos prema sebi, greškama i sopstvenim postignućima.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Online psihoterapija za perfekcionizam, samokričnost i samosabotažu",
+  url: `${siteBase}/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza/`,
+  description:
+    "Individualna online psihoterapija za perfekcionizam, samokričnost i samosabotažu. Rad na korenima unutrašnjeg kritičara i stabilizaciji osećaja sopstvene vrednosti.",
+  provider: {
+    "@type": "Person",
+    name: "Dr Tamara Medovarski",
+    jobTitle: [
+      "Psihoterapeut",
+      "Doktor medicine",
+      "Specijalizant psihijatrije",
+    ],
+  },
+});
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchema.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+});
+---
+
+<Layout
+  title="Online psihoterapija za perfekcionizam i samokričnost | Dr Tamara Medovarski"
+  description="Online psihoterapija za perfekcionizam, samokričnost i samosabotažu. Integrativni pristup koji spaja praktične strategije sa radom na korenima unutrašnjeg kritičara. Zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={serviceSchema} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>
+        Online psihoterapija za perfekcionizam, samokritičnost i samosabotažu
+      </h1>
+
+      <p class="lead">
+        Perfekcionizam se često doživljava kao vrlina - kao znak visokih
+        standarda i posvećenosti. U stvarnosti, kada pređe određenu granicu,
+        postaje izvor hroničnog nezadovoljstva, paralize i iscrpljenosti. Osoba
+        koja pati od perfekcionizma retko uživa u onome što postigne - pažnja je
+        uvek usmerena na ono što nije bilo dovoljno dobro. Putem online
+        psihoterapije, dr Tamara Medovarski pomaže klijentima da razumeju šta
+        stoji iza potrebe za savršenstvom i da razviju autentičniji i
+        milosrdniji odnos prema sebi.
+      </p>
+
+      <section class="section">
+        <h2>
+          Kako se perfekcionizam, samokritičnost i samosabotaža manifestuju?
+        </h2>
+        <ul class="symptoms-list">
+          <li>
+            Hronično nezadovoljstvo sopstvenim učinkom, čak i kada je objektivno
+            dobar
+          </li>
+          <li>
+            Unutrašnji kritičar koji komentariše svaki korak i pronalazi greške
+            tamo gde ih drugi ne vide
+          </li>
+          <li>
+            Sve-ili-ništa razmišljanje — ako nije savršeno, kao da nije ni
+            urađeno
+          </li>
+          <li>
+            Odlaganje početka jer uslovi još nisu pravi, ili teškoće sa
+            završavanjem jer nije dovoljno dobro
+          </li>
+          <li>
+            Preterano ulaganje vremena i energije u zadatke koji to objektivno
+            ne zahtevaju
+          </li>
+          <li>
+            Preterana usredsređenost na detalje nauštrb cele slike, što
+            paradoksalno dovodi do smanjene produktivnosti — i do kritike od
+            strane nadređenih koju osoba onda doživljava kao potvrdu da nije
+            dovoljno dobra
+          </li>
+          <li>
+            Izbegavanje novih situacija u kojima postoji rizik od neuspeha ili
+            tuđe procene
+          </li>
+          <li>
+            Ruminacija o greškama i propuštenim prilikama dugo nakon što su
+            prošle
+          </li>
+          <li>
+            Samosabotaža — odustajanje ili povlačenje upravo kada je cilj na
+            dohvat ruke
+          </li>
+          <li>
+            Uprkos vidljivim postignućima, perzistentni osećaj da si prevara, da
+            si slučajno tu gde jesi i da će te pre ili kasnije "raskrinkati" -
+            tzv. imposter sindrom
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Šta je samosabotaža i odakle dolazi?</h2>
+        <p>
+          Samosabotaža je naizgled zbunjujuć obrazac — osoba nešto svesno želi,
+          ulaže trud, a onda u poslednjem trenutku odustane, sabotira, ili se
+          povuče.
+          <br />
+          <br />
+          Iza samosabotaže često stoji strah od uspeha - jer uspeh nosi nova očekivanja,
+          veću odgovornost, veću vidljivost, a time i rizik od bolnog pada sa više
+          pozicije. Ili iza njega stoji duboko uverenje da uspeh "nije za mene" —
+          internalizovana poruka iz ranog relacionog okruženja, koja se aktivira upravo
+          onda kada se cilj počinje ostvarivati. Ponekad je samosabotaža i način regulacije
+          anksioznosti — bolje je sam/a prekinuti nego sačekati da se drugi drugi
+          razočaraju ili da odbace.
+        </p>
+        <h2>
+          Kako izgleda psihoterapija za perfekcionizam, samokritičnost i
+          samosabotažu?
+        </h2>
+        <p>
+          Perfekcionizam i samokritičnost nisu samo navike i svesne strategije —
+          ukorenjeni su u način na koji osoba doživljava svoju vrednost i
+          sigurnost u svetu. Zato samo površinske tehnike — liste, planiranje,
+          "budi blaži/a prema sebi" — retko daju trajne rezultate.
+          <br />
+          <br />
+          Dr Tamara Medovarski se u integrativnoj psihoterapiji posvećuje radu i na
+          praktičnoj ravni i na dubljoj ravni.
+          <br />
+          <br />
+          Na praktičnoj ravni radimo na prepoznavanju obrazaca u konkretnim situacijama,
+          razvijamo realističnije standarde, učimo kako da definišete prioritete i
+          ne ”gubite” se u detaljima što objektivno dovodi do bolje produktivnosti,
+          kao i da se nosite sa neizvesnošću i mogućnošću greške.
+          <br />
+          <br />
+          Na dubljoj ravni istražujemo poreklo unutrašnjeg kritičara: koje su to rane
+          poruke, iskustva i odnosi koji su oblikovali uverenje da vrednost zavisi
+          od učinka. Razumevanje tog porekla je ono što omogućava da se odnos prema
+          sebi trajno promeni — ne samo u ponašanju, već u tome kako se doživljavate
+          iznutra i u odnosu sa drugima.
+          <br />
+          <br />
+          Tempo i ciljevi uvek se određuju zajedno, uz puno uvažavanje vaših potreba
+          i mogućnosti.
+        </p>
+      </section>
+
+      <section class="section faq-section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p set:html={item.answerHtml || item.answer} />
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .condition-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .condition-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .condition-card p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .symptoms-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .symptoms-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .benefits-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .benefits-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .conditions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

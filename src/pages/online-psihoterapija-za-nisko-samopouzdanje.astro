@@ -1,0 +1,356 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const faqSchema = [
+  {
+    question:
+      "Da li psihoterapija može da promeni duboko ukorenjenu sliku o sebi?",
+    answer:
+      "Da, ali to je proces koji zahteva vreme. Kognitivno-bihejvioralni pristup omogućava konkretne promene u ponašanju, a psihodinamski pristup omogućava dublju promenu u načinu doživljavanja sebe.",
+  },
+  {
+    question: "Koja je razlika između niskog samopouzdanja i neasertivnosti?",
+    answer:
+      "Nisko samopouzdanje je unutrašnje - odnosi se na to kako doživljavamo svoju vrednost. Neasertivnost je njegova bihejvioralna posledica - teškoća da u interakciji sa drugima zastupamo sopstvene potrebe. Često idu zajedno, ali ne uvek: neko može biti asertivan u profesionalnom kontekstu, a potpuno izgubiti sebe u bliskim odnosima.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchema.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+});
+---
+
+<Layout
+  title="Psihoterapija za stres i burnout | Dr Tamara Medovarski"
+  description="Psihoterapija za hronični stres i burnout. Naučite da prepoznate i prevaziđete sagorevanje. Individualne online seanse - zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={schemaJson} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>
+        Online psihoterapija za nisko samopouzdanje i nedostatak asertivnosti
+      </h1>
+
+      <p class="lead">
+        Osećaj da nisi dovoljno dobar/a, da su tuđe potrebe važnije od tvojih,
+        ili da ne možeš da kažeš šta stvarno misliš u privatnom i/ili u
+        profesionalnom kontekstu - nisu karakterna crta niti sudbina. Najčešće
+        je reč o obrascu koji se razvijao godinama, kroz iskustva koja su
+        oblikovala sliku o sebi i mestu koje zauzimamo u odnosima sa drugima.
+        Putem online psihoterapije, dr Tamara Medovarski pomaže klijentima da
+        razumeju odakle taj obrazac potiče i da razviju autentičniji, stabilniji
+        odnos prema sebi, kao i da na adekvatan način izražavaju svoje potrebe.
+      </p>
+
+      <section class="section">
+        <h2>
+          Kako se nisko samopouzdanje i nedostatak asertivnosti manifestuju?
+        </h2>
+        <div class="signs-grid">
+          <div class="sign-card">
+            <h3>Emocionalni znaci</h3>
+            <ul>
+              <li>
+                Hronični osećaj da nisi dovoljno dobar/a, bez obzira na ono što
+                postigneš
+              </li>
+              <li>Sram ili neprijatnost pri dobijanju pohvale ili pažnje</li>
+              <li>
+                Osećaj krivice kada odbiješ nečiji zahtev ili postaviš granicu
+              </li>
+              <li>
+                Intenzivna osetljivost na kritiku, čak i kada je konstruktivna,
+                ili na znakove neodobravanja
+              </li>
+              <li>
+                Strah od odbijanja koji te sprečava da tražiš ono što ti treba
+              </li>
+            </ul>
+          </div>
+          <div class="sign-card">
+            <h3>Kognitivni znaci</h3>
+            <ul>
+              <li>
+                Unutrašnji glas koji konstantno pronalazi greške i omalovažava
+                postignuća
+              </li>
+              <li>
+                Automatsko upoređivanje sa drugima uz osećaj da uvek zaostaješ
+              </li>
+              <li>Uverenje da su tuđe potrebe i osećanja važniji od tvojih</li>
+              <li>Uspeh pripisuješ sreći, a neuspeh sopstvenim manama</li>
+              <li>
+                Unapred predviđaš odbijanje ili osudu, još pre nego što se
+                situacija desi
+              </li>
+            </ul>
+          </div>
+          <div class="sign-card">
+            <h3>Bihejvioralni znaci</h3>
+            <ul>
+              <li>
+                Govoriš "da" kada misliš "ne" - iz straha od konflikta ili
+                neodobravanja
+              </li>
+              <li>
+                Preterano izvinjavanje i preuzimanje odgovornosti za tuđe
+                raspoloženje i ponašanje
+              </li>
+              <li>
+                Izbegavanje situacija u kojima bi mogao/la biti odbijen/a ili
+                kritikovan/a
+              </li>
+              <li>
+                Teškoće u izražavanju neslaganja, čak i kada znaš da imaš pravo
+              </li>
+              <li>
+                Prilagođavanje do te mere da gubiš osećaj šta ti sam/a zapravo
+                želiš
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>
+          Kako izgleda psihoterapija za nisko samopouzdanje i nedostatak
+          asertivnosti?
+        </h2>
+        <p>
+          Nisko samopouzdanje i neasertivnost gotovo uvek su povezani sa dubokim
+          uverenjima o sopstvenoj vrednosti - uverenjima koja se nisu formirala
+          svesno, već kroz rane relacione obrasce, kroz poruke koje smo dobijali
+          od bliskih osoba i kroz iskustva koja su nas naučila da je
+          prilagođavanje sigurnije od autentičnosti.
+          <br />
+          <br />
+          Psihoterapija se sastoji u prepoznavanju konkretnih situacija u kojima samopouzdanje
+          pada, razvijanju kapaciteta za jasno izražavanje potreba i postavljanje
+          granica a da ne izgubite odnos. Na dubljoj ravni istražujemo poreklo te
+          slike o sebi: šta je, kada i kroz koje odnose oblikovalo uverenje da vaše
+          potrebe nisu dovoljno važne. Upravo taj sloj je ono što razlikuje površinsku
+          promenu u ponašanju od trajne promene u načinu doživljavanja sebe.
+        </p>
+        <h2>Koliko traje terapija?</h2>
+        <p>
+          Trajanje psihoterapije je individualno, međutim postoje određene
+          smernice.
+          <br />
+          <br />
+          Kada je nisko samopouzdanje vezano za konkretan kontekst - period u toksičnoj
+          vezi, radno okruženje koje je dugo omalovažavalo — rad je često kraći i
+          fokusiraniji.
+          <br />
+          <br />
+          Kada je negativna slika o sebi prisutna od ranog doba i provlači se kroz
+          različite životne oblasti - u vezama, na poslu, u svakodnevnim interakcijama
+          — rad zahteva više vremena i veću dubinu. To nije nedostatak, već odraz
+          toga koliko je dugo taj obrazac bio jedini poznati način postojanja u svetu.
+          <br />
+          <br />
+          Ciljevi i trajanje psihoterapije uvek se određuju zajedno, uz puno uvažavanje
+          vaših potreba i mogućnosti.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p set:html={item.answerHtml || item.answer} />
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .sign-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .sign-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  .sign-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+  .sign-card li {
+    margin-bottom: 0.35rem;
+  }
+  .approach-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .approach-list li {
+    margin-bottom: 0.75rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .internal-links {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  .internal-links h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .internal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .internal-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .signs-grid {
+      grid-template-columns: 1fr;
+    }
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

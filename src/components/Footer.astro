@@ -42,18 +42,32 @@ const currentYear = new Date().getFullYear();
                     <li><a href={`/${lang}`}>{t('nav.home')}</a></li>
                     <li><a href={`/${lang}/about`}>{t('nav.about')}</a></li>
                     <li><a href={`/${lang}/contact`}>{t('nav.contact')}</a></li>
+                    {lang === 'sr' && (
+                        <>
+                            <li><a href="/online-individualna-psihoterapija/">Individualna psihoterapija</a></li>
+                        </>
+                    )}
                 </ul>
             </div>
+
+            {lang === 'sr' && (
+                <div class="footer-section services-links">
+                    <h3>Online psihoterapija</h3>
+                    <ul>
+                        <li><a href="/online-psihoterapija-anksioznost/" role="menuitem">Psihoterapija za anksioznost</a></li>
+                        <li><a href="/online-psihoterapija-depresija/" role="menuitem">Psihoterapija za depresiju</a></li>
+                        <li><a href="/online-psihoterapija-burnout/" role="menuitem">Psihoterapija za stres i burnout</a></li>
+                        <li><a href="/online-psihoterapija-za-dijasporu/" role="menuitem">Psihoterapija za dijasporu</a></li>
+                        <li><a href="/online-psihoterapija-partnerski-i-porodicni-odnosi/" role="menuitem">Problemi u odnosima</a></li>
+                        <li><a href="/online-psihoterapija-za-nisko-samopouzdanje/" role="menuitem">Nisko samopouzdanje</a></li>
+                        <li><a href="/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza/" role="menuitem">Perfekcionizam i samokritičnost</a></li>
+                    </ul>
+                </div>
+            )}
 
             <div class="footer-section platforms">
                 <h3>{t('footer.onlinePlatforms')}</h3>
                 <ul>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M15.6 11.28L22 7v10l-6.4-4.28v4.28L22 21V3l-6.4 4.28V11.28z"></path><path d="M2 7l6.4 4.28V7L2 3v18l6.4-4.28V11.28L2 17V7z"></path>
-                        </svg>
-                        Zoom
-                    </li>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>

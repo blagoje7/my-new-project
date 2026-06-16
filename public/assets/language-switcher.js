@@ -17,6 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
+    // Pages that only exist in Serbian – switching language redirects to homepage
+    const srOnlyPrefixes = [
+        '/online-psihoterapija-anksioznost',
+        '/online-psihoterapija-depresija',
+        '/online-psihoterapija-burnout',
+        '/online-psihoterapija-za-dijasporu',
+        '/online-individualna-psihoterapija',
+        '/online-psihoterapija-partnerski-i-porodicni-odnosi',
+        '/online-psihoterapija-za-nisko-samopouzdanje',
+        '/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza',
+    ];
+
+    function isSrOnlyPage(path) {
+        return srOnlyPrefixes.some(prefix => path.startsWith(prefix));
+    }
+
     // Handle language selection
     items.forEach(item => {
         item.addEventListener('click', () => {
@@ -26,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentPath = window.location.pathname;
             const pathParts = currentPath.split('/').filter(Boolean);
             let newPath;
+
+            // If current page doesn't exist in other languages, go to homepage
+            if (isSrOnlyPage(currentPath)) {
+                newPath = `/${lang}/`;
+                window.location.href = window.location.origin + newPath;
+                return;
+            }
 
             if (currentPath === '/' || pathParts.length === 0) {
                 newPath = `/${lang}`;

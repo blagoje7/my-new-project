@@ -1,0 +1,448 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteBase = "https://drmedovarski.com";
+
+const faqSchema = [
+  {
+    question:
+      "Da li online psihoterapija pomaže kod problema u odnosima?",
+    answer:
+      "Da. Kliničke studije dosledno potvrđuju efikasnost psihoterapije u identifikovanju i modifikovanju disfunkcionalnih obrazaca vezivanja, komunikacije, uspešnijem rešavanju konflikata i poboljšanju emocionalne regulacije. Istraživanja pokazuju da je online format jednako efikasan kao i terapija uživo za rad na interpersonalnim poteškoćama.",
+  },
+  {
+    question: "Koliko seansi je potrebno za poboljšanje kvaliteta ostvarivanja i održavanja odnosa?",
+    answer:
+      "Promene u ponašanju i komunikaciji primećuju se nakon 8 do 12 seansi, dok je za restrukturiranje disfunkcionalnih obrazaca vezivanja (koji su u korenu hroničnih problema) potreban dugoročniji rad. Intenzitet i tempo rada, kao i trajanje terapije, prilagođava se vašim individualnim potrebama, ciljevima, i mogućnostima.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  }
+];
+
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Online psihoterapija za partnerske i porodične odnose",
+  url: `${siteBase}/online-psihoterapija-partnerski-i-porodicni-odnosi/`,
+  description:
+    "Individualna online psihoterapija za probleme u partnerskim i porodičnim odnosima",
+  provider: {
+    "@type": "Person",
+    name: "Dr Tamara Medovarski",
+    jobTitle: [
+      "Psihoterapeut",
+      "Doktor medicine",
+      "Specijalizant psihijatrije",
+    ],
+  },
+});
+
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchema.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+});
+---
+
+<Layout
+  title="Online psihoterapija za probleme u odnosima | Dr Tamara Medovarski"
+  description="Online psihoterapija za probleme u partnerskim i porodičnim odnosima. Rad na obrascima vezivanja, komunikaciji i bliskosti. Zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={serviceSchema} />
+  <script type="application/ld+json" set:html={faqJsonLd} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>Online psihoterapija za probleme u odnosima</h1>
+
+      <p class="lead">
+        Odnosi su jedan od najvažnijih izvora i zadovoljstva i bola u životu.
+        Teškoće u ostvarivanju i održavanju bliskih veza retko su rezultat loše
+        volje ili nedovoljnog truda — češće odražavaju dublje obrasce u načinu
+        na koji se vezujemo, komuniciramo i doživljavamo sebe u odnosu sa drugim
+        ljudima. Ti obrasci često vuku korene iz ranijih životnih iskustava i
+        ponavljaju se kroz različite odnose, čak i kada to svesno ne želimo.
+      </p>
+
+      <section class="section">
+        <h2>
+          Problemi u partnerskim i porodičnim odnosima mogu izgledati kao:
+        </h2>
+        <ul class="symptoms-list">
+          <li>Učestale svađe oko istih tema, bez osećaja da se išta menja</li>
+          <li>Osećaj udaljenosti ili emotivne nepovezanosti sa partnerom</li>
+          <li>Teškoće u izražavanju potreba ili postavljanju granica</li>
+          <li>
+            Trpljenje nepoštovanja, omalovažavanja, vređanja, pa čak i nasilja
+            iz straha od samoće
+          </li>
+          <li>
+            Obrazac odnosa koji se ponavlja - isti tipovi partnera, isti načini
+            na koji se veze završavaju
+          </li>
+          <li>Teškoće u pronalaženju partnera uprkos želji za bliskom vezom</li>
+          <li>
+            Intenzivan strah od napuštanja ili, obrnuto, povlačenje kada odnos
+            postane blizak
+          </li>
+          <li>
+            Stavljanje tuđih potreba ispred svojih, uz osećaj da svoje nisu
+            dovoljno važne
+          </li>
+          <li>
+            Gubitak sebe u odnosu — prilagođavanje do te mere da osoba više ne
+            zna šta ona sama želi
+          </li>
+          <li>Razvod ili raskid koji ne može da se prebrodi</li>
+          <li>
+            Konflikti sa roditeljima ili decom oko granica, uloga i očekivanja
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Zašto se isti problemi u odnosima ponavljaju?</h2>
+        <p>
+          Kada se isti problemi javljaju u različitim vezama, ili se ponavljaju
+          unutar iste disfunkcionalne dugotrajne veze, najčešće se radi o
+          neadekvatnom obrascu vezivanja.
+          <br />
+          <br />
+          Teorija afektivnog vezivanja razlikuje nekoliko obrazaca. Dva koja najčešće
+          stoje iza ponavljajućih problema u vezama su anksiozni i izbegavajući obrazac
+          vezivanja. Anksiozni obrazac vezivanja okarakterisan je strahom od napuštanja,
+          dok je izbegavajući obrazac okarakterisan strahom od vezivanja.
+        </p>
+      </section>
+      <div class="signs-grid">
+        <div class="sign-card">
+            <h3>Strah od napuštanja može izgledati ovako:</h3>
+                <ul class="symptoms-list">
+                    <li>
+                        Intenzivna ljubomora i potreba za stalnom potvrdom od partnera
+                    </li>
+                    <li>Kontrolisanje partnerovog kretanja, kontakata ili ponašanja</li>
+                    <li>
+                        Panična reakcija na distancu, tišinu ili promenu raspoloženja
+                        partnera
+                    </li>
+                    <li>
+                        Ostajanje u vezama koje ne funkcionišu jer je biti sam/a gore od
+                        loše veze
+                    </li>
+                    <li>
+                        Pretnja ili impulsivno ponašanje u trenucima kada se osoba oseća
+                        napušteno
+                    </li>
+                    <li>Gubitak sebe u pokušaju da se zadrži partner</li>
+                    <li>Trpljenje verbalnog i fizičkog nasilja</li>
+                </ul>
+            </div>
+        <div class="sign-card">
+            <h3>Strah od vezivanja može izgledati ovako:</h3>
+            <ul class="symptoms-list">
+                <li>
+                    Povlačenje ili sabotaža odnosa upravo kada postane blizak i dubok
+                </li>
+                <li>Nalaženje grešaka kod partnera koji su objektivno dobri</li>
+                <li>Osećaj gušenja ili gubitka slobode u ozbiljnijim vezama</li>
+                <li>Preferiranje odnosa bez obaveza ili emocionalne dubine</li>
+                <li>
+                    Teškoće u zamišljanju stabilne, dugoročne veze kao nečeg što osobi
+                    odgovara
+                </li>
+            </ul>
+        </div>
+      </div>
+        <p class="disclaimer">
+          <em>
+            Napomena: ova dva obrasca se nekada javljaju kod iste osobe —
+            naizmenično ili u zavisnosti od tipa partnera.
+          </em>
+        </p>
+        <br />
+        <br />
+        <h3>Uloga psihoterapije kod problema u odnosima</h3>
+        <p>
+          Obrasci vezivanja, način komunikacije i doživljaj sebe u odnosima nisu
+          svesni izbori - to su duboko ukorenjene strategije koje su u nekom
+          trenutku razvoja imale smisla kao odgovor na disfunkcionalnu ranu
+          relacionu sredinu. U odraslom životu nastavljaju da se aktiviraju
+          automatski, naročito u situacijama bliskosti, konflikta ili pretnje
+          gubitkom. Psihoterapija pruža prostor da se ti obrasci prepoznaju,
+          razumeju i - postepeno - promene.
+        </p>
+      </section>
+
+      <section class="section faq-section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .condition-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+
+  .condition-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .condition-card p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .symptoms-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .symptoms-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .benefits-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .benefits-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sign-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-card-h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .sign-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  .sign-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+  .sign-card li {
+    margin-bottom: 0.35rem;
+  }
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .conditions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-radius: 4px;
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-radius: 4px;
+  }
+</style>

@@ -1,0 +1,312 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteBase = "https://drmedovarski.com";
+
+const faqSchema = [
+  {
+    question: "Da li online psihoterapija pomaže kod depresije?",
+    answer:
+      "Da. Psihoterapija je dokazano efikasna u lečenju depresivnih simptoma. Istraživanja pokazuju da su rezultati online terapije uporedivi sa terapijom licem u lice.",
+  },
+  {
+    question: "Koliko seansi je potrebno za depresiju?",
+    answer:
+      "Trajanje terapije zavisi od intenziteta i trajanja depresivnih simptoma. Mnogi klijenti primete prvu promenu nakon 6-8 seansi, ali sveobuhvatniji rad na uzrocima depresije može zahtevati duži tretman.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchema.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+});
+---
+
+<Layout
+  title="Online psihoterapija za depresiju | Dr Tamara Medovarski"
+  description="Online psihoterapija za depresiju i osećaj bezvoljnosti. Individualni pristup zasnovan na naučno potvrđenim metodama. Zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={schemaJson} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>Online psihoterapija za depresiju</h1>
+
+      <p class="lead">
+        Depresija nije slabost, niti lenjost, niti je znak da je osoba
+        nesposobna - to je stanje koje zahteva stručnu pomoć. Putem online
+        psihoterapije, dr Tamara Medovarski pruža podršku osobama koje se bore
+        sa depresijom i osećajem bezvoljnosti, koristeći naučno potvrđene
+        psihoterapijske metode.
+      </p>
+
+      <section class="section">
+        <h2>Prepoznajte simptome depresije</h2>
+        <p>
+          Depresija se manifestuje na različite načine. Ako se prepoznajete u
+          sledećim simptomima, psihoterapija može biti od pomoći:
+        </p>
+        <ul class="symptoms-list">
+          <li>Hronična tuga, osećaj praznine ili beznađa</li>
+          <li>
+            Gubitak interesa za aktivnosti koje su ranije donosile zadovoljstvo
+          </li>
+          <li>Umor i nedostatak energije bez jasnog uzroka</li>
+          <li>Poremećaji spavanja (nesanica ili prekomerno spavanje)</li>
+          <li>Poteškoće sa koncentracijom i donošenjem odluka</li>
+          <li>Osećaj bezvrednosti ili prekomerne krivice</li>
+          <li>Promena apetita i telesne težine</li>
+        </ul>
+        <p class="disclaimer">
+          <em
+            >Napomena: Ukoliko imate misli o samopovređivanju, molim vas da
+            odmah potražite hitnu psihijatrijsku pomoć.</em
+          >
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Kako izgleda psihoterapija za depresiju?</h2>
+        <p>
+          Depresija često dolazi sa osećajem da nema smisla ni pokušavati - što
+          samo po sebi može biti prepreka za terapiju. Upravo zato je početak
+          rada usmeren na stvaranje uslova u kojima promena uopšte postaje
+          moguća: na stabilizaciju svakodnevnog funkcionisanja, na male,
+          konkretne korake koji vraćaju osećaj delotvornosti. Takodje se radi na
+          prepoznavanju automatskih negativnih misli i kognitivnih distorzija
+          koje održavaju depresiju.
+          <br />
+          <br />
+          Kada se stvori dovoljno prostora, terapija se pomera ka dubljim pitanjima:
+          šta stoji iza povlačenja, bezvoljnosti ili osećaja praznine. Depresija gotovo
+          uvek nosi neku priču — o gubicima koji nisu prežaljeni, o potrebama koje
+          su dugo ignorisane, o slici sebe koja se formirala u ranim iskustvima.
+        </p>
+        <div class="approach-steps">
+          <div class="step">
+            <h3>1. Razumevanje uzroka</h3>
+            <p>
+              Istraživanje životne istorije, odnosa i iskustava koji su
+              doprineli razvoju depresivnih simptoma.
+            </p>
+          </div>
+          <div class="step">
+            <h3>2. Rad na misaonim obrascima</h3>
+            <p>
+              Prepoznavanje negativnih automatskih misli i kognitivnih
+              distorzija koje održavaju depresiju.
+            </p>
+          </div>
+          <div class="step">
+            <h3>3. Jačanje resursa</h3>
+            <p>
+              Razvijanje strategija suočavanja sa negativnim životnim
+              iskustvima, jačanje osećaja sopstvene vrednosti i otkrivanje novih
+              izvora smisla.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p set:html={item.answerHtml || item.answer} />
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+  .symptoms-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .symptoms-list li {
+    margin-bottom: 0.5rem;
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-radius: 4px;
+  }
+  .approach-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .step {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .step h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .step p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .internal-links {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  .internal-links h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .internal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .internal-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .approach-steps {
+      grid-template-columns: 1fr;
+    }
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

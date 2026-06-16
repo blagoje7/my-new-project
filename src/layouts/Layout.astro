@@ -12,12 +12,16 @@ interface Props {
     title?: string;
     description?: string;
     lang?: 'sr' | 'en' | 'nl';
+    faqSchema?: Array<{question: string; answer: string}>;
+    noAlternates?: boolean;
 }
 
 const { 
     title = "Dr Tamara Medovarski - Psychotherapist",
     description = "Expert online psychotherapy in Serbian, English, and Dutch. Dr Tamara Medovarski offers professional therapy for anxiety, depression, and personal growth. Schedule your free consultation today.",
-    lang = 'sr' 
+    lang = 'sr',
+    faqSchema,
+    noAlternates = false
 } = Astro.props;
 
 const t = useTranslations(lang);
@@ -25,6 +29,97 @@ const t = useTranslations(lang);
 // Determine LCP image based on current page
 const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname.match(/^\/(sr|en|nl)\/?$/);
 const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
+
+// Production SEO URLs (canonical + hreflang)
+const siteBase = 'https://drmedovarski.com';
+const pathSuffix = Astro.url.pathname.replace(/^\/(sr|en|nl)/, '') || '/';
+const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
+const srHref = `${siteBase}/sr${pathSuffix}`;
+const enHref = `${siteBase}/en${pathSuffix}`;
+const nlHref = `${siteBase}/nl${pathSuffix}`;
+
+// JSON-LD Structured Data
+const schemaGraph: any[] = [
+    {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": `${siteBase}/#business`,
+        "name": "Dr Tamara Medovarski – Online Psihoterapija",
+        "url": siteBase,
+        "telephone": "+31648569129",
+        "image": `${siteBase}/IMG_16832-800w.avif`,
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Novi Sad",
+            "addressCountry": "RS"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.2671,
+            "longitude": 19.8335
+        },
+        "areaServed": [
+            {"@type": "Country", "name": "Serbia"},
+            {"@type": "Country", "name": "Netherlands"}
+        ],
+        "availableLanguage": [
+            {"@type": "Language", "name": "Serbian"},
+            {"@type": "Language", "name": "English"},
+            {"@type": "Language", "name": "Dutch"}
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Psihoterapijske usluge",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Online psihoterapija", "description": "Individualne online psihoterapijske seanse na srpskom, engleskom i holandskom jeziku"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Besplatna inicijalna konsultacija", "description": "15-minutni besplatni razgovor pre prve seanse"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Psihoterapija za dijasporu", "description": "Specijalizovana podrška za osobe balkanskog porekla koje žive u inostranstvu"}}
+            ]
+        },
+        "founder": {"@id": `${siteBase}/#person`}
+    },
+    {
+        "@type": "Person",
+        "@id": `${siteBase}/#person`,
+        "name": "Dr Tamara Medovarski",
+        "jobTitle": ["Psihoterapeut", "Doktor medicine", "Specijalizant psihijatrije"],
+        "url": siteBase,
+        "image": `${siteBase}/IMG_16832-800w.avif`,
+        "worksFor": {"@id": `${siteBase}/#business`},
+        "knowsLanguage": ["sr", "en", "nl"],
+        "description": "Doktor medicine i psihoterapeut na edukaciji. Specijalizant psihijatrije na Univerzitetskom Medicinskom Centru u Groningenu. Pruža online psihoterapiju na srpskom, engleskom i holandskom jeziku.",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Medicinski fakultet u Novom Sadu"
+        },
+        "sameAs": []
+    },
+    {
+        "@type": "WebSite",
+        "@id": `${siteBase}/#website`,
+        "name": "Dr Tamara Medovarski – Online Psihoterapija",
+        "url": siteBase,
+        "inLanguage": ["sr", "en", "nl"],
+        "publisher": {"@id": `${siteBase}/#person`}
+    }
+];
+
+if (faqSchema && faqSchema.length > 0) {
+    schemaGraph.push({
+        "@type": "FAQPage",
+        "@id": `${siteBase}${Astro.url.pathname}#faq`,
+        "mainEntity": faqSchema.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+            }
+        }))
+    });
+}
+
+const schemaJson = JSON.stringify({"@context": "https://schema.org", "@graph": schemaGraph});
 ---
 
 <!doctype html>
@@ -52,7 +147,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;line-height:1.6;color:var(--text-color);background-color:var(--background-color);font-weight:400;display:flex;flex-direction:column;align-items:center;min-height:100vh}
             main{width:100%;max-width:min(75vw,1800px);margin:0 auto;padding:0 1rem;flex:1 0 auto}
             header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);width:100%;min-height:80px}
-            nav{display:flex;align-items:center;padding:1.25rem 0;background-color:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 2px 20px var(--shadow-color);width:100%}
+            nav:not([class]){display:flex;align-items:center;padding:1.25rem 0;background-color:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 2px 20px var(--shadow-color);width:100%}
             .nav-items{display:flex;gap:2.5rem;flex:0 0 auto;padding-left:2rem}
             .language-switcher{margin-left:auto;flex-shrink:0;padding-right:2rem;position:relative;display:inline-block;min-width:180px}
             .language-button{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background-color:#fff;border:1px solid var(--border-color);border-radius:8px;cursor:pointer;font-size:.9rem;color:var(--text-color);min-height:38px;width:100%}
@@ -61,7 +156,7 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             .dropdown-item{display:flex;align-items:center;gap:.5rem;width:100%;padding:.5rem 1rem;border:none;background:none;cursor:pointer;text-align:left;white-space:nowrap;color:var(--text-color);min-height:38px}
             .flag{width:24px;height:16px;object-fit:cover;border-radius:2px;border:1px solid var(--border-color)}
             .arrow{font-size:.8em;margin-left:.25rem}
-            nav a{color:var(--text-color);text-decoration:none;padding:.5rem 0;font-weight:500;position:relative;transition:color var(--transition-speed) ease}
+            nav:not([class]) a{color:var(--text-color);text-decoration:none;padding:.5rem 0;font-weight:500;position:relative;transition:color var(--transition-speed) ease}
             h1,h2,h3{margin-bottom:1.5rem;line-height:1.3;color:var(--primary-color);font-weight:600}
             h1{font-size:2.5rem;min-height:3.25rem}
             h2{font-size:1.875rem;min-height:2.4375rem}
@@ -85,11 +180,11 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
             .icon-wrapper svg{width:2rem;height:2rem;display:block}
             @media(max-width:768px){
                 main{padding-top:90px}
-                nav{height:70px;position:fixed;top:0;left:0;right:0;z-index:1001;padding:1rem}
+                nav:not([class]){height:70px;position:fixed;top:0;left:0;right:0;z-index:1001;padding:1rem;backdrop-filter:none;background-color:rgba(255,255,255,.98)}
                 header{min-height:70px}
                 .hamburger{display:flex;flex-direction:column;justify-content:space-between;width:30px;height:20px;background:transparent;border:none;cursor:pointer;padding:0;position:relative}
                 .hamburger span{display:block;width:24px;height:2px;background-color:var(--text-color);position:absolute}
-                .nav-items{display:none;position:fixed;top:70px;left:0;right:0;height:calc(100vh - 70px);background-color:rgba(255,255,255,.98);flex-direction:column;align-items:center;justify-content:center;padding:0 1rem;gap:3rem;z-index:1000;padding-left:0}
+                .nav-items{display:none;position:fixed;top:70px;left:0;right:0;height:calc(100vh - 70px);height:calc(100dvh - 70px);background-color:rgba(255,255,255,.98);flex-direction:column;align-items:center;justify-content:center;padding:0 1rem;gap:3rem;z-index:1000;padding-left:0;overflow-y:auto;overscroll-behavior:contain}
                 .language-switcher{margin-right:.5rem;padding-right:0}
                 h1{font-size:1.75rem;min-height:2.275rem}
                 h2{font-size:1.5rem;min-height:1.95rem}
@@ -106,6 +201,28 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
                 .benefit-card{padding:.75rem;min-height:120px}
                 .icon-wrapper{font-size:1.5rem;min-height:1.5rem;min-width:1.5rem}
                 .icon-wrapper svg{width:1.5rem;height:1.5rem}
+            }
+            /* Services dropdown */
+            .services-dropdown{position:relative;display:inline-flex;align-items:center}
+            .services-dropdown-btn{color:var(--text-color);text-decoration:none;padding:.5rem 0;font-weight:500;background:none;border:none;cursor:pointer;font-size:1rem;display:flex;align-items:center;gap:.3rem;font-family:inherit;line-height:1.6;transition:color var(--transition-speed) ease}
+            .services-dropdown-btn:hover{color:var(--primary-color)}
+            .services-dropdown-arrow{font-size:.65em;display:inline-block;transition:transform .2s ease}
+            .services-dropdown.open .services-dropdown-arrow{transform:rotate(180deg)}
+            .services-dropdown-menu{position:absolute;top:calc(100% + .75rem);left:0;transform:none;background:#fff;border:1px solid var(--border-color);border-radius:10px;box-shadow:0 8px 28px var(--shadow-color);min-width:320px;padding:.5rem;z-index:500;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility .18s ease}
+            .services-dropdown.open .services-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
+            .services-dropdown-menu a{display:block;padding:.55rem 1rem;color:var(--text-color);text-decoration:none;border-radius:6px;font-size:.95rem;font-weight:400;transition:background .15s,color .15s;white-space:nowrap}
+            .services-dropdown-menu a:hover{background:var(--light-bg);color:var(--primary-color)}
+            .services-dropdown-divider{height:1px;background:var(--border-color);margin:.4rem .5rem}
+            /* Contact button */
+            .nav-contact-btn{background:var(--primary-color) !important;color:#fff !important;padding:.38rem 1.15rem !important;border-radius:7px !important;font-weight:600 !important;border:2px solid var(--primary-color) !important;transition:opacity var(--transition-speed) ease !important}
+            .nav-contact-btn:hover{opacity:.85 !important;color:#fff !important}
+            @media(max-width:768px){
+                .services-dropdown{width:100%;justify-content:center;flex-direction:column}
+                .services-dropdown-btn{font-size:1.1rem;justify-content:center;padding:.5rem 0}
+                .services-dropdown-menu{position:static;transform:none;box-shadow:none;border:1px solid var(--border-color);border-radius:8px;opacity:1;visibility:visible;pointer-events:auto;display:none;margin-top:.5rem;min-width:0;width:100%;text-align:center;transition:none}
+                .services-dropdown.open .services-dropdown-menu{display:block}
+                .services-dropdown-menu a{font-size:1rem;padding:.6rem 1rem;white-space:normal;display:block;text-align:center}
+                .nav-contact-btn{padding:.55rem 2rem !important;font-size:1.1rem !important;border-radius:8px !important}
             }
         </style>
         
@@ -126,11 +243,16 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <meta name="author" content="Dr Tamara Medovarski" />
         <meta name="robots" content="index, follow" />
         
-        <!-- Language alternates -->
-        <link rel="alternate" hreflang="en" href={`${Astro.url.origin}/en${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
-        <link rel="alternate" hreflang="sr" href={`${Astro.url.origin}/sr${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
-        <link rel="alternate" hreflang="nl" href={`${Astro.url.origin}/nl${Astro.url.pathname.replace(/^\/(sr|en|nl)/, '')}`} />
-        <link rel="canonical" href={Astro.url} />
+        <!-- Language alternates (hreflang) -->
+        {!noAlternates && (
+            <>
+                <link rel="alternate" hreflang="sr" href={srHref} />
+                <link rel="alternate" hreflang="en" href={enHref} />
+                <link rel="alternate" hreflang="nl" href={nlHref} />
+                <link rel="alternate" hreflang="x-default" href={srHref} />
+            </>
+        )}
+        <link rel="canonical" href={canonicalUrl} />
         
         <!-- Favicon - Multiple sizes for better compatibility -->
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -154,104 +276,8 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
         <meta name="twitter:image" content={`${Astro.url.origin}/web-app-manifest-512x512.png`} />
         
         <!-- JSON-LD Structured Data -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@graph": [
-                    {
-                        "@type": "Service",
-                        "name": "Online Psychotherapy",
-                        "serviceType": "Psychotherapy",
-                        "provider": {
-                            "@type": "Person",
-                            "name": "Dr Tamara Medovarski",
-                            "jobTitle": "Psychotherapist",
-                            "image": "${Astro.url.origin}/IMG_16832-800w.avif"
-                        },
-                        "areaServed": ["Netherlands", "Serbia", "Global"],
-                        "availableLanguage": ["English", "Serbian", "Dutch"],
-                        "description": "Professional online psychotherapy services in multiple languages",
-                        "offers": {
-                            "@type": "Offer",
-                            "availability": "https://schema.org/InStock",
-                            "price": "0",
-                            "priceCurrency": "EUR",
-                            "validFrom": "2025-10-26",
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "price": "0",
-                                "priceCurrency": "EUR",
-                                "description": "Free initial consultation"
-                            }
-                        }
-                    },
-                    {
-                        "@type": "ProfessionalService",
-                        "name": "Dr Tamara Medovarski - Psychotherapy",
-                        "image": "${Astro.url.origin}/web-app-manifest-512x512.png",
-                        "description": "Expert online psychotherapy in Serbian, English, and Dutch. Professional therapy for anxiety, depression, and personal growth.",
-                        "@id": "${Astro.url.origin}",
-                        "url": "${Astro.url.origin}",
-                        "telephone": "+31 6 48569129",
-                        "priceRange": "$",
-                        "areaServed": ["Netherlands", "Serbia", "Worldwide"],
-                        "availableLanguage": ["English", "Serbian", "Dutch"],
-                        "founder": {
-                            "@type": "Person",
-                            "name": "Dr Tamara Medovarski",
-                            "jobTitle": ["Psychotherapist", "Medical Doctor", "Psychiatrist in Training"],
-                            "description": "Medical Doctor and Psychotherapist specializing in integrative psychotherapy",
-                            "knowsLanguage": ["en", "sr", "nl"]
-                        },
-                        "sameAs": [],
-                        "hasOfferCatalog": {
-                            "@type": "OfferCatalog",
-                            "name": "Psychotherapy Services",
-                            "itemListElement": [
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Online Psychotherapy",
-                                        "description": "Professional online therapy sessions in Serbian, English, or Dutch"
-                                    }
-                                },
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Free Initial Consultation",
-                                        "description": "15-minute free consultation to discuss your needs"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "@type": "WebSite",
-                        "name": "Dr Tamara Medovarski - Psychotherapy",
-                        "url": "${Astro.url.origin}",
-                        "potentialAction": {
-                            "@type": "SearchAction",
-                            "target": "${Astro.url.origin}/search?q={search_term_string}",
-                            "query-input": "required name=search_term_string"
-                        }
-                    },
-                    {
-                        "@type": "MedicalBusiness",
-                        "name": "Dr Tamara Medovarski - Psychotherapy Practice",
-                        "medicalSpecialty": ["Psychotherapy", "Mental Health"],
-                        "availableService": [
-                            "Online Psychotherapy",
-                            "Anxiety Treatment",
-                            "Depression Treatment",
-                            "Relationship Counseling",
-                            "Expat Support"
-                        ]
-                    }
-                ]
-            }
-        </script>        <meta name="generator" content={Astro.generator} />
+        <script type="application/ld+json" set:html={schemaJson}></script>
+        <meta name="generator" content={Astro.generator} />
         
         <!-- Preload LCP images for faster loading -->
         {isHomePage && (
@@ -274,8 +300,26 @@ const isAboutPage = Astro.url.pathname.match(/^\/(sr|en|nl)\/about\/?$/);
                 </button>
                 <div id="nav-items" class="nav-items">
                     <a href={`/${lang}`} aria-current={Astro.url.pathname === `/${lang}` ? 'page' : undefined}>{t('nav.home')}</a>
+                    {lang === 'sr' && (
+                        <div class="services-dropdown">
+                            <button class="services-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+                                Usluge <span class="services-dropdown-arrow">&#9660;</span>
+                            </button>
+                            <div class="services-dropdown-menu" role="menu">
+                                <a href="/online-individualna-psihoterapija/" role="menuitem">Individualna psihoterapija</a>
+                                <div class="services-dropdown-divider"></div>
+                                <a href="/online-psihoterapija-anksioznost/" role="menuitem">Psihoterapija za anksioznost</a>
+                                <a href="/online-psihoterapija-depresija/" role="menuitem">Psihoterapija za depresiju</a>
+                                <a href="/online-psihoterapija-burnout/" role="menuitem">Psihoterapija za stres i burnout</a>
+                                <a href="/online-psihoterapija-za-dijasporu/" role="menuitem">Psihoterapija za dijasporu</a>
+                                <a href="/online-psihoterapija-partnerski-i-porodicni-odnosi/" role="menuitem">Problemi u odnosima</a>
+                                <a href="/online-psihoterapija-za-nisko-samopouzdanje/" role="menuitem">Nisko samopouzdanje</a>
+                                <a href="/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza/" role="menuitem">Perfekcionizam i samokritičnost</a>
+                            </div>
+                        </div>
+                    )}
                     <a href={`/${lang}/about`} aria-current={Astro.url.pathname === `/${lang}/about` ? 'page' : undefined}>{t('nav.about')}</a>
-                    <a href={`/${lang}/contact`} aria-current={Astro.url.pathname === `/${lang}/contact` ? 'page' : undefined}>{t('nav.contact')}</a>
+                    <a href={`/${lang}/contact`} class="nav-contact-btn" aria-current={Astro.url.pathname === `/${lang}/contact` ? 'page' : undefined}>{t('nav.contact')}</a>
                 </div>
                 <LanguageSwitcher lang={lang} />
             </nav>

@@ -1,0 +1,335 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteBase = "https://drmedovarski.com";
+
+const faqSchema = [
+  {
+    question: "Da li online psihoterapija pomaže kod anksioznosti?",
+    answer:
+      "Da. Istraživanja dosledno pokazuju da je psihoterapija efikasna u lečenju anksioznosti, uključujući generalizovanu anksioznost, socijalnu anksioznost i panične napade. Online format je jednako efikasan kao terapija uživo.",
+  },
+  {
+    question: "Koliko seansa je potrebno za anksioznost?",
+    answer:
+      "Trajanje terapije se razlikuje u zavisnosti od intenziteta i vrste anksioznosti. Mnogi klijenti primete poboljšanje već nakon 8–12 seansi, ali trajanje se individualno prilagođava.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalCondition",
+      name: "Anksioznost",
+      alternateName: [
+        "Generalizovani anksiozni poremećaj",
+        "Panični napadi",
+        "Socijalna anksioznost",
+      ],
+      possibleTreatment: {
+        "@type": "MedicalTherapy",
+        name: "Online psihoterapija",
+        url: `${siteBase}/online-psihoterapija-anksioznost/`,
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqSchema.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+});
+---
+
+<Layout
+  title="Online psihoterapija za anksioznost | Dr Tamara Medovarski"
+  description="Online psihoterapija za anksioznost, panične napade i socijalnu anksioznost. Individualni pristup, fleksibilan raspored. Zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={schemaJson} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>Online psihoterapija za anksioznost</h1>
+
+      <p class="lead">
+        Anksioznost je jedan od najčešćih razloga zbog kojih ljudi traže pomoć
+        psihoterapeuta. Putem online psihoterapije, Dr Tamara Medovarski pruža
+        efikasnu podršku osobama koje se bore sa anksioznošću, paničnim napadima
+        i socijalnom anksioznošću - iz komfora vašeg doma.
+      </p>
+
+      <section class="section">
+        <h2>Šta je anksioznost i kada potražiti pomoć?</h2>
+        <p>
+          Anksioznost je prirodna emocionalna i fiziološka reakcija na
+          percipiranu pretnju ili neizvesnost, ali kada je hronična, nesrazmerna
+          situaciji ili kada počne da ograničava svakodnevni život -
+          profesionalni, socijalni ili porodični - vreme je da potražite stručnu
+          pomoć.
+        </p>
+        <div class="symptoms-grid">
+          <div class="symptom-card">
+            <h3>Generalizovana anksioznost</h3>
+            <p>
+              Stanje hronične, teško kontrolisane brige o različitim aspektima
+              svakodnevnog života — poslu, zdravlju, odnosima — praćeno
+              unutrašnjom napetošću, teškoćom sa opuštanjem i spavanjem.
+            </p>
+          </div>
+          <div class="symptom-card">
+            <h3>Panični napadi</h3>
+            <p>
+              Iznenadni talasi intenzivnog straha praćeni snažnim telesnim
+              simptomima - ubrzan rad srca, otežano disanje, vrtoglavica, osećaj
+              gubitka kontrole - koji obično traju do pola sata i mogu se javiti
+              i bez očiglednog okidača.
+            </p>
+          </div>
+          <div class="symptom-card">
+            <h3>Socijalna anksioznost</h3>
+            <p>
+              Intenzivan strah od negativne procene, osude ili poniženja u
+              socijalnim situacijama, koji može dovesti do izbegavanja kontakata
+              ili svakodnevnih interakcija, kako privatno, tako i profesionalno,
+              čak i kada osoba svesno zna da opasnosti nema.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Kako izgleda psihoterapija za anksioznost?</h2>
+        <p>
+          Ono što određuje tok i dubinu rada jeste pre svega priroda same
+          anksioznosti: da li je nastala kao reakcija na konkretan životni
+          period ili događaj, ili je deo dugotrajnog obrasca integrisana u
+          karakter.
+        </p>
+        <h3>Šta se dešava u radu?</h3>
+        <p>
+          U zavisnosti od vaše situacije, terapijski rad može uključivati
+          nekoliko ravni.
+          <br />
+          <br />
+          Na praktičnoj ravni — učimo da prepoznate šta pokreće anksioznost, kako
+          ona funkcioniše u vašem telu i mislima, i razvijamo konkretne strategije
+          za upravljanje simptomima. Ovo je posebno korisno kada anksioznost ometa
+          svakodnevno funkcionisanje i potrebna je brža stabilizacija.
+          <br />
+          <br />
+          Na dubljoj ravni — istražujemo šta stoji iza anksioznosti: koje su to neispunjene
+          potrebe, strahovi ili iskustva iz prošlosti koji je hrane. Anksioznost retko
+          postoji sama za sebe — često govori nešto važno o tome kako doživljavamo
+          sebe, druge i svet oko nas.
+          <br />
+          <br />
+          Kombinacija ova dva pristupa — rada na simptomima i razumevanja njihovog
+          porekla — omogućava i kratkoročno olakšanje i dugotrajniju promenu.
+        </p>
+        <h3>Koliko traje psihoterapija</h3>
+        <p>
+          Na ovo pitanje ne postoji univerzalan odgovor, ali postoje smernice.
+          <br />
+          <br />
+          Kada je anksioznost reakcija na određenu životnu situaciju — novi posao,
+          kraj veze, zdravstvenu krizu — terapijski rad je često fokusiraniji i kraći,
+          tipično nekoliko meseci.
+          <br />
+          <br />
+          Kada je anksioznost deo dugotrajnijeg karakterološkog obrasca — kada je
+          isprepletena sa načinom na koji osoba doživljava sebe i odnose — rad zahteva
+          više vremena i veću dubinu. To nije nedostatak, već odraz toga koliko je
+          korenito nešto ugrađeno u naš način funkcionisanja.
+          <br />
+          <br />
+          Tempo i ciljevi terapije uvek se određuju zajedno, uz puno uvažavanje vaših
+          potreba i mogućnosti.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p set:html={item.answerHtml || item.answer} />
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+  .symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .symptom-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .symptom-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .symptom-card p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .internal-links {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  .internal-links h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .internal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .internal-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .symptoms-grid {
+      grid-template-columns: 1fr;
+    }
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

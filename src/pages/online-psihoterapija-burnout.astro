@@ -1,0 +1,314 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const faqSchema = [
+  {
+    question:
+      "Zašto odmor ili promena posla često nisu dovoljni bez psihoterapije?",
+    answer:
+      "Fizičko distanciranje od izvora stresa donosi samo privremeno olakšanje, jer ne menja unutrašnje, često automatske, obrasce razmišljanja i ponašanja koji pokreću stalno iscrpljivanje. Psihoterapijom identifikujemo uzroke i transformišemo način na koji se suočavate sa zahtevima okruženja, adaptiramo životni stil kako bi više odgovarao vašem autentičnom karakteru i afinitetima, čime se sprečava ponovni ulazak u ciklus hroničnog osećaja stresa i iscrpljivanja.",
+  },
+  {
+    question: "Koliko traje terapija za burnout?",
+    answer:
+      "Trajanje terapije varira, ali mnogi klijenti primete poboljšanje već nakon 8-12 seansi. Sveobuhvatan rad na uzrocima burnout-a i menjanje duboko ukorenjenih misaonih i bihejvioralnih obrazaca obično zahteva duži tretman. Tempo i ciljevi terapije uvek se određuju zajedno, uz puno uvažavanje vaših potreba i mogućnosti.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSchema.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+});
+---
+
+<Layout
+  title="Psihoterapija za stres i burnout | Dr Tamara Medovarski"
+  description="Psihoterapija za hronični stres i burnout. Naučite da prepoznate i prevaziđete sagorevanje. Individualne online seanse - zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={schemaJson} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>Psihoterapija za stres i burnout</h1>
+
+      <p class="lead">
+        Hronični stres i burnout su sve češći problemi u savremenom životu. Oni
+        nisu samo znak da osoba previše radi. Češće su znak da je osoba dugo
+        ignorisala signale da nešto u načinu na koji živi ne odgovara njenom
+        autentičnom karakteru. Putem online psihoterapije dr Tamara Medovarski
+        pomaže klijentima da prepoznaju uzroke stresa, razviju zdravije
+        strategije suočavanja sa životnim izazovima, otkriju kakav životni stil
+        više odgovara njihovim autentičnim afinitetima i ponovo pronađu balans.
+      </p>
+
+      <section class="section">
+        <h2>Prepoznajte znakove stresa i burnout-a</h2>
+        <div class="signs-grid">
+          <div class="sign-card">
+            <h3>Emocionalni znaci</h3>
+            <ul>
+              <li>Hronična razdražljivost i nervoza</li>
+              <li>Osećaj beznadežnosti i bezvoljnosti</li>
+              <li>Cinizam prema poslu i kolegama</li>
+              <li>Gubitak motivacije i entuzijazma</li>
+            </ul>
+          </div>
+          <div class="sign-card">
+            <h3>Telesni znaci</h3>
+            <ul>
+              <li>Hronične glavobolje, napetost u vratu i ramenima</li>
+              <li>
+                Problemi sa spavanjem — otežano uspavljivanje, rano buđenje,
+                neosvežavajući san
+              </li>
+              <li>Stomačne tegobe bez organskog uzroka</li>
+              <li>Česte infekcije i oslabljen imunitet</li>
+              <li>Hronični umor koji ne nestaje nakon sna i odmora</li>
+            </ul>
+          </div>
+          <div class="sign-card">
+            <h3>Bihejvioralni znaci</h3>
+            <ul>
+              <li>Prokrastinacija i teškoće sa koncentracijom</li>
+              <li>Izolacija od prijatelja i porodice</li>
+              <li>Zanemarivanje privatnih potreba</li>
+              <li>Smanjena produktivnost uprkos uloženom trudu</li>
+              <li>
+                Povećana upotreba alkohola, hrane ili ekrana kao regulacija
+                emocija
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Kako psihoterapija pomaže?</h2>
+        <p>
+          Rad na stresu i burnout-u u psihoterapiji podrazumeva dublji uvid u
+          uzroke i obrasce koji vas iscrpljuju. Dr Tamara Medovarski koristi
+          integrativni pristup koji uključuje:
+        </p>
+        <ul class="approach-list">
+          <li>
+            <strong>Identifikaciju uzroka</strong> - razumevanje šta stoji iza stresa
+            i burnout-a (radna ili porodična dinamika, obrasci razmišljanja i ponašanja,
+            neusklađenost autentičnog karaktera i životnog stila)
+          </li>
+          <li>
+            <strong>Postavljanje granica</strong> - razvijanje zdravih granica prema
+            poslu i drugima
+          </li>
+          <li>
+            <strong>Upravljanje stresom</strong> - učenje konkretnih tehnika za smanjenje
+            osećaja stresa
+          </li>
+          <li>
+            <strong>Pronalaženje balansa</strong> - restrukturisanje prioriteta i
+            vraćanje osećaja smisla
+          </li>
+          <li>
+            <strong>Jačanje otpornosti</strong> - izgradnja dugoročnih resursa za
+            suočavanje sa životim izazovima
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Često postavljana pitanja</h2>
+        <div class="faq-list">
+          {
+            faqSchema.map((item) => (
+              <details class="faq-item">
+                <summary>
+                  <h3>{item.question}</h3>
+                </summary>
+                <p set:html={item.answerHtml || item.answer} />
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <h2>Zakažite konsultaciju</h2>
+        <p>
+          Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor radi
+          upoznavanja, okvirne procene problema, što vama pruža mogućnost da
+          procenite da li želite dalje da sarađujemo zajedno, a meni omogućava
+          da procenim da li je integrativna psihoterapija adekvatno rešenje za
+          vas.
+        </p>
+        <div class="cta-buttons">
+          <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+  }
+  .landing-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-bg);
+  }
+  .signs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .sign-card {
+    background: var(--light-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .sign-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+  .sign-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+  .sign-card li {
+    margin-bottom: 0.35rem;
+  }
+  .approach-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  .approach-list li {
+    margin-bottom: 0.75rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+  }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-item summary h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--primary-color);
+  }
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+  }
+  .cta-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .internal-links {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  .internal-links h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .internal-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .internal-links a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .signs-grid {
+      grid-template-columns: 1fr;
+    }
+    .landing-content h1 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

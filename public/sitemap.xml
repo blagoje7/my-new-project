@@ -1,82 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
     <!-- Home Pages -->
     <url>
-        <loc>https://drmedovarski.com/en</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
+        <loc>https://drmedovarski.com/sr/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://drmedovarski.com/sr/"/>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/sr</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
+        <loc>https://drmedovarski.com/en/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://drmedovarski.com/sr/"/>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/nl</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl"/>
+        <loc>https://drmedovarski.com/nl/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://drmedovarski.com/sr/"/>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
     </url>
-    
+
     <!-- About Pages -->
     <url>
-        <loc>https://drmedovarski.com/en/about</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
+        <loc>https://drmedovarski.com/sr/about/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about/"/>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/sr/about</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
+        <loc>https://drmedovarski.com/en/about/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about/"/>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/nl/about</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about"/>
+        <loc>https://drmedovarski.com/nl/about/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/about/"/>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
-    
+
     <!-- Contact Pages -->
     <url>
-        <loc>https://drmedovarski.com/en/contact</loc>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
+        <loc>https://drmedovarski.com/sr/contact/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact/"/>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/sr/contact</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
+        <loc>https://drmedovarski.com/en/contact/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact/"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/nl/contact/</loc>
+        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact/"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact/"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Service Pages (Serbian only) -->
+    <url>
+        <loc>https://drmedovarski.com/online-individualna-psihoterapija/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://drmedovarski.com/nl/contact</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://drmedovarski.com/en/contact"/>
-        <xhtml:link rel="alternate" hreflang="sr" href="https://drmedovarski.com/sr/contact"/>
-        <xhtml:link rel="alternate" hreflang="nl" href="https://drmedovarski.com/nl/contact"/>
+        <loc>https://drmedovarski.com/online-psihoterapija-anksioznost/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-depresija/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-burnout/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-za-dijasporu/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-partnerski-i-porodicni-odnosi/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-za-nisko-samopouzdanje/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://drmedovarski.com/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

@@ -1,0 +1,405 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const siteBase = "https://drmedovarski.com";
+
+const faqSchema = [
+  {
+    question: "Šta je individualna psihoterapija?",
+    answer:
+      "Individualna psihoterapija je psihoterapijski rad jedan na jedan sa psihoterapeutom. Za razliku od grupne terapije, individualni format omogućava potpunu posvećenost vašim specifičnim potrebama, ciljevima i životnoj istoriji.",
+  },
+  {
+    question: "Kako izgleda online individualna psihoterapija?",
+    answer:
+      "Seanse se odvijaju putem Google Meet-a. Ja vam šaljem link za pristupanje video pozivu. Vi u zakazano vreme, klikom na link, pristupate video pozivu. Ne treba vam nikakva dodatna aplikacija niti kreiranje naloga. Svaka seansa traje 50 minuta. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor. Učestalost seansi se dogovara individualno, najčešće jednom nedeljno.",
+  },
+  {
+    question: "Koliko dugo traje individualna psihoterapija?",
+    answer:
+      "Trajanje terapije zavisi od vaših tegoba i ciljeva. Kratkotrajna terapija (8-20 seansi) je fokusirana na specifičan problem, dok dugotrajna terapija omogućava dublje razumevanje sebe i trajnije promene duboko ukorenjenih obrazaca.",
+  },
+  {
+    question: "Kako zakazati prvu seansu?",
+    answer:
+      "Ispunite kontakt formu ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.",
+    answerHtml: `Ispunite <a style="text-decoration: underline;" href="/sr/contact/">kontakt formu</a> ili me kontaktirajte putem WhatsApp / Viber na +31 6 48569129. Pre prve seanse nudim besplatni 15-minutni uvodni razgovor.`,
+  },
+];
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Individualna psihoterapija online",
+      description:
+        "Individualne online psihoterapijske seanse na srpskom i engleskom jeziku",
+      url: `${siteBase}/online-individualna-psihoterapija/`,
+      provider: {
+        "@type": "Person",
+        name: "Dr Tamara Medovarski",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqSchema.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+});
+---
+
+<Layout
+  title="Individualna psihoterapija online | Dr Tamara Medovarski"
+  description="Individualna online psihoterapija na srpskom jeziku. Integrativni pristup prilagođen vašim specifičnim potrebama. Zakažite besplatni uvodni razgovor."
+  lang="sr"
+  noAlternates={true}
+>
+  <script type="application/ld+json" set:html={schemaJson} />
+
+  <div class="page-container">
+    <article class="landing-content">
+      <h1>Individualna psihoterapija</h1>
+
+      <p class="lead">
+        Individualna psihoterapija je prostor posvećen isključivo vama - vašim
+        mislima, osećanjima, izazovima i ciljevima. Dr Tamara Medovarski pruža
+        online psihoterapiju zasnovanu na integrativnom pristupu, prilagođenu
+        vašim jedinstvenim potrebama.
+
+        <section class="section">
+          <h2>Šta je integrativna psihoterapija?</h2>
+          <p>
+            Integrativna psihoterapija kombinuje naučno potvrđene tehnike iz
+            različitih psihoterapijskih pravaca (psihoanaliza, psihodinamska
+            psihoterapija, kognitivno-bihejvioralna psihoterapija, humanistički
+            pravci), birajući one koji su najprikladnije za vaše specifične
+            potrebe i tegobe.
+          </p>
+          <div class="approaches-grid">
+            <div class="approach-card">
+              <h3>Psihodinamska terapija</h3>
+              <p>
+                Istraživanje nesvesnih obrazaca, prošlih iskustava i odnosa koji
+                utiču na sadašnje funkcionisanje.
+              </p>
+            </div>
+            <div class="approach-card">
+              <h3>Kognitivno-bihejvioralna terapija</h3>
+              <p>
+                Prepoznavanje i promena negativnih misaonih obrazaca i ponašanja
+                koji održavaju tegobe.
+              </p>
+            </div>
+            <div class="approach-card">
+              <h3>Humanistički pristup</h3>
+              <p>
+                Fokus na lični razvoj, samoaktualizaciju i jačanje unutrašnjih
+                resursa.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Za koga je individualna psihoterapija?</h2>
+          <p>Individualna psihoterapija je korisna za širok spektar izazova:</p>
+          <ul class="topics-list">
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-anksioznost/"
+                >Anksioznost i panični napadi</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-depresija/"
+                >Depresija i osećaj bezvoljnosti</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-burnout/"
+                >Hronični stres i burnout</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-partnerski-i-porodicni-odnosi/"
+                >Problemi u partnerskim i porodičnim odnosima</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-za-dijasporu/"
+                >Prilagođavanje životu u inostranstvu</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-za-dijasporu/"
+                >Životne tranzicije i krize identiteta</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-za-nisko-samopouzdanje"
+                >Nisko samopouzdanje i asertivnost</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a
+                href="/online-psihoterapija-perfekcionizam-samokriticnost-i-samosabotaza"
+                >Perfekcionizam i samosabotaža</a>
+            </li>
+            <li style="text-decoration: underline;">
+              <a href="/online-psihoterapija-za-nisko-samopouzdanje"
+                >Lični razvoj i samoaktualizacija</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Kako izgleda online individualna psihoterapija?</h2>
+          <div class="process-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <div>
+                <h3>Besplatni uvodni razgovor (15 min)</h3>
+                <p>
+                  Upoznajemo se, vi opisujete šta vas muči, a ja procenjujem da
+                  li je psihoterapija adekvatno rešenje za vaše potrebe.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <div>
+                <h3>Prva seansa - procena (50 min)</h3>
+                <p>
+                  Detaljniji razgovor o vašim aktuelnim tegobama, životnoj
+                  istoriji i ciljevima terapije.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <div>
+                <h3>Redovne seanse</h3>
+                <p>
+                  Najčešće jednom nedeljno, 50 minuta. Učestalost i trajanje
+                  terapije se prilagođava vašim potrebama i mogućnostima.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Često postavljana pitanja</h2>
+          <div class="faq-list">
+            {
+              faqSchema.map((item) => (
+                <details class="faq-item">
+                  <summary>
+                    <h3>{item.question}</h3>
+                  </summary>
+                  <p set:html={item.answerHtml || item.answer} />
+                </details>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="section cta-section">
+          <h2>Zakažite konsultaciju</h2>
+          <p>
+            Napravite prvi korak. Nudim besplatni 15-minutni uvodni razgovor
+            radi upoznavanja, okvirne procene problema, što vama pruža mogućnost
+            da procenite da li želite dalje da sarađujemo zajedno, a meni
+            omogućava da procenim da li je integrativna psihoterapija adekvatno
+            rešenje za vas.
+          </p>
+          <div class="cta-buttons">
+            <a href="/sr/contact" class="btn-primary">Kontaktirajte me</a>
+          </div>
+        </section>
+      </p>
+    </article>
+  </div>
+
+  <style>
+    .page-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    .landing-content h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    .lead {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 1rem;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--light-bg);
+    }
+    .approaches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .approach-card {
+      background: var(--light-bg);
+      border: 1px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .approach-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .approach-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .topics-list {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .topics-list li {
+      margin-bottom: 0.5rem;
+    }
+    .topics-list a {
+      color: var(--primary-color);
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+    }
+    .step-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .step h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .step p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-item summary h3 {
+      font-size: 1rem;
+      margin: 0;
+      color: var(--primary-color);
+    }
+    .faq-item p {
+      margin: 0.75rem 0 0;
+      font-size: 0.95rem;
+    }
+    .cta-section {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .btn-secondary {
+      display: inline-block;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-color);
+      color: #fff;
+    }
+    .internal-links {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: var(--background-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+    .internal-links h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .internal-links ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .internal-links a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .approaches-grid {
+        grid-template-columns: 1fr;
+      }
+      .landing-content h1 {
+        font-size: 1.75rem;
+      }
+      .step {
+        flex-direction: column;
+      }
+    }
+  </style>
+</Layout>
