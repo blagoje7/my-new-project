@@ -15,10 +15,13 @@ const t = useTranslations(lang as keyof typeof languages);
 
 <Layout title={`${t('thankYou.title')} - Dr Tamara Medovarski`} lang={lang as keyof typeof languages}>
     <!-- Event snippet for Submit lead form conversion page -->
+    <!-- Only fires when the visitor actually arrived from a form submission -->
     <script is:inline>
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17725181424/5zxDCPeh7MobEPCbg4RC'
-      });
+      if (new URLSearchParams(window.location.search).has('submitted')) {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17725181424/5zxDCPeh7MobEPCbg4RC'
+        });
+      }
     </script>
     
     <div class="container">
