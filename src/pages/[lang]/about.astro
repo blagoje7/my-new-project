@@ -14,17 +14,13 @@ const t = useTranslations(lang as keyof typeof languages);
 
 const pageTitle = lang === 'sr'
     ? 'Dr Tamara Medovarski | Psihoterapeut i psihijatar na edukaciji'
-    : lang === 'nl'
-    ? 'Dr Tamara Medovarski | Psychotherapeut en psychiater in opleiding'
     : 'Dr Tamara Medovarski | Psychotherapist and Psychiatrist in Training';
 
 const pageDescription = lang === 'sr'
     ? 'Dr Tamara Medovarski – doktor medicine, specijalizant psihijatrije i psihoterapeut. Pruža online psihoterapiju na srpskom i engleskom jeziku za klijente iz Srbije i dijaspore.'
-    : lang === 'nl'
-    ? 'Dr Tamara Medovarski – arts, psychiater in opleiding en psychotherapeut. Online psychotherapie in Servisch, Engels en Nederlands.'
     : 'Dr Tamara Medovarski – Medical Doctor, Psychiatrist in Training and Psychotherapist. Online psychotherapy in Serbian and English for clients in Serbia and the diaspora.';
 
-const aboutH1 = lang === 'sr' ? 'O mojoj profesionalnoj karijeri' : lang === 'nl' ? 'Over mijn professionele ontwikkeling' : 'About my professional career';
+const aboutH1 = lang === 'sr' ? 'O mojoj profesionalnoj karijeri' : 'About my professional career';
 ---
 
 <Layout title={pageTitle} description={pageDescription} lang={lang as keyof typeof languages}>

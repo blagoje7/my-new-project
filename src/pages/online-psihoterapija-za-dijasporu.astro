@@ -7,7 +7,7 @@ const faqSchema = [
   {
     question: "Da li pružate psihoterapiju na srpskom jeziku za dijasporu?",
     answer:
-      "Da. Dr Tamara Medovarski pruža online psihoterapiju na srpskom jeziku za klijente koji žive u inostranstvu - u Holandiji, Nemačkoj, Austriji, Švajcarskoj, Australiji i drugde. Online format omogućava rad bez obzira na lokaciju.",
+      "Da. Dr Tamara Medovarski pruža online psihoterapiju na srpskom jeziku za klijente koji žive u inostranstvu - u Nemačkoj, Austriji, Švajcarskoj, Australiji i drugde. Online format omogućava rad bez obzira na lokaciju.",
   },
   {
     question:
@@ -40,10 +40,9 @@ const schemaJson = JSON.stringify({
       provider: {
         "@type": "Person",
         name: "Dr Tamara Medovarski",
-        knowsLanguage: ["sr", "en", "nl"],
+        knowsLanguage: ["sr", "en"],
       },
       areaServed: [
-        "Netherlands",
         "Germany",
         "Austria",
         "Switzerland",
@@ -53,7 +52,6 @@ const schemaJson = JSON.stringify({
       availableLanguage: [
         { "@type": "Language", name: "Serbian" },
         { "@type": "Language", name: "English" },
-        { "@type": "Language", name: "Dutch" },
       ],
     },
     {
@@ -70,7 +68,7 @@ const schemaJson = JSON.stringify({
 
 <Layout
   title="Psihoterapija za dijasporu | Online na srpskom jeziku - Dr Tamara Medovarski"
-  description="Online psihoterapija na srpskom jeziku za Srbe u inostranstvu. Specijalizovana podrška za dijasporu u Holandiji, Nemačkoj, Australiji i drugde. Zakažite konsultacije."
+  description="Online psihoterapija na srpskom jeziku za Srbe u inostranstvu. Specijalizovana podrška za dijasporu u Nemačkoj, Australiji i drugde. Zakažite konsultacije."
   lang="sr"
   noAlternates={true}
 >
@@ -83,7 +81,7 @@ const schemaJson = JSON.stringify({
       <p class="lead">
         Život u inostranstvu donosi brojne izazove za mentalno zdravlje. Dr
         Tamara Medovarski pruža online psihoterapiju na srpskom jeziku
-        specijalno prilagođenu potrebama dijaspore - klijentima iz Holandije,
+        specijalno prilagođenu potrebama dijaspore - klijentima iz
         Nemačke, Austrije, Švajcarske, Australije i celog sveta.
       </p>
 
@@ -98,7 +96,7 @@ const schemaJson = JSON.stringify({
         </p>
         <p>
           Dr Tamara Medovarski je i sama godinama živela, obrazovala se i radila
-          u Holandiji i razume specifičnosti iskustva emigracije -
+          u inostranstvu i razume specifičnosti iskustva emigracije -
           prilagođavanje novoj kulturi, nostalgiju za domovinom, pritisak
           porodičnih očekivanja i izazov pronalaženja identiteta između dve
           kulture.

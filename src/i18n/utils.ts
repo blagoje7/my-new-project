@@ -1,11 +1,11 @@
 import sr from './sr.json';
 import en from './en.json';
-import nl from './nl.json';
+// import nl from './nl.json'; // Dutch (nl) site disabled
 
 export const languages = {
     sr,
     en,
-    nl
+    // nl // Dutch (nl) site disabled
 };
 
 export const defaultLang = 'sr';
@@ -28,5 +28,5 @@ export function useTranslations(lang: Language) {
 export const languageNames = {
     sr: "SR (Srpski)",
     en: "EN (English)",
-    nl: "NL (Nederlands)"
+    // nl: "NL (Nederlands)" // Dutch (nl) site disabled
 };

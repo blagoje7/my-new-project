@@ -18,7 +18,7 @@ interface Props {
 
 const { 
     title = "Dr Tamara Medovarski - Psychotherapist",
-    description = "Expert online psychotherapy in Serbian, English, and Dutch. Dr Tamara Medovarski offers professional therapy for anxiety, depression, and personal growth. Schedule your free consultation today.",
+    description = "Expert online psychotherapy in Serbian and English. Dr Tamara Medovarski offers professional therapy for anxiety, depression, and personal growth. Schedule your free consultation today.",
     lang = 'sr',
     faqSchema,
     noAlternates = false
@@ -59,19 +59,19 @@ const schemaGraph: any[] = [
             "longitude": 19.8335
         },
         "areaServed": [
-            {"@type": "Country", "name": "Serbia"},
-            {"@type": "Country", "name": "Netherlands"}
+            {"@type": "Country", "name": "Serbia"}
+            // {"@type": "Country", "name": "Netherlands"} // Netherlands removed
         ],
         "availableLanguage": [
             {"@type": "Language", "name": "Serbian"},
-            {"@type": "Language", "name": "English"},
-            {"@type": "Language", "name": "Dutch"}
+            {"@type": "Language", "name": "English"}
+            // {"@type": "Language", "name": "Dutch"} // Dutch removed
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Psihoterapijske usluge",
             "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Online psihoterapija", "description": "Individualne online psihoterapijske seanse na srpskom, engleskom i holandskom jeziku"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Online psihoterapija", "description": "Individualne online psihoterapijske seanse na srpskom i engleskom jeziku"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Besplatna inicijalna konsultacija", "description": "15-minutni besplatni razgovor pre prve seanse"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Psihoterapija za dijasporu", "description": "Specijalizovana podrška za osobe balkanskog porekla koje žive u inostranstvu"}}
             ]
@@ -86,8 +86,8 @@ const schemaGraph: any[] = [
         "url": siteBase,
         "image": `${siteBase}/IMG_16832-800w.avif`,
         "worksFor": {"@id": `${siteBase}/#business`},
-        "knowsLanguage": ["sr", "en", "nl"],
-        "description": "Doktor medicine i psihoterapeut na edukaciji. Specijalizant psihijatrije na Univerzitetskom Medicinskom Centru u Groningenu. Pruža online psihoterapiju na srpskom, engleskom i holandskom jeziku.",
+        "knowsLanguage": ["sr", "en"],
+        "description": "Doktor medicine i psihoterapeut na edukaciji. Specijalizant psihijatrije. Pruža online psihoterapiju na srpskom i engleskom jeziku.",
         "alumniOf": {
             "@type": "CollegeOrUniversity",
             "name": "Medicinski fakultet u Novom Sadu"
@@ -99,7 +99,7 @@ const schemaGraph: any[] = [
         "@id": `${siteBase}/#website`,
         "name": "Dr Tamara Medovarski – Online Psihoterapija",
         "url": siteBase,
-        "inLanguage": ["sr", "en", "nl"],
+        "inLanguage": ["sr", "en"],
         "publisher": {"@id": `${siteBase}/#person`}
     }
 ];
@@ -231,14 +231,12 @@ const schemaJson = JSON.stringify({"@context": "https://schema.org", "@graph": s
         <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
         
         <!-- Regional Meta Tags -->
-        <meta name="geo.region" content={lang === 'sr' ? 'RS;DE;AT;CH' : lang === 'nl' ? 'NL' : 'GLOBAL'} />
-        <meta name="geo.placename" content={lang === 'sr' ? 'Srbija, Nemačka, Austrija, Švajcarska' : 'Amsterdam, Netherlands'} />
+        <meta name="geo.region" content={lang === 'sr' ? 'RS;DE;AT;CH' : 'GLOBAL'} />
+        <meta name="geo.placename" content={lang === 'sr' ? 'Srbija, Nemačka, Austrija, Švajcarska' : 'Global'} />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="keywords" content={lang === 'sr' 
-            ? 'online psihoterapija, onlajn psihoterapija, psiholog online, psiholog onlajn, psihoterapija preko interneta, terapija od kuće, srpski psiholog, anksioznost, depresija, stres, burn-out, problemi u odnosima' 
-            : lang === 'nl' 
-            ? 'online psychotherapie, psycholoog online, therapie vanuit huis, expat therapie, Servische psycholoog, integratieve psychotherapie, angst, depressie, burn-out, relatieproblemen'
+            ? 'online psihoterapija, onlajn psihoterapija, psiholog online, psiholog onlajn, psihoterapija preko interneta, terapija od kuće, srpski psiholog, anksioznost, depresija, stres, burn-out, problemi u odnosima'
             : 'online psychotherapy, psychologist online, therapy from home, expat therapy, Serbian psychologist, integrative psychotherapy, anxiety, depression, stress, burn-out, relationship issues'} />
         <meta name="author" content="Dr Tamara Medovarski" />
         <meta name="robots" content="index, follow" />
@@ -248,7 +246,7 @@ const schemaJson = JSON.stringify({"@context": "https://schema.org", "@graph": s
             <>
                 <link rel="alternate" hreflang="sr" href={srHref} />
                 <link rel="alternate" hreflang="en" href={enHref} />
-                <link rel="alternate" hreflang="nl" href={nlHref} />
+                {/* <link rel="alternate" hreflang="nl" href={nlHref} /> Dutch site disabled */}
                 <link rel="alternate" hreflang="x-default" href={srHref} />
             </>
         )}
@@ -267,7 +265,7 @@ const schemaJson = JSON.stringify({"@context": "https://schema.org", "@graph": s
         <meta property="og:image" content={`${Astro.url.origin}/web-app-manifest-512x512.png`} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:site_name" content="Dr Tamara Medovarski - Psychotherapy" />
-        <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : lang === 'nl' ? 'nl_NL' : 'en_US'} />
+        <meta property="og:locale" content={lang === 'sr' ? 'sr_RS' : 'en_US'} />
         
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />

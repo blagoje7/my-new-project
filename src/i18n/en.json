@@ -76,7 +76,7 @@
   "contact": {
     "title": "How to contact me?",
     "instructions": "You can fill out the contact form, or message me on WhatsApp, Viber or Telegram at +31 6 48569129  First we will schedule a free 15-minute introductory conversation, followed by your first session.",
-    "languages": "I offer psychotherapy in Serbian, English and Dutch.",
+    "languages": "I offer psychotherapy in Serbian and English.",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -98,8 +98,8 @@
   "benefits": {
     "title": "Other Benefits Of Choosing Me",
     "card1": {
-      "title": "Online therapy in 3 languages",
-      "description": "Connect with psychotherapist who speaks Serbian, English or Dutch."
+      "title": "Online therapy in 2 languages",
+      "description": "Connect with psychotherapist who speaks Serbian or English."
     },
     "card2": {
       "title": "Pay as you go after each session",

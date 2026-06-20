@@ -77,8 +77,8 @@
   },
   "contact": {
     "title": "Kako da me kontaktirate?",
-    "instructions": "Ispunite kontakt formu klikom na dugme ili mi pišite na Whatsapp ili Viber na +31 6 48569129 (napomena: holandski pozivni broj, nije greška), kako bismo zakazali inicijalno besplatno 15-minutno upoznavanje, a zatim i prvu seansu.",
-    "languages": "Psihoterapiju nudim na srpskom, engleskom i holandskom jeziku.",
+    "instructions": "Ispunite kontakt formu klikom na dugme ili mi pišite na Whatsapp ili Viber na +31 6 48569129, kako bismo zakazali inicijalno besplatno 15-minutno upoznavanje, a zatim i prvu seansu.",
+    "languages": "Psihoterapiju nudim na srpskom i engleskom jeziku.",
     "form": {
       "name": "Ime",
       "email": "Email",
@@ -100,8 +100,8 @@
   "benefits": {
     "title": "Ostale prednosti",
     "card1": {
-      "title": "Online terapija na 3 jezika",
-      "description": "Povežite se sa psihoterapeutom koji pruza usluge psihoterapije na srpskom, engleskom i holandskom jeziku."
+      "title": "Online terapija na 2 jezika",
+      "description": "Povežite se sa psihoterapeutom koji pruza usluge psihoterapije na srpskom i engleskom jeziku."
     },
     "card2": {
       "title": "Plaćanje nakon svake seanse",
